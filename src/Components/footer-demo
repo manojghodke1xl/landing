@@ -1,0 +1,70 @@
+import React from 'react'
+import { Link } from 'react-router-dom';
+import Logo_Horizontal from "../assets/images/bg/Logo_Horizontal.png"
+
+const FooterUAE = () => {
+return (
+<>
+  <footer className="w-full grid justify-center py-10">
+    <div className="max-w-[1400px] pb-[25px] flex flex-col sm:flex-row justify-between items-center">
+      <div className="flex items-center justify-center w-1/2">
+        <Link to="/ae">
+        <img src={Logo_Horizontal} className="w-32 h-auto sm:w-40 md:w-48 lg:w-56 xl:w-64" alt="Logo" />
+        </Link>
+        <p className="ml-2"></p> {/* If you want to add text next to the image */}
+      </div>
+
+      <div className="flex gap-10">
+        <ul className="ml-10 pt-[10px]">
+          <b className="text-custom-amber  text-[15px] sm:text-[20px] md:text[20px] lg:text-[20px]">Legal</b>
+          <li>
+            <Link to="/privacy-policyUAE">
+            <b className=" text-[15px] hover:text-blue-500 hover:underline sm:text-[20px] md:text[20px] lg:text-[20px]">Privacy Policy</b>
+            </Link>
+          </li>
+          <li>
+            <Link to="/terms-of-serviceUAE">
+            <b className=" text-[15px] hover:text-blue-500 hover:underline sm:text-[20px] md:text[20px] lg:text-[20px]">Terms of Service</b>
+            </Link>
+          </li>
+          <li>
+            <Link to="/refund-policyUAE">
+            <b className=" text-[15px] hover:text-blue-500 hover:underline sm:text-[20px] md:text[20px] lg:text-[20px]">Refund Policy</b>
+            </Link>
+          </li>
+          <li>
+            <Link to="/shipping-policyUAE">
+            <b className=" text-[15px] hover:text-blue-500 hover:underline sm:text-[20px] md:text[20px] lg:text-[20px]">Shipping Policy </b>
+            </Link>
+          </li>
+           <!-- <li>
+            <Link to="/cancellation-policy"><b>Cancellation Policy </b></Link>
+          </li>  -->
+        </ul>
+
+         <!-- <ul>
+          <b className="text-custom-amber">Support</b>
+          <li><b>Knowledge base</b></li>
+          <li><b>Customer Support</b></li>
+        </ul>  -->
+      </div>
+    </div>
+
+    <hr />
+    <div className="pt-[25px] text-center">
+      © 2024 - 2025 <a href="https://books.1xl.com/"
+        className="hover:text-blue-500 hover:underline font-semibold">Books.1XL.com</a> – A Product of{" "}
+      <a href="https://1xl.com/" className="hover:text-blue-500 hover:underline font-semibold">1XL LLC FZ</a>. All Rights
+      Reserved.
+    </div>
+
+    <a href="http://www.1XL.com" className="hover:text-blue-500 hover:underline font-semibold">1XL.com </a>
+
+  </footer>
+
+</>
+)
+}
+export default FooterUAE;
+
+Business Center 1, M Floor, The Meydan Hotel, Nad Al Sheba, Dubai, U.A.E.
