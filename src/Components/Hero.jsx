@@ -1,18 +1,18 @@
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect, Suspense, lazy } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import WhyAttend from "./WhyAttend";
-import Change from "./Change";
 import { getSeoMeta } from "../utils/getSeoMeta";
 import Seo from "../Seo";
-import GrowthInMotion from "./GrowthInMotion";
-import Discover from "./Discover";
-import MissionSection from "./MissionComponent";
-import BulletListSection from "./BulletListSection";
 import { cardData, missionSectionsData } from "../data/BooksData";
 
 const LazyFooter = React.lazy(() => import("./Footer"));
 const FooterUAE = React.lazy(() => import("./FooterUAE"));
+const LazyGrowthInMotion = lazy(() => import("./GrowthInMotion"));
+const MissionSection = lazy(() => import("./MissionComponent"));
+const LazyBulletListSection = lazy(() => import("./BulletListSection"));
+const LazyDiscover = lazy(() => import("./Discover"));
+const LazyChange = lazy(() => import("./Change"));
+const LazyWhyAttend = lazy(() => import("./WhyAttend"));
 
 const Hero = ({ country }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -89,7 +89,9 @@ const Hero = ({ country }) => {
                     Inspired Thousands!
                   </h2>
                 </div>
-                <WhyAttend />
+                <Suspense fallback={<div className="text-center">Loading...</div>}>
+                  <LazyWhyAttend />
+                </Suspense>
                 <div className="flex flex-col lg:flex-row gap-4 justify-center">
                   <a
                     // href={`/pay/?type=PRODUCT&curr=INR&productIds=67de9c03770d7aa5b35b4712&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
@@ -168,7 +170,9 @@ const Hero = ({ country }) => {
           </section>
         </div>
 
-        <Change />
+        <Suspense fallback={<div className="text-center">Loading...</div>}>
+          <LazyChange />
+        </Suspense>
 
         <section className="py-14 px-[20px]">
           <div className="w-full flex flex-col gap-y-4 justify-center pb-8 items-center">
@@ -306,7 +310,9 @@ const Hero = ({ country }) => {
             <div></div>
           </div>
           <section className="w-full flex flex-col justify-center gap-2  lg:px-10 xl:px-20 gap-y-6">
-            <GrowthInMotion />
+            <Suspense fallback={<div className="text-center">Loading...</div>}>
+              <LazyGrowthInMotion />
+            </Suspense>
 
             <div className="flex flex-col items-center justify-center pb-[10px] mt-3">
               <div className="w-fit p-2 px-10 sm:px-20 bg-custom-amber text-black my-3 rounded-xl">
@@ -329,7 +335,9 @@ const Hero = ({ country }) => {
 
         <div className="bg-black rounded-lg pt-[40px]">
           {missionSectionsData.map((section, index) => (
-            <MissionSection key={index} {...section} />
+            <Suspense fallback={<div className="text-white text-center">Loading...</div>} key={index}>
+              <MissionSection {...section} />
+            </Suspense>
           ))}
         </div>
         <div className="bg-secondary">
@@ -513,18 +521,20 @@ const Hero = ({ country }) => {
             </p>
 
             <div className=" mx-auto mt-12 sm:py-[40px] sm:px-[50px] py-5 px-5 bg-black/70 rounded-xl shadow-xl sm:max-w-[80%] max-w-[100%]">
-              <BulletListSection
-                heading="We didn’t have shortcuts, fame, or a head start."
-                items={[
-                  "What we did have was stubborn determination,",
-                  "A strong willingness to learn,",
-                  "Consistency through every challenge,",
-                  "And a habit of taking on one bold mission every year.",
-                ]}
-                imageSrc="/Images/breaking-all-rules.webp"
-                imageAlt="We Turned Dreams into Reality by Breaking All the Rules!"
-                imageFirst={false}
-              />
+              <Suspense fallback={<div className="text-white text-center">Loading...</div>}>
+                <LazyBulletListSection
+                  heading="We didn’t have shortcuts, fame, or a head start."
+                  items={[
+                    "What we did have was stubborn determination,",
+                    "A strong willingness to learn,",
+                    "Consistency through every challenge,",
+                    "And a habit of taking on one bold mission every year.",
+                  ]}
+                  imageSrc="/Images/breaking-all-rules.webp"
+                  imageAlt="We Turned Dreams into Reality by Breaking All the Rules!"
+                  imageFirst={false}
+                />
+              </Suspense>
             </div>
 
             <div className="max-w-[1200px] text-[18px]  md:text-[20px] justify-center text-semibolds w-auto mt-10 pb-[40px] px-[30px] rounded-xl shadow-xl gap-10">
@@ -549,18 +559,20 @@ const Hero = ({ country }) => {
             <div></div>
 
             <div className=" mx-auto  mt-12 sm:py-[40px] sm:px-[50px] py-5 px-5 bg-secondary rounded-xl shadow-xl sm:max-w-[80%] max-w-[100%]">
-              <BulletListSection
-                heading="By following a structured system of 50-day challenges, we were able to focus on what truly matters:"
-                items={[
-                  "Taking on new challenges without hesitation.",
-                  "Building confidence through real experiences.",
-                  "Learning, growing, and inspiring others along the way.",
-                  "Creating a life of impact by helping others achieve their dreams.",
-                ]}
-                imageSrc="/Images/freedom.webp"
-                imageAlt="Our Approach to Growth Has Given Us More Freedom Than We Ever Imagined!"
-                imageFirst={false}
-              />
+              <Suspense fallback={<div className="text-white text-center">Loading...</div>}>
+                <LazyBulletListSection
+                  heading="By following a structured system of 50-day challenges, we were able to focus on what truly matters:"
+                  items={[
+                    "Taking on new challenges without hesitation.",
+                    "Building confidence through real experiences.",
+                    "Learning, growing, and inspiring others along the way.",
+                    "Creating a life of impact by helping others achieve their dreams.",
+                  ]}
+                  imageSrc="/Images/freedom.webp"
+                  imageAlt="Our Approach to Growth Has Given Us More Freedom Than We Ever Imagined!"
+                  imageFirst={false}
+                />
+              </Suspense>
             </div>
 
             <div className="max-w-[1200px] text-[18px]  md:text-[20px] justify-center text-semibolds w-auto mt-10 px-[30px] gap-10">
@@ -579,7 +591,9 @@ const Hero = ({ country }) => {
               What Will You Discover in This Book?
             </b>
           </h2>
-          <Discover cards={cardData} />
+          <Suspense fallback={<div className="text-white text-center">Loading...</div>}>
+            <LazyDiscover cards={cardData} />
+          </Suspense>
         </section>
 
         <section className="pt-[40px] bg-black grid justify-center rounded-xl px-[20px] relative">
