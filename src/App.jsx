@@ -90,6 +90,7 @@ function App() {
                 />
                 {/* <Route exact path="/cancellation-policyUAE" element={<CancellationPolicyUAE />} /> */}
                 <Route exact path="/contact-us" element={<ContactUs />} />
+                <Route path="*" element={<MainPage />} />
               </Route>
             </Routes>
           </div>
