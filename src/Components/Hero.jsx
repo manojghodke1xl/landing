@@ -5,6 +5,10 @@ import WhyAttend from "./WhyAttend";
 import Change from "./Change";
 import { getSeoMeta } from "../utils/getSeoMeta";
 import Seo from "../Seo";
+import GrowthInMotion from "./GrowthInMotion";
+import Discover from "./Discover";
+import MissionSection from "./MissionComponent";
+import BulletListSection from "./BulletListSection";
 
 const LazyFooter = React.lazy(() => import("./Footer"));
 
@@ -13,7 +17,38 @@ const Hero = () => {
   const seo = getSeoMeta("https://books.1xl.com/dreams-to-reality/in");
   const successUrl = window.location.origin + "/success";
   const failureUrl = window.location.origin + "/failure";
-
+  const cardData = [
+    {
+      title: "Real Stories of Action, Not Just Advice",
+      description:
+        "Follow the journey of two young siblings who turned learning into impact, completing five 50-day missions that inspired 50,000+ lives across India",
+    },
+    {
+      title: "A Blueprint for Purpose-Driven Growth",
+      description:
+        "Learn how they developed skills like discipline, time management, public speaking, and focus through hands-on experience, not just theory.",
+    },
+    {
+      title: "How to Start Before You Feel Ready",
+      description:
+        "See how Jainam and Jivika launched projects like JJFuntime, 1XL, Jainam Jivika Foundation, and more by starting small and showing up consistently.",
+    },
+    {
+      title: "Lessons That Go Beyond Age or Background",
+      description:
+        "Discover how their faith, family, and mindset helped them tackle challenges from public speaking fears to health setbacks and come out stronger every time.",
+    },
+    {
+      title: "Tools to Turn Dreams Into Daily Practice",
+      description:
+        "From reading 50 books in 50 days to mastering 50 skills, this book shares the exact missions and frameworks that helped them turn learning into leadership.",
+    },
+    {
+      title: "A Deeper Meaning of Success",
+      description:
+        "Explore how giving back, serving others, and creating impact became more powerful than any certificate or award.",
+    },
+  ];
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop =
@@ -28,52 +63,6 @@ const Hero = () => {
     };
   }, []);
 
-  const initialTime = 15 * 60;
-  const [remainingTime, setRemainingTime] = useState(initialTime);
-
-  const formatTime = (time) => {
-    const minutes = Math.floor(time / 60);
-    const seconds = time % 60;
-    return `${minutes.toString().padStart(2, "0")}:${seconds
-      .toString()
-      .padStart(2, "0")}`;
-  };
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setRemainingTime((prevTime) => {
-        if (prevTime > 0) {
-          return prevTime - 1;
-        } else {
-          clearInterval(timer);
-          return prevTime;
-        }
-      });
-    }, 1000);
-
-    return () => {
-      clearInterval(timer);
-    };
-  }, []);
-
-  const minutes = Math.floor(remainingTime / 60);
-  const seconds = remainingTime % 60;
-
-  const navigate = useNavigate();
-  const [open, setOpen] = React.useState(0);
-
-  const handleOpen = (value) => setOpen(open === value ? 0 : value);
-  const ToCheckout = (productId) => {
-    const successUrl = window.location.origin + "/success";
-
-    const failureUrl = window.location.origin + "/failure";
-    const curr = "INR";
-    const anchor = document.createElement("a");
-    anchor.href = `/pay/?type=PRODUCT&curr=${curr}&productIds=${productId}&successUrl=${successUrl}&failureUrl=${failureUrl}`;
-
-    //anchor.target = "_blank";
-    anchor.click();
-  };
   return (
     <>
       {seo && <Seo {...seo} />}
@@ -198,21 +187,7 @@ const Hero = () => {
                 creates impact.
               </b>
             </h2>
-            <div>
-              {/* <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="137"
-                height="14"
-                viewBox="0 0 137 14"
-                fill="none"
-              >
-                <path
-                  d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                  stroke="#FFC621"
-                  strokeWidth="4"
-                ></path>
-              </svg> */}
-            </div>
+            <div></div>
           </div>
 
           <div className="flex flex-col justify-center items-center mb-5">
@@ -337,127 +312,10 @@ const Hero = () => {
                 Every Year, A New Leap – Our Growth in Motion
               </b>
             </h2>
-            <div>
-              {/* <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="137"
-                height="14"
-                viewBox="0 0 137 14"
-                fill="none"
-              >
-                <path
-                  d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                  stroke="#FFC621"
-                  strokeWidth="4"
-                ></path>
-              </svg> */}
-            </div>
+            <div></div>
           </div>
           <section className="w-full flex flex-col justify-center gap-2  lg:px-10 xl:px-20 gap-y-6">
-            <div className="flex flex-wrap justify-center w-full gap-4">
-              <div className="bg-dark-gray rounded-xl border border-white w-[97%] lg:w-[48%] 2xl:w-[23%] py-8 flex  p-3 flex-col">
-                <div className="w-full">
-                  <h2 className="font-semibold text-[16px] text-center"></h2>
-                </div>
-                <div className="w-full p-2 bg-custom-amber text-black my-3 rounded-xl">
-                  <p className="font-semibold text-xl text-black text-center">
-                    <b className="text-black">2019</b>
-                  </p>
-                </div>
-                <div className="font-medium text-center">
-                  <p className="mb-2 mt-3 text-white">
-                    Launched JJFuntime, a YouTube channel at ages 7 and 4,
-                    igniting curiosity through fun, science-led experiments for
-                    children around the world.
-                  </p>
-                </div>
-              </div>
-              <div className="bg-dark-gray rounded-xl  border border-white w-[97%] lg:w-[48%] 2xl:w-[23%] py-8 flex  p-3 flex-col">
-                <div className="w-full">
-                  <h2 className="font-semibold text-[16px] text-center"></h2>
-                </div>
-                <div className="w-full p-2 bg-custom-amber text-black my-3 rounded-xl">
-                  <p className="font-semibold text-xl text-black text-center">
-                    <b className="text-black">2020</b>
-                  </p>
-                </div>
-                <h2 className="font-medium text-center">
-                  <p className="mb-2 mt-3">
-                    Learned a full religious book in just 50 days, in Prakrit,
-                    to challenge our minds and connect with our roots, showing
-                    that age doesn’t define discipline.
-                  </p>
-                </h2>
-              </div>
-              <div className="bg-dark-gray rounded-xl  border border-white w-[97%] lg:w-[48%] 2xl:w-[23%] py-8 flex  p-3 flex-col">
-                <div className="w-full">
-                  <h2 className="font-semibold text-[16px] text-center"></h2>
-                </div>
-                <div className="w-full p-2 bg-custom-amber text-black my-3 rounded-xl">
-                  <p className="font-semibold text-xl text-black text-center">
-                    <b className="text-black">2021</b>
-                  </p>
-                </div>
-                <h2 className="font-medium text-center">
-                  <p className="mb-2 mt-3">
-                    Attended 50 networking events in 50 days. We listened,
-                    learned, and asked questions, gaining clarity and confidence
-                    from some of India’s most inspiring voices.
-                  </p>
-                </h2>
-              </div>
-              <div className="bg-dark-gray rounded-xl  border border-white w-[97%] lg:w-[48%] 2xl:w-[23%] py-8 flex p-3 flex-col">
-                <div className="w-full">
-                  <h2 className="font-semibold text-[16px] text-center"></h2>
-                </div>
-                <div className="w-full p-2 bg-custom-amber text-black my-3 rounded-xl">
-                  <p className="font-semibold text-xl text-black text-center">
-                    <b className="text-black">2022</b>
-                  </p>
-                </div>
-                <h2 className="font-medium text-center">
-                  <p className="mb-2 mt-3">
-                    Completed 50 books in 50 days. From leadership to mindset,
-                    every page taught us that knowledge becomes power when
-                    paired with action.
-                  </p>
-                </h2>
-              </div>
-              <div className="bg-dark-gray rounded-xl  border border-white w-[97%] lg:w-[48%] 2xl:w-[23%] py-8 flex  p-3 flex-col">
-                <div className="w-full">
-                  <h2 className="font-semibold text-[16px] text-center"></h2>
-                </div>
-                <div className="w-full p-2 bg-custom-amber text-black my-3 rounded-xl">
-                  <p className="font-semibold text-xl text-black text-center">
-                    <b className="text-black">2023</b>
-                  </p>
-                </div>
-                <h2 className="font-medium text-center">
-                  <p className="mb-2 mt-3">
-                    Learned 50 new skills in 50 days, from communication and
-                    growth to discipline and time management. It was a year of
-                    application, not just accumulation.
-                  </p>
-                </h2>
-              </div>
-              <div className="bg-dark-gray rounded-xl  border border-white w-[97%] lg:w-[48%] 2xl:w-[23%] py-8 flex  p-3 flex-col">
-                <div className="w-full">
-                  <h2 className="font-semibold text-[16px] text-center"></h2>
-                </div>
-                <div className="w-full p-2 bg-custom-amber text-black my-3 rounded-xl">
-                  <p className="font-semibold text-xl text-black text-center">
-                    <b className="text-black">2024</b>
-                  </p>
-                </div>
-                <h2 className="font-medium text-center">
-                  <p className="mb-2 mt-3">
-                    Our boldest leap - Mission50. We hosted 120+ events in 50
-                    days across India, reaching over 50,000 people through free,
-                    high-energy sessions in schools, NGOs, and colleges.
-                  </p>
-                </h2>
-              </div>
-            </div>
+            <GrowthInMotion />
 
             <div className="flex flex-col items-center justify-center pb-[10px] mt-3">
               <div className="w-fit p-2 px-10 sm:px-20 bg-custom-amber text-black my-3 rounded-xl">
@@ -479,411 +337,81 @@ const Hero = () => {
         </section>
 
         <div className="bg-black rounded-lg pt-[40px]">
-          <section>
-            <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold">
-              <b className="text-custom-amber">
-                Mission50 – Our Boldest Leap Yet
-              </b>
-            </h2>
+          <MissionSection
+            heading="Mission50 – Our Boldest Leap Yet"
+            highlightedText="Mission50 – Our Boldest Leap Yet"
+            paragraphs={[
+              "We wanted to test everything we’d learned. So we set out on Mission50 in 2024, a 50-day tour across India with 120+ free events and a goal to reach 50,000 people.",
+              "It wasn’t a campaign. It was a commitment.",
+              "With our mom on the road and our dad cheering us on from afar, we ran this mission ourselves, planning, preparing, speaking, and sometimes just showing up even when we were exhausted.",
+              "We documented it all on JJMission Diary, a space where we share personal reflections, experiments, life hacks, and everything we learned in real time.",
+            ]}
+            imageSrc="/Images/mission-50.webp"
+            imageAlt="Mission50 – Our Boldest Leap Yet"
+            imageFirst={false}
+          />
 
-            <div className="flex justify-center">
-              <section className="2xl:w-[80%] flex flex-col lg:flex-row gap-5 mt-10 mb-10">
-                <div className="w-full lg-[w-47%]">
-                  <div className="w-[90%] flex flex-col items-start mb-5 lg:mb-10 mx-[15px] mt-0">
-                    <div className="w-full flex flex-col justify-center items-center gap-y-2">
-                      <p className="w-[90%] text-justify text-[20px] sm:text-[20px] md:text-[20px] font-medium">
-                        We wanted to test everything we’d learned. So we set out
-                        on Mission50 in 2024, a 50-day tour across India with
-                        120+ free events and a goal to reach 50,000 people.
-                      </p>
-                      <p className="w-[90%] text-justify text-[20px] sm:text-[20px] md:text-[20px] font-medium">
-                        It wasn’t a campaign. It was a commitment.
-                      </p>
-                      <p className="w-[90%] text-justify text-[20px] sm:text-[20px] md:text-[20px] font-medium">
-                        With our mom on the road and our dad cheering us on from
-                        afar, we ran this mission ourselves, planning,
-                        preparing, speaking, and sometimes just showing up even
-                        when we were exhausted.
-                      </p>
-                      <p className="w-[90%] text-justify text-[20px] sm:text-[20px] md:text-[20px] font-medium">
-                        We documented it all on JJMission Diary, a space where
-                        we share personal reflections, experiments, life hacks,
-                        and everything we learned in real time.
-                      </p>
-                    </div>
-                  </div>
+          <MissionSection
+            heading="The Road Wasn’t Easy"
+            highlightedText="The Road Wasn’t Easy"
+            paragraphs={[
+              "We faced illnesses. Language barriers. Travel fatigue. Sleepless nights.",
+              "But we learned that challenges aren’t setbacks, they’re reminders that we’re doing something real.",
+              "Every struggle added depth. Every obstacle made the mission matter more.",
+            ]}
+            imageSrc="/Images/RoadWasntEasy.webp"
+            imageAlt="The Road Wasn’t Easy"
+            imageFirst={true}
+          />
 
-                  {/*  */}
-                </div>
-                <div className="w-full flex justify-center flex-wrap">
-                  <img
-                    src="/Images/mission-50.webp"
-                    className="w-full max-w-[600px] h-auto object-contain"
-                    alt="Mission50 – Our Boldest Leap Yet"
-                    loading="lazy"
-                  />
-                </div>
-              </section>
-            </div>
-          </section>
+          <MissionSection
+            heading="Team Dreams to Reality – The Real Heroes"
+            highlightedText="Team Dreams to Reality – The Real Heroes"
+            paragraphs={[
+              "We couldn’t have done it alone. This was a team journey.",
+              "Our mom was our co-creator, companion, and motivator on the road.",
+              "Our dad kept us grounded from miles away.",
+              "It takes a village, and we’re proud of ours.",
+            ]}
+            imageSrc="/Images/team.webp"
+            imageAlt="Team Dreams to Reality – The Real Heroes"
+            imageFirst={false}
+          />
+          <MissionSection
+            heading="What We Learned"
+            highlightedText="What We Learned"
+            paragraphs={[
+              <>
+                <strong>Age is irrelevant.</strong> We started at 10. We weren’t
+                waiting for permission; we gave it to ourselves.
+              </>,
+              <>
+                <strong>Giving creates growth.</strong> Every time we shared our
+                ideas, our time, or our voice, we received something bigger:
+                support, energy, and a deeper meaning.
+              </>,
+            ]}
+            imageSrc="/Images/what-learned.webp"
+            imageAlt="What We Learned"
+            imageFirst={true}
+          />
 
-          <section>
-            <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold">
-              <b className="text-custom-amber">The Road Wasn’t Easy</b>
-            </h2>
-            {/* <div className="flex justify-center py-[10px]">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="137"
-                height="14"
-                viewBox="0 0 137 14"
-                fill="none"
-              >
-                <path
-                  d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                  stroke="#FFC621"
-                  strokeWidth="4"
-                ></path>
-              </svg>
-            </div> */}
-
-            <div className="flex justify-center">
-              <section className="2xl:w-[80%] flex flex-col lg:flex-row gap-5 mt-10 mb-10">
-                <div className="w-full flex justify-center flex-wrap">
-                  <img
-                    src="/Images/RoadWasntEasy.webp"
-                    className="w-full max-w-[600px] h-auto object-contain"
-                    alt="The Road Wasn’t Easy"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="w-full items-center lg-[w-47%]">
-                  <div className="w-[90%] flex flex-col items-start mb-10 mx-[25px] mt-0">
-                    <div className="w-full flex flex-col justify-center items-center gap-y-2">
-                      <p className="w-[90%] text-justify text-[20px] sm:text-[20px] md:text-[20px] font-medium">
-                        We faced illnesses. Language barriers. Travel fatigue.
-                        Sleepless nights.
-                      </p>
-                      <p className="w-[90%] text-justify text-[20px] sm:text-[20px] md:text-[20px] font-medium">
-                        But we learned that challenges aren’t setbacks, they’re
-                        reminders that we’re doing something real.
-                      </p>
-                      <p className="w-[90%] text-justify text-[20px] sm:text-[20px] md:text-[20px] font-medium">
-                        Every struggle added depth. Every obstacle made the
-                        mission matter more.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </div>
-          </section>
-
-          <section>
-            <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold">
-              <b className="text-custom-amber">
-                Team Dreams to Reality – The Real Heroes
-              </b>
-            </h2>
-            {/* <div className="flex justify-center py-[10px]">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="137"
-                height="14"
-                viewBox="0 0 137 14"
-                fill="none"
-              >
-                <path
-                  d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                  stroke="#FFC621"
-                  strokeWidth="4"
-                ></path>
-              </svg>
-            </div> */}
-
-            <div className="flex justify-center">
-              <section className="2xl:w-[80%] flex flex-col lg:flex-row gap-5 mt-10 mb-10">
-                <div className="w-full items-center lg-[w-47%]">
-                  <div className="w-[90%] flex flex-col items-start mb-10 mx-[25px] mt-0">
-                    <div className="w-full flex flex-col justify-center items-center gap-y-2">
-                      <p className="w-[90%] text-justify text-[20px] sm:text-[20px] md:text-[20px] font-medium">
-                        We couldn’t have done it alone. This was a team journey.
-                      </p>
-                      <p className="w-[90%] text-justify text-[20px] sm:text-[20px] md:text-[20px] font-medium">
-                        Our mom was our co-creator, companion, and motivator on
-                        the road.
-                      </p>
-                      <p className="w-[90%] text-justify text-[20px] sm:text-[20px] md:text-[20px] font-medium">
-                        Our dad kept us grounded from miles away.
-                      </p>
-                      <p className="w-[90%] text-justify text-[20px] sm:text-[20px] md:text-[20px] font-medium">
-                        It takes a village, and we’re proud of ours.
-                      </p>
-                    </div>
-                  </div>
-
-                  {/*  */}
-                </div>
-                <div className="w-full flex justify-center flex-wrap">
-                  <img
-                    src="/Images/team.webp"
-                    className="w-full max-w-[600px] h-auto object-contain"
-                    alt="Team Dreams to Reality – The Real Heroes"
-                    loading="lazy"
-                  />
-                </div>
-              </section>
-            </div>
-          </section>
-
-          <section>
-            <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold">
-              <b className="text-custom-amber">What We Learned</b>
-            </h2>
-            {/* <div className="flex justify-center py-[10px]">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="137"
-                height="14"
-                viewBox="0 0 137 14"
-                fill="none"
-              >
-                <path
-                  d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                  stroke="#FFC621"
-                  strokeWidth="4"
-                ></path>
-              </svg>
-            </div> */}
-
-            <div className="flex justify-center">
-              <section className="2xl:w-[80%] flex flex-col lg:flex-row gap-5 mt-10 mb-10">
-                <div className="w-full flex justify-center flex-wrap">
-                  <img
-                    src="/Images/what-learned.webp"
-                    className="w-full max-w-[600px] h-auto object-contain"
-                    alt="What We Learned"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="w-full items-center lg-[w-47%]">
-                  <div className="2xl:w-[90%] flex flex-col items-start mb-10 mx-[25px] mt-0">
-                    <div className="w-full flex flex-col justify-center items-center gap-y-2">
-                      <p className="w-[90%] text-justify text-[20px] sm:text-[20px] md:text-[20px] font-medium">
-                        <strong>Age is irrelevant.</strong> We started at 10. We
-                        weren’t waiting for permission; we gave it to ourselves.
-                      </p>
-                      <p className="w-[90%] text-justify text-[20px] sm:text-[20px] md:text-[20px] font-medium">
-                        <strong>Giving creates growth.</strong> Every time we
-                        shared our ideas, our time, or our voice, we received
-                        something bigger: support, energy, and a deeper meaning.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </div>
-          </section>
-
-          <section>
-            <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold">
-              <b className="text-custom-amber">
-                The Next Chapter: Dreams to Reality
-              </b>
-            </h2>
-            {/* <div className="flex justify-center py-[10px]">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="137"
-                height="14"
-                viewBox="0 0 137 14"
-                fill="none"
-              >
-                <path
-                  d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                  stroke="#FFC621"
-                  strokeWidth="4"
-                ></path>
-              </svg>
-            </div> */}
-
-            <div className="flex justify-center">
-              <section className="2xl:w-[80%] flex flex-col lg:flex-row gap-5 mt-10 mb-10">
-                <div className="w-full items-center lg-[w-47%]">
-                  <div className="w-[90%] flex flex-col items-start mb-10 mx-[25px] mt-0">
-                    <div className="w-full flex flex-col justify-center items-center gap-y-2">
-                      <p className="w-[90%] text-justify text-[20px] sm:text-[20px] md:text-[20px] font-medium">
-                        Our latest initiative, Dreams to Reality, is about
-                        sharing the blueprint of our journey so others can start
-                        their own.
-                      </p>
-                      <p className="w-[90%] text-justify text-[20px] sm:text-[20px] md:text-[20px] font-medium">
-                        It's not about being fearless. It’s about showing up
-                        even when you’re scared.
-                      </p>
-                      <p className="w-[90%] text-justify text-[20px] sm:text-[20px] md:text-[20px] font-medium">
-                        It’s for those who are tired of waiting and ready to
-                        take one small step toward their dreams.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="w-full flex justify-center flex-wrap">
-                  <img
-                    src="/Images/TheNextChapter.webp"
-                    className="w-full max-w-[600px] h-auto object-contain"
-                    alt="The Next Chapter: Dreams to Reality"
-                    loading="lazy"
-                  />
-                </div>
-              </section>
-            </div>
-          </section>
+          <MissionSection
+            heading="The Next Chapter: Dreams to Reality"
+            highlightedText="The Next Chapter: Dreams to Reality"
+            paragraphs={[
+              "Our latest initiative, Dreams to Reality, is about sharing the blueprint of our journey so others can start their own.",
+              "It's not about being fearless. It’s about showing up even when you’re scared.",
+              "It’s for those who are tired of waiting and ready to take one small step toward their dreams.",
+            ]}
+            imageSrc="/Images/TheNextChapter.webp"
+            imageAlt="The Next Chapter: Dreams to Reality"
+            imageFirst={false}
+          />
         </div>
-
-        {/* <section className="bg-secondary rounded-xl py-[25px] md:py-[40px]">
-          <h2 className="w-full px-10 md:px-18 text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold text-center">
-            <b className="text-custom-amber">
-              Real Reactions, True Impact
-              <div className="flex justify-center py-[10px]">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="137"
-                  height="14"
-                  viewBox="0 0 137 14"
-                  fill="none"
-                >
-                  <path
-                    d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                    stroke="#FFC621"
-                    strokeWidth="4"
-                  ></path>
-                </svg>
-              </div>
-            </b>
-          </h2>
-          <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 justify-center gap-3 mt-10 px-4 sm:px-10 ">
-            <div
-              className="w-full rounded-xl bg-dark-gray"
-              style={{ overflow: "hidden" }}
-            >
-              <iframe
-                width="100%"
-                height="415"
-                src="https://www.youtube.com/embed/0t5ORABCDuk?autoplay=1&mute=1&controls=0&modestbranding=1&iv_load_policy=3&playsinline=1"
-                title="YouTube video player"
-                style={{ borderRadius: "inherit" }}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-            <div className="w-full rounded-xl" style={{ overflow: "hidden" }}>
-              <iframe
-                width="100%"
-                height="415"
-                src="https://www.youtube.com/embed/b_YNzu0P5F8?autoplay=1&mute=1&controls=0&modestbranding=1&iv_load_policy=3&playsinline=1"
-                title="YouTube video player"
-                style={{ borderRadius: "inherit" }}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-            <div className="w-full rounded-xl" style={{ overflow: "hidden" }}>
-              <iframe
-                width="100%"
-                height="415"
-                src="https://www.youtube.com/embed/hrGx4Fo87Ys?autoplay=1&mute=1&controls=0&modestbranding=1&iv_load_policy=3&playsinline=1"
-                title="YouTube video player"
-                style={{ borderRadius: "inherit" }}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-            <div className="w-full rounded-xl" style={{ overflow: "hidden" }}>
-              <iframe
-                width="100%"
-                height="415"
-                src="https://www.youtube.com/embed/5q-dYi3mFWE?autoplay=1&mute=1&controls=0&modestbranding=1&iv_load_policy=3&playsinline=1"
-                title="YouTube video player"
-                style={{ borderRadius: "inherit" }}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div>
-        </section> */}
-
-        {/* <section className="bg-black rounded-xl pt-[20px]">
-          <div className="flex flex-col justify-center items-center pb-[40px] mt-3">
-            <div className="w-full mx-2 sm:mx-0 sm:w-[90%] lg:w-[70%] 2xl:w-[50%] flex flex-col justify-center items-center">
-              <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold">
-                <b className="text-custom-amber">Our Story Isn’t Done</b>
-              </h2>
-              <div className="flex justify-center py-[10px]">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="137"
-                  height="14"
-                  viewBox="0 0 137 14"
-                  fill="none"
-                >
-                  <path
-                    d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                    stroke="#FFC621"
-                    strokeWidth="4"
-                  ></path>
-                </svg>
-              </div> 
-              <p className="mb-2 text-lg font-medium text-center pt-4">
-                It’s just proof that when you move with intention, the world
-                moves with you.
-              </p>
-              <p className="mb-2 text-lg font-medium text-center">
-                We may not have superpowers,
-              </p>
-              <p className="text-lg font-medium text-center mb-4">
-                But this journey? It’s been nothing short of magical.
-              </p>
-              <div className="max-w-full flex flex-col xl:flex-row gap-6 xl:gap-6 justify-center items-center xl:w-[90%] 2xl:w-[80%]">
-                <a
-                  href={`/pay/?type=PRODUCT&curr=INR&productIds=67de9c03770d7aa5b35b4712&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
-                  //onClick={() => ToCheckout("67de9c03770d7aa5b35b4712")}
-                  className="text-white mb-3 text-1xl w-full lg:w-full  rounded-full py-4 px-10 lg:px-20 text-center font-bold bg-btn-primary hover:bg-btn-primary/90  shadow-btn-primary/100"
-                >
-                  Grab Your Hardcover
-                </a>
-                <a
-                  //onClick={() => ToCheckout("67dea774770d7aa5b35b4db2")}
-                  href={`/pay/?type=PRODUCT&curr=INR&productIds=67dea774770d7aa5b35b4db2&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
-                  className="text-white mb-3 text-1xl w-full lg:w-full  rounded-full py-4 px-10 lg:px-20 text-center font-bold bg-btn-primary hover:bg-btn-primary/90  shadow-btn-primary/100"
-                >
-                  Grab Your E-Book
-                </a>
-              </div>
-            </div>
-          </div>
-        </section> */}
-
         <div className="bg-secondary">
           <h2 className="w-full py-[25px] md:py-[40px]  px-10 md:px-18  text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px]  font-bold text-center">
-            <b className="text-custom-amber">
-              Stories That Stay With Us
-              {/* <div className="flex justify-center py-[10px]">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="137"
-                  height="14"
-                  viewBox="0 0 137 14"
-                  fill="none"
-                >
-                  <path
-                    d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                    stroke="#FFC621"
-                    strokeWidth="4"
-                  ></path>
-                </svg>
-              </div> */}
-            </b>
+            <b className="text-custom-amber">Stories That Stay With Us</b>
           </h2>
 
           <div className="flex flex-col justify-center items-center">
@@ -995,21 +523,7 @@ const Hero = () => {
               </b>
             </h2>
 
-            <div>
-              {/* <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="137"
-                height="14"
-                viewBox="0 0 137 14"
-                fill="none"
-              >
-                <path
-                  d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                  stroke="#FFC621"
-                  strokeWidth="4"
-                ></path>
-              </svg> */}
-            </div>
+            <div></div>
           </div>
 
           <div className="flex justify-center ">
@@ -1031,14 +545,14 @@ const Hero = () => {
                     <a
                       href={`/pay/?type=PRODUCT&curr=INR&productIds=67de9c03770d7aa5b35b4712&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
                       //onClick={() => ToCheckout("67de9c03770d7aa5b35b4712")}
-                      className="text-white mb-3 text-1xl w-full lg:w-full  rounded-full py-4 px-10 lg:px-15 text-center font-bold bg-btn-primary hover:bg-btn-primary/90  shadow-btn-primary/100"
+                      className="text-white mb-3 text-1xl w-full lg:w-full  rounded-full py-4 px-5 lg:px-15 text-center font-bold bg-btn-primary hover:bg-btn-primary/90  shadow-btn-primary/100"
                     >
                       Grab Your Hardcover
                     </a>
                     <a
                       //onClick={() => ToCheckout("67dea774770d7aa5b35b4db2")}
                       href={`/pay/?type=PRODUCT&curr=INR&productIds=67dea774770d7aa5b35b4db2&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
-                      className="text-white mb-3 text-1xl w-full lg:w-full  rounded-full py-4 px-10 lg:px-15 text-center font-bold bg-btn-primary hover:bg-btn-primary/90  shadow-btn-primary/100"
+                      className="text-white mb-3 text-1xl w-full lg:w-full  rounded-full py-4 px-5 lg:px-15 text-center font-bold bg-btn-primary hover:bg-btn-primary/90  shadow-btn-primary/100"
                     >
                       Grab Your E-Book
                     </a>
@@ -1065,21 +579,7 @@ const Hero = () => {
                 We Turned Dreams into Reality by Breaking All the Rules!
               </b>
             </h2>
-            <div>
-              {/* <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="137"
-                height="14"
-                viewBox="0 0 137 14"
-                fill="none"
-              >
-                <path
-                  d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                  stroke="#FFC621"
-                  strokeWidth="4"
-                ></path>
-              </svg> */}
-            </div>
+            <div></div>
 
             <p className="max-w-[1200px] text-center  text-[20px]  sm:text-[20px] md:text-[20px] lg:text-[24px] font-bold">
               We never had a big network or formal training when we started.
@@ -1088,106 +588,18 @@ const Hero = () => {
             </p>
 
             <div className=" mx-auto mt-12 sm:py-[40px] sm:px-[50px] py-5 px-5 bg-black/70 rounded-xl shadow-xl sm:max-w-[80%] max-w-[100%]">
-              <div className="flex flex-col 2xl:flex-row justify-center gap-12 text-center lg:text-left items-center">
-                <div className="grid w-full text-left 2xl:w-2/3">
-                  <p className="text-[20px] md:text-[24px] font-semibold mb-4">
-                    We didn’t have shortcuts, fame, or a head start.
-                  </p>
-
-                  <div className="flex  justify-left gap-5 pb-4">
-                    <span>
-                      {" "}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="22"
-                        height="22"
-                        viewBox="0 0 22 22"
-                        fill="none"
-                      >
-                        <circle cx="11" cy="11" r="11" fill="#25AB75"></circle>
-                        <path
-                          d="M6.94042 9.69044L5.30351 11.3273L5.23804 11.3928L9.42851 15.5833L16.8928 8.11901L15.1904 6.41663L9.42851 12.1785L6.94042 9.69044Z"
-                          fill="white"
-                        ></path>
-                      </svg>
-                    </span>
-                    <p className="text-[18px] md:text-[20px] text-semibolds">
-                      What we did have was stubborn determination,
-                    </p>
-                  </div>
-                  <div className="flex  justify-left gap-5 pb-4">
-                    <span>
-                      {" "}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="22"
-                        height="22"
-                        viewBox="0 0 22 22"
-                        fill="none"
-                      >
-                        <circle cx="11" cy="11" r="11" fill="#25AB75"></circle>
-                        <path
-                          d="M6.94042 9.69044L5.30351 11.3273L5.23804 11.3928L9.42851 15.5833L16.8928 8.11901L15.1904 6.41663L9.42851 12.1785L6.94042 9.69044Z"
-                          fill="white"
-                        ></path>
-                      </svg>
-                    </span>
-                    <p className="text-[18px] md:text-[20px] text-semibolds">
-                      A strong willingness to learn,
-                    </p>
-                  </div>
-                  <div className="flex  justify-left gap-5 pb-4">
-                    <span>
-                      {" "}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="22"
-                        height="22"
-                        viewBox="0 0 22 22"
-                        fill="none"
-                      >
-                        <circle cx="11" cy="11" r="11" fill="#25AB75"></circle>
-                        <path
-                          d="M6.94042 9.69044L5.30351 11.3273L5.23804 11.3928L9.42851 15.5833L16.8928 8.11901L15.1904 6.41663L9.42851 12.1785L6.94042 9.69044Z"
-                          fill="white"
-                        ></path>
-                      </svg>
-                    </span>
-                    <p className="text-[18px] md:text-[20px] text-semibolds">
-                      Consistency through every challenge,
-                    </p>
-                  </div>
-                  <div className="flex  justify-left gap-5 pb-4">
-                    <span>
-                      {" "}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="22"
-                        height="22"
-                        viewBox="0 0 22 22"
-                        fill="none"
-                      >
-                        <circle cx="11" cy="11" r="11" fill="#25AB75"></circle>
-                        <path
-                          d="M6.94042 9.69044L5.30351 11.3273L5.23804 11.3928L9.42851 15.5833L16.8928 8.11901L15.1904 6.41663L9.42851 12.1785L6.94042 9.69044Z"
-                          fill="white"
-                        ></path>
-                      </svg>
-                    </span>
-                    <p className="text-[18px] md:text-[20px] text-semibolds">
-                      And a habit of taking on one bold mission every year.
-                    </p>
-                  </div>
-                </div>
-                <div className="w-full 2xl:w-1/3">
-                  <img
-                    className="w-full"
-                    src="/Images/breaking-all-rules.webp"
-                    alt="We Turned Dreams into Reality by Breaking All the Rules!"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
+              <BulletListSection
+                heading="We didn’t have shortcuts, fame, or a head start."
+                items={[
+                  "What we did have was stubborn determination,",
+                  "A strong willingness to learn,",
+                  "Consistency through every challenge,",
+                  "And a habit of taking on one bold mission every year.",
+                ]}
+                imageSrc="/Images/breaking-all-rules.webp"
+                imageAlt="We Turned Dreams into Reality by Breaking All the Rules!"
+                imageFirst={false}
+              />
             </div>
 
             <div className="max-w-[1200px] text-[18px]  md:text-[20px] justify-center text-semibolds w-auto mt-10 pb-[40px] px-[30px] rounded-xl shadow-xl gap-10">
@@ -1209,125 +621,21 @@ const Hero = () => {
                 Imagined!
               </b>
             </h2>
-            <div>
-              {/* <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="137"
-                height="14"
-                viewBox="0 0 137 14"
-                fill="none"
-              >
-                <path
-                  d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                  stroke="#FFC621"
-                  strokeWidth="4"
-                ></path>
-              </svg> */}
-            </div>
+            <div></div>
 
             <div className=" mx-auto  mt-12 sm:py-[40px] sm:px-[50px] py-5 px-5 bg-secondary rounded-xl shadow-xl sm:max-w-[80%] max-w-[100%]">
-              <div className="flex flex-col 2xl:flex-row justify-center gap-12 text-center lg:text-left items-center">
-                <div className="grid w-full text-left 2xl:w-2/3">
-                  <p className="text-[20px] md:text-[24px] font-semibold mb-4">
-                    By following a structured system of 50-day challenges, we
-                    were able to focus on what truly matters:
-                  </p>
-
-                  <div className="flex  justify-left gap-5 pb-4">
-                    <span>
-                      {" "}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="22"
-                        height="22"
-                        viewBox="0 0 22 22"
-                        fill="none"
-                      >
-                        <circle cx="11" cy="11" r="11" fill="#25AB75"></circle>
-                        <path
-                          d="M6.94042 9.69044L5.30351 11.3273L5.23804 11.3928L9.42851 15.5833L16.8928 8.11901L15.1904 6.41663L9.42851 12.1785L6.94042 9.69044Z"
-                          fill="white"
-                        ></path>
-                      </svg>
-                    </span>
-                    <p className="text-[18px] md:text-[20px] text-semibolds">
-                      Taking on new challenges without hesitation.
-                    </p>
-                  </div>
-                  <div className="flex  justify-left gap-5 pb-4">
-                    <span>
-                      {" "}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="22"
-                        height="22"
-                        viewBox="0 0 22 22"
-                        fill="none"
-                      >
-                        <circle cx="11" cy="11" r="11" fill="#25AB75"></circle>
-                        <path
-                          d="M6.94042 9.69044L5.30351 11.3273L5.23804 11.3928L9.42851 15.5833L16.8928 8.11901L15.1904 6.41663L9.42851 12.1785L6.94042 9.69044Z"
-                          fill="white"
-                        ></path>
-                      </svg>
-                    </span>
-                    <p className="text-[18px] md:text-[20px] text-semibolds">
-                      Building confidence through real experiences.
-                    </p>
-                  </div>
-                  <div className="flex  justify-left gap-5 pb-4">
-                    <span>
-                      {" "}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="22"
-                        height="22"
-                        viewBox="0 0 22 22"
-                        fill="none"
-                      >
-                        <circle cx="11" cy="11" r="11" fill="#25AB75"></circle>
-                        <path
-                          d="M6.94042 9.69044L5.30351 11.3273L5.23804 11.3928L9.42851 15.5833L16.8928 8.11901L15.1904 6.41663L9.42851 12.1785L6.94042 9.69044Z"
-                          fill="white"
-                        ></path>
-                      </svg>
-                    </span>
-                    <p className="text-[18px] md:text-[20px] text-semibolds">
-                      Learning, growing, and inspiring others along the way.
-                    </p>
-                  </div>
-                  <div className="flex  justify-left gap-5 pb-4">
-                    <span>
-                      {" "}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="22"
-                        height="22"
-                        viewBox="0 0 22 22"
-                        fill="none"
-                      >
-                        <circle cx="11" cy="11" r="11" fill="#25AB75"></circle>
-                        <path
-                          d="M6.94042 9.69044L5.30351 11.3273L5.23804 11.3928L9.42851 15.5833L16.8928 8.11901L15.1904 6.41663L9.42851 12.1785L6.94042 9.69044Z"
-                          fill="white"
-                        ></path>
-                      </svg>
-                    </span>
-                    <p className="text-[18px] md:text-[20px] text-semibolds">
-                      Creating a life of impact by helping others achieve their
-                      dreams.
-                    </p>
-                  </div>
-                </div>
-                <div className="w-full 2xl:w-1/3">
-                  <img
-                    className="w-full"
-                    src="/Images/freedom.webp"
-                    alt="Our Approach to Growth Has Given Us More Freedom Than We Ever Imagined!"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
+              <BulletListSection
+                heading="By following a structured system of 50-day challenges, we were able to focus on what truly matters:"
+                items={[
+                  "Taking on new challenges without hesitation.",
+                  "Building confidence through real experiences.",
+                  "Learning, growing, and inspiring others along the way.",
+                  "Creating a life of impact by helping others achieve their dreams.",
+                ]}
+                imageSrc="/Images/freedom.webp"
+                imageAlt="Our Approach to Growth Has Given Us More Freedom Than We Ever Imagined!"
+                imageFirst={false}
+              />
             </div>
 
             <div className="max-w-[1200px] text-[18px]  md:text-[20px] justify-center text-semibolds w-auto mt-10 px-[30px] gap-10">
@@ -1346,83 +654,7 @@ const Hero = () => {
               What Will You Discover in This Book?
             </b>
           </h2>
-          {/* <div className="flex justify-center py-[10px]">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="137"
-              height="14"
-              viewBox="0 0 137 14"
-              fill="none"
-            >
-              <path
-                d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                stroke="#FFC621"
-                strokeWidth="4"
-              ></path>
-            </svg>
-          </div> */}
-
-          <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-center items-stretch flex-wrap gap-4 md:px-10 lg:px-14 xl:px-20 mb-8 mt-8">
-            <div className="w-full bg-black/60 rounded-xl p-8 flex flex-col justify-center">
-              <h2 className="text-center text-2xl font-semibold text-custom-amber">
-                Real Stories of Action, Not Just Advice
-              </h2>
-              <p className="mt-4 tracking-wide text-center text-xl text-gray-300">
-                Follow the journey of two young siblings who turned learning
-                into impact, completing five 50-day missions that inspired
-                50,000+ lives across India
-              </p>
-            </div>
-            <div className="w-full bg-black/60 rounded-xl p-8 flex flex-col justify-center">
-              <h2 className="text-center text-2xl font-semibold text-custom-amber">
-                A Blueprint for Purpose-Driven Growth
-              </h2>
-              <p className="mt-4 tracking-wide text-center text-xl text-gray-300">
-                Learn how they developed skills like discipline, time
-                management, public speaking, and focus through hands-on
-                experience, not just theory.
-              </p>
-            </div>
-            <div className="w-full bg-black/60 rounded-xl p-8 flex flex-col justify-center">
-              <h2 className="text-center text-2xl font-semibold text-custom-amber">
-                How to Start Before You Feel Ready
-              </h2>
-              <p className="mt-4 tracking-wide text-center text-xl text-gray-300">
-                See how Jainam and Jivika launched projects like JJFuntime, 1XL,
-                Jainam Jivika Foundation, and more by starting small and showing
-                up consistently.
-              </p>
-            </div>
-            <div className="w-full bg-black/60 rounded-xl p-8 flex flex-col justify-center">
-              <h2 className="text-center text-2xl font-semibold text-custom-amber">
-                Lessons That Go Beyond Age or Background
-              </h2>
-              <p className="mt-4 tracking-wide text-center text-xl text-gray-300">
-                Discover how their faith, family, and mindset helped them tackle
-                challenges from public speaking fears to health setbacks and
-                come out stronger every time.
-              </p>
-            </div>
-            <div className="w-full bg-black/60 rounded-xl p-8 flex flex-col justify-center">
-              <h2 className="text-center text-2xl font-semibold text-custom-amber">
-                Tools to Turn Dreams Into Daily Practice
-              </h2>
-              <p className="mt-4 tracking-wide text-center text-xl text-gray-300">
-                From reading 50 books in 50 days to mastering 50 skills, this
-                book shares the exact missions and frameworks that helped them
-                turn learning into leadership.
-              </p>
-            </div>
-            <div className="w-full bg-black/60 rounded-xl p-8 flex flex-col justify-center">
-              <h2 className="text-center text-2xl font-semibold text-custom-amber">
-                A Deeper Meaning of Success
-              </h2>
-              <p className="mt-4 tracking-wide text-center text-xl text-gray-300">
-                Explore how giving back, serving others, and creating impact
-                became more powerful than any certificate or award.
-              </p>
-            </div>
-          </div>
+          <Discover cards={cardData} />
         </section>
 
         <section className="pt-[40px] bg-black grid justify-center rounded-xl px-[20px] relative">
@@ -1432,21 +664,7 @@ const Hero = () => {
                 Dreams to Reality is NOT Just Another Ordinary Book!
               </b>
             </h2>
-            <div>
-              {/* <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="137"
-                height="14"
-                viewBox="0 0 137 14"
-                fill="none"
-              >
-                <path
-                  d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                  stroke="#FFC621"
-                  strokeWidth="4"
-                ></path>
-              </svg> */}
-            </div>
+            <div></div>
 
             <div className=" mx-auto  mt-12 sm:py-[40px] sm:px-[50px] py-5 px-5 bg-secondary rounded-xl shadow-xl sm:max-w-[80%] max-w-[100%]">
               <div className="flex flex-col 2xl:flex-row justify-center gap-12 text-center lg:text-left items-center">
@@ -1542,21 +760,6 @@ const Hero = () => {
                   own.
                 </b>
               </h2>
-              {/* <div className="flex justify-center py-[10px]">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="137"
-                  height="14"
-                  viewBox="0 0 137 14"
-                  fill="none"
-                >
-                  <path
-                    d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                    stroke="#FFC621"
-                    strokeWidth="4"
-                  ></path>
-                </svg>
-              </div> */}
               <p className="text-center mb-3 text-[20px] mt-4 sm:text-[20px] md:text-[20px] lg:text-[24px] text-semibolds">
                 Dreams to Reality will show you exactly how to break past
                 doubts, take bold action, and start achieving what once felt
@@ -1567,63 +770,20 @@ const Hero = () => {
         </section>
 
         <section className="bg-secondary rounded-lg py-[40px]">
-          <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold">
-            <b className="text-custom-amber">
-              Get Your Copy Now – Limited Stock Available!
-            </b>
-          </h2>
-          {/* <div className="flex justify-center py-[10px]">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="137"
-              height="14"
-              viewBox="0 0 137 14"
-              fill="none"
-            >
-              <path
-                d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                stroke="#FFC621"
-                strokeWidth="4"
-              ></path>
-            </svg>
-          </div> */}
-
-          <div className="flex justify-center">
-            <section className="2xl:w-[80%] flex flex-col lg:flex-row gap-5 mt-10 mb-10">
-              <div className="w-full lg-[w-47%]">
-                <div className="w-[90%] flex flex-col items-start mb-10 mx-[25px] mt-0">
-                  <div className="w-full flex flex-col justify-start items-start gap-y-2">
-                    <p className="text-[20px] md:text-[20px] font-medium mb-1">
-                      We’ve printed only a few copies of Dreams to Reality for
-                      this special giveaway - and they’re going fast.
-                    </p>
-                    <p className="text-[20px] md:text-[20px] font-medium mb-1">
-                      Once these copies are gone, it could be months before more
-                      are available.
-                    </p>
-                    <p className="text-[20px] md:text-[20px] font-medium mb-1">
-                      The good news? Your copy is still available - right now
-                    </p>
-                    <p className="text-[20px] md:text-[20px] font-medium mb-1">
-                      But time is running out…
-                    </p>
-                    <p className="text-[20px] md:text-[20px] font-medium mb-1">
-                      If you’re serious about turning your goals into reality,
-                      don’t wait - grab your copy today before it’s gone!
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="w-full flex justify-center flex-wrap">
-                <img
-                  src="/Images/LimitedBook.webp"
-                  className="w-full max-w-[600px] h-auto object-contain"
-                  alt="Get Your Copy Now – Limited Stock Available!"
-                  loading="lazy"
-                />
-              </div>
-            </section>
-          </div>
+          <MissionSection
+            heading="Get Your Copy Now – Limited Stock Available!"
+            highlightedText="Get Your Copy Now – Limited Stock Available!"
+            paragraphs={[
+              "We’ve printed only a few copies of Dreams to Reality for this special giveaway – and they’re going fast.",
+              "Once these copies are gone, it could be months before more are available.",
+              "The good news? Your copy is still available – right now.",
+              "But time is running out…",
+              "If you’re serious about turning your goals into reality, don’t wait – grab your copy today before it’s gone!",
+            ]}
+            imageSrc="/Images/LimitedBook.webp"
+            imageAlt="Limited Book Cover"
+            imageFirst={false}
+          />
         </section>
 
         <section className="bg-black py-[40px] mb-8 rounded-xl px-[14px]">
@@ -1635,21 +795,7 @@ const Hero = () => {
               </b>
             </h2>
 
-            <div>
-              {/* <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="137"
-                height="14"
-                viewBox="0 0 137 14"
-                fill="none"
-              >
-                <path
-                  d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                  stroke="#FFC621"
-                  strokeWidth="4"
-                ></path>
-              </svg> */}
-            </div>
+            <div></div>
 
             <p className="max-w-[1200px] text-center  text-[20px] mt-8 sm:text-[20px] md:text-[20px] lg:text-[24px] font-medium">
               Let us know where to send your Book, and take the first step

@@ -29,17 +29,6 @@ const HeroUAE = () => {
     };
   }, []);
 
-  const initialTime = 15 * 60;
-  const [remainingTime, setRemainingTime] = useState(initialTime);
-
-  const formatTime = (time) => {
-    const minutes = Math.floor(time / 60);
-    const seconds = time % 60;
-    return `${minutes.toString().padStart(2, "0")}:${seconds
-      .toString()
-      .padStart(2, "0")}`;
-  };
-
   useEffect(() => {
     const timer = setInterval(() => {
       setRemainingTime((prevTime) => {
@@ -59,24 +48,6 @@ const HeroUAE = () => {
     };
   }, []);
 
-  // Get minutes and seconds for display
-  const minutes = Math.floor(remainingTime / 60);
-  const seconds = remainingTime % 60;
-
-  const navigate = useNavigate();
-  const [open, setOpen] = React.useState(0);
-
-  const handleOpen = (value) => setOpen(open === value ? 0 : value);
-  const ToCheckout = (productId) => {
-    const successUrl = window.location.origin + "/success";
-
-    const failureUrl = window.location.origin + "/failure";
-    const curr = "AED";
-    const anchor = document.createElement("a");
-    anchor.href = `/pay/?type=PRODUCT&curr=${curr}&productIds=${productId}&successUrl=${successUrl}&failureUrl=${failureUrl}`;
-    //anchor.target = "_blank";
-    anchor.click();
-  };
   return ( 
     <>
       {seo && <Seo {...seo} />}
@@ -112,21 +83,7 @@ const HeroUAE = () => {
                     Inspired Thousands!
                   </h2>
 
-                  {/* <div className="flex justify-center py-[10px]">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="137"
-                      height="14"
-                      viewBox="0 0 137 14"
-                      fill="none"
-                    >
-                      <path
-                        d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                        stroke="#FFC621"
-                        strokeWidth="4"
-                      ></path>
-                    </svg>
-                  </div> */}
+                  
                 </div>
                 <WhyAttend />
                 <div className="flex flex-col lg:flex-row gap-4 justify-center">
@@ -216,21 +173,7 @@ const HeroUAE = () => {
                 creates impact.
               </b>
             </h2>
-            {/* <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="137"
-                height="14"
-                viewBox="0 0 137 14"
-                fill="none"
-              >
-                <path
-                  d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                  stroke="#FFC621"
-                  strokeWidth="4"
-                ></path>
-              </svg>
-            </div> */}
+            
           </div>
 
           <div className="flex flex-col justify-center items-center mb-5">
@@ -347,190 +290,6 @@ const HeroUAE = () => {
             </h4>
           </div>
         </section>
-
-        {/* <section className="bg-secondary rounded-lg pt-[40px] pb-[20px] px-[10px] relative">
-
-          <div className="w-full flex flex-col justify-center mb-10 gap-y-2 items-center">
-            <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold">
-              <b className="text-custom-amber">
-                {" "}
-                We May Not Have Superpowers, But Our Journey Was Pure Magic
-              </b>
-            </h2>
-            <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="137"
-                height="14"
-                viewBox="0 0 137 14"
-                fill="none"
-              >
-                <path
-                  d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                  stroke="#FFC621"
-                  strokeWidth="4"
-                ></path>
-              </svg>
-            </div>
-          </div>
-          <div className="w-full flex  flex-col justify-center items-center gap-3 px-2">
-            <div className="max-w-[1200px] pb-[20px] flex flex-col items-center justify-center">
-              <ul className="list-none p-0">
-                <li className="flex items-center gap-3 mb-4">
-                  <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-                      <circle cx="11" cy="11" r="11" fill="#25AB75"></circle>
-                      <path d="M6.94042 9.69044L5.30351 11.3273L5.23804 11.3928L9.42851 15.5833L16.8928 8.11901L15.1904 6.41663L9.42851 12.1785L6.94042 9.69044Z" fill="white"></path>
-                    </svg>
-                  </span>
-                  <span className="text-[18px] md:text-[20px] text-semibold text-justify">
-                    {" "}
-                    We’re Jainam and Jivika, siblings who believe that bold dreams shouldn’t wait for permission. We began not with experience, but with intent, courage, and a deep desire to make a difference.
-                  </span>
-                </li>
-                <li className="flex items-center gap-3 mb-4">
-                  <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-                      <circle cx="11" cy="11" r="11" fill="#25AB75"></circle>
-                      <path d="M6.94042 9.69044L5.30351 11.3273L5.23804 11.3928L9.42851 15.5833L16.8928 8.11901L15.1904 6.41663L9.42851 12.1785L6.94042 9.69044Z" fill="white"></path>
-                    </svg>
-                  </span>
-                  <span className="text-[18px] md:text-[20px] text-semibold text-justify">
-                    {" "}
-                    We didn’t wait for perfect plans or the "right age." We started with what we had - ideas, values, and beliefs. From there, one step at a time, we created lasting change.
-                  </span>
-                </li>
-                <li className="flex items-center gap-3 mb-4">
-                  <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-                      <circle cx="11" cy="11" r="11" fill="#25AB75"></circle>
-                      <path d="M6.94042 9.69044L5.30351 11.3273L5.23804 11.3928L9.42851 15.5833L16.8928 8.11901L15.1904 6.41663L9.42851 12.1785L6.94042 9.69044Z" fill="white"></path>
-                    </svg>
-                  </span>
-                  <span className="text-[18px] md:text-[20px] text-semibold text-justify">
-                    From 2019 to 2025, our focus wasn’t on ticking boxes - it was on touching lives. No shortcuts, no formulas. Just consistent effort, daily learning, and purpose-driven action that made each day count.
-                  </span>
-                </li>
-              </ul>
-              <h4 className="pt-[20px] font-semibold sm:w-[70%] text-[32px] text-center">
-                Projects with Purpose  - Built to Serve, Not Just Scale
-              </h4>
-              <p className="text-[18px] text-center">Every project we launched started with a question: “How can we help?” From education and wellness to tech and youth leadership, each idea was born to serve real needs.</p>
-              <p className="text-[18px] text-center">Some of our most impactful platforms include:</p>
-            </div>
-            <div className="w-full flex flex-col justify-between lg:px-8 xl:px-10 2xl:px-20">
-              <div className="flex lg:flex-row flex-col lg:gap-5">
-                <div className="py-6 rounded-xl bg-black w-full lg:w-[48%] flex gap-5 mb-7">
-                  <h2 className="text-xl font-extrabold bg-custom-amber text-black flex justify-center items-center rounded-r-lg min-w-14 h-10">
-                    01
-                  </h2>
-                  <p className="text-[15px] sm:text-[15px] md:text-[15px] lg:text-[18px] tracking-wide">
-                    <img src={JJFIndia} height={80} width={200} alt="JJFIndia.com" />
-                  </p>
-                </div>
-                <div className="py-6 rounded-xl bg-black w-full lg:w-[48%] flex gap-5 mb-7">
-                  <h2 className="text-xl font-extrabold bg-custom-amber text-black flex justify-center items-center rounded-r-lg min-w-14 h-10">
-                    02
-                  </h2>
-                  <p className="text-[15px] sm:text-[15px] md:text-[15px] lg:text-[18px] tracking-wide">
-                    <img src={PlegeOrgans} height={80} width={200} alt="PlegeOrgans.com" />
-                  </p>
-                </div>
-              </div>
-              <div className="flex lg:flex-row flex-col lg:gap-5">
-                <div className="py-6 rounded-xl bg-black w-full lg:w-[48%] flex gap-5 mb-7">
-                  <h2 className="text-xl font-extrabold bg-custom-amber text-black flex justify-center items-center rounded-r-lg min-w-14 h-10">
-                    03
-                  </h2>
-                  <p className="text-[15px] sm:text-[15px] md:text-[15px] lg:text-[18px] tracking-wide">
-                    <img src={ReformArmy} height={80} width={250} alt="ReformArmy.com" />
-                  </p>
-                </div>
-                <div className="pr-4 py-6 rounded-xl bg-black w-full lg:w-[48%] flex gap-5 mb-7">
-                  <h2 className="text-xl font-extrabold bg-custom-amber text-black flex justify-center items-center rounded-r-lg min-w-14 h-10">
-                    04
-                  </h2>
-                  <p className="text-[15px] sm:text-[15px] md:text-[15px] lg:text-[18px] tracking-wide">
-                    <img src={MyFoodChecker} height={80} width={200} alt="MyFoodChecker.com" />
-                  </p>
-                </div>
-              </div>
-              <div className="flex lg:flex-row flex-col lg:gap-5">
-                <div className="py-6 rounded-xl bg-black w-full lg:w-[48%] flex gap-5 mb-7">
-                  <h2 className="text-xl font-extrabold bg-custom-amber text-black flex justify-center items-center rounded-r-lg min-w-14 h-10">
-                    05
-                  </h2>
-                  <p className="text-[15px] sm:text-[15px] md:text-[15px] lg:text-[18px] tracking-wide">
-                    <img src={LeadsMagix} height={80} style={{height:'80px'}} alt="LeadsMagix.com" />
-                  </p>
-                </div>
-                <div className="pr-4 py-6 rounded-xl bg-black w-full lg:w-[48%] flex gap-5 mb-7">
-                  <h2 className="text-xl font-extrabold bg-custom-amber text-black flex justify-center items-center rounded-r-lg min-w-14 h-10">
-                    06
-                  </h2>
-                  <p className="text-[15px] sm:text-[15px] md:text-[15px] lg:text-[18px] tracking-wide">
-                    <img src={YoungJains} height={80} style={{height:'80px'}} alt="YoungJains.com" />
-                  </p>
-                </div>
-              </div>
-              <div className="flex lg:flex-row flex-col lg:gap-5">
-                <div className="py-6 rounded-xl bg-black w-full lg:w-[48%] flex gap-5 mb-7">
-                  <h2 className="text-xl font-extrabold bg-custom-amber text-black flex justify-center items-center rounded-r-lg min-w-14 h-10">
-                    07
-                  </h2>
-                  <p className="text-[15px] sm:text-[15px] md:text-[15px] lg:text-[18px] tracking-wide">
-                    <img src={LifeSaverArmy} height={80} style={{height:'80px'}} alt="LifeSaverArmy.com" />
-                  </p>
-                </div>
-                <div className="pr-4 py-6 rounded-xl bg-black w-full lg:w-[48%] flex gap-5 mb-7">
-                  <h2 className="text-xl font-extrabold bg-custom-amber text-black flex justify-center items-center rounded-r-lg min-w-14 h-10">
-                    08
-                  </h2>
-                  <p className="text-[15px] sm:text-[15px] md:text-[15px] lg:text-[18px] tracking-wide">
-                    <img src={AkshayNetra} height={80} style={{height:'80px'}} alt="AkshayNetra.com" />
-                  </p>
-                </div>
-              </div>
-              <div className="flex lg:flex-row flex-col lg:gap-5">
-                <div className="py-6 rounded-xl bg-black w-full lg:w-[48%] flex gap-5 mb-7">
-                  <h2 className="text-xl font-extrabold bg-custom-amber text-black flex justify-center items-center rounded-r-lg min-w-14 h-10">
-                    09
-                  </h2>
-                  <p className="text-[15px] sm:text-[15px] md:text-[15px] lg:text-[18px] tracking-wide">
-                    <img src={MindUnload} height={80} style={{height:'80px'}} alt="MindUnload.com" />
-                  </p>
-                </div>
-                <div className="pr-4 py-6 rounded-xl bg-black w-full lg:w-[48%] flex gap-5 mb-7">
-                  <h2 className="text-xl font-extrabold bg-custom-amber text-black flex justify-center items-center rounded-r-lg min-w-14 h-10">
-                    10
-                  </h2>
-                  <p className="text-[15px] sm:text-[15px] md:text-[15px] lg:text-[18px] tracking-wide">
-                    <img src={XL1} height={80} style={{height:'80px'}} alt="1XL.com" />
-                  </p>
-                </div>
-              </div>
-              <div className="flex lg:flex-row flex-col lg:gap-5">
-                <div className="pr-4 py-6 rounded-xl bg-black w-full lg:w-[48%] flex gap-5 mb-7">
-                  <h2 className="text-xl font-extrabold bg-custom-amber text-black flex justify-center items-center rounded-r-lg min-w-14 h-10">
-                    11
-                  </h2>
-                  <p className="text-[15px] sm:text-[15px] md:text-[15px] lg:text-[18px] tracking-wide">
-                    <img src={SevakArmy} height={80} style={{height:'80px'}} alt="SevakArmy.com" />
-                  </p>
-                </div>
-                <div className="pr-4 py-6 rounded-xl bg-black w-full lg:w-[48%] flex gap-5 mb-7">
-                  <h2 className="text-xl font-extrabold bg-custom-amber text-black flex justify-center items-center rounded-r-lg min-w-14 h-10">
-                    12
-                  </h2>
-                  <p className="text-[15px] sm:text-[15px] md:text-[15px] lg:text-[18px] tracking-wide">
-                    <img src={JJFFuntime} height={80} style={{height:'80px'}} alt="JJFFuntime.com" />
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> */}
-
         <section className="py-[40px]  bg-secondary rounded-xl px-[5px]">
           <div className="mb-14 flex flex-col justify-center items-center gap-y-4">
             <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold">
@@ -538,21 +297,6 @@ const HeroUAE = () => {
                 Every Year, A New Leap – Our Growth in Motion
               </b>
             </h2>
-            {/* <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="137"
-                height="14"
-                viewBox="0 0 137 14"
-                fill="none"
-              >
-                <path
-                  d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                  stroke="#FFC621"
-                  strokeWidth="4"
-                ></path>
-              </svg>
-            </div> */}
           </div>
           <section className="w-full flex flex-col justify-center gap-2  lg:px-10 xl:px-20 gap-y-6">
             <div className="flex flex-wrap justify-center w-full gap-4">
@@ -686,21 +430,6 @@ const HeroUAE = () => {
                 Mission50 – Our Boldest Leap Yet
               </b>
             </h2>
-            {/* <div className="flex justify-center py-[10px]">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="137"
-                height="14"
-                viewBox="0 0 137 14"
-                fill="none"
-              >
-                <path
-                  d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                  stroke="#FFC621"
-                  strokeWidth="4"
-                ></path>
-              </svg>
-            </div> */}
 
             <div className="flex justify-center">
               <section className="2xl:w-[80%] flex flex-col lg:flex-row gap-5 mt-10 mb-10">
@@ -957,149 +686,10 @@ const HeroUAE = () => {
           </section>
         </div>
 
-        {/* <section className="bg-secondary rounded-xl py-[25px] md:py-[40px]">
-          <h2 className="w-full px-10 md:px-18 text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold text-center">
-            <b className="text-custom-amber">
-              Real Reactions, True Impact
-              <div className="flex justify-center py-[10px]">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="137"
-                  height="14"
-                  viewBox="0 0 137 14"
-                  fill="none"
-                >
-                  <path
-                    d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                    stroke="#FFC621"
-                    strokeWidth="4"
-                  ></path>
-                </svg>
-              </div>
-            </b>
-          </h2>
-          <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 justify-center gap-3 mt-10 px-4 sm:px-10 ">
-            <div
-              className="w-full rounded-xl bg-dark-gray"
-              style={{ overflow: "hidden" }}
-            >
-              <iframe
-                width="100%"
-                height="415"
-                src="https://www.youtube.com/embed/0t5ORABCDuk?autoplay=1&mute=1&controls=0&modestbranding=1&iv_load_policy=3&playsinline=1"
-                title="YouTube video player"
-                style={{ borderRadius: "inherit" }}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-            <div className="w-full rounded-xl" style={{ overflow: "hidden" }}>
-              <iframe
-                width="100%"
-                height="415"
-                src="https://www.youtube.com/embed/b_YNzu0P5F8?autoplay=1&mute=1&controls=0&modestbranding=1&iv_load_policy=3&playsinline=1"
-                title="YouTube video player"
-                style={{ borderRadius: "inherit" }}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-            <div className="w-full rounded-xl" style={{ overflow: "hidden" }}>
-              <iframe
-                width="100%"
-                height="415"
-                src="https://www.youtube.com/embed/hrGx4Fo87Ys?autoplay=1&mute=1&controls=0&modestbranding=1&iv_load_policy=3&playsinline=1"
-                title="YouTube video player"
-                style={{ borderRadius: "inherit" }}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-            <div className="w-full rounded-xl" style={{ overflow: "hidden" }}>
-              <iframe
-                width="100%"
-                height="415"
-                src="https://www.youtube.com/embed/5q-dYi3mFWE?autoplay=1&mute=1&controls=0&modestbranding=1&iv_load_policy=3&playsinline=1"
-                title="YouTube video player"
-                style={{ borderRadius: "inherit" }}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div>
-        </section> */}
-
-        {/* <section className="bg-black rounded-xl pt-[20px]">
-          <div className="flex flex-col justify-center items-center pb-[40px] mt-3">
-            <div className="w-full mx-2 sm:mx-0 sm:w-[90%] lg:w-[70%] 2xl:w-[50%] flex flex-col justify-center items-center">
-              <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold">
-                <b className="text-custom-amber">Our Story Isn’t Done</b>
-              </h2>
-             <div className="flex justify-center py-[10px]">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="137"
-                  height="14"
-                  viewBox="0 0 137 14"
-                  fill="none"
-                >
-                  <path
-                    d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                    stroke="#FFC621"
-                    strokeWidth="4"
-                  ></path>
-                </svg>
-              </div> 
-              <p className="mb-2 text-lg font-medium text-center pt-4">
-                It’s just proof that when you move with intention, the world
-                moves with you.
-              </p>
-              <p className="mb-2 text-lg font-medium text-center">
-                We may not have superpowers,
-              </p>
-              <p className="text-lg font-medium text-center mb-4">
-                But this journey? It’s been nothing short of magical.
-              </p>
-              <div className="max-w-full flex flex-col xl:flex-row gap-6 xl:gap-6 justify-center items-center xl:w-[90%] 2xl:w-[80%]">
-                <a
-                  href={`/pay/?type=PRODUCT&curr=INR&productIds=67de9c03770d7aa5b35b4712&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/ae`}
-                  //onClick={() => ToCheckout("67de9c03770d7aa5b35b4712")}
-                  className="text-white mb-3 text-1xl w-full lg:w-full  rounded-full py-4 px-10 lg:px-20 text-center font-bold bg-btn-primary hover:bg-btn-primary/90  shadow-btn-primary/100"
-                >
-                  Grab Your Hardcover
-                </a>
-
-                <a
-                  href={`/pay/?type=PRODUCT&curr=INR&productIds=67dea774770d7aa5b35b4db2&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/ae`}
-                  //  onClick={() => ToCheckout("67dea774770d7aa5b35b4db2")}
-                  className="text-white mb-3 text-1xl w-full lg:w-full  rounded-full py-4 px-10 lg:px-20 text-center font-bold bg-btn-primary hover:bg-btn-primary/90  shadow-btn-primary/100"
-                >
-                  Grab Your E-Book
-                </a>
-              </div>
-            </div>
-          </div>
-        </section> */}
-
         <div className="bg-secondary">
           <h2 className="w-full py-[25px] md:py-[40px]  px-10 md:px-18  text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px]  font-bold text-center">
             <b className="text-custom-amber">
               Stories That Stay With Us
-              {/* <div className="flex justify-center py-[10px]">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="137"
-                  height="14"
-                  viewBox="0 0 137 14"
-                  fill="none"
-                >
-                  <path
-                    d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                    stroke="#FFC621"
-                    strokeWidth="4"
-                  ></path>
-                </svg>
-              </div> */}
             </b>
           </h2>
 
@@ -1211,22 +801,6 @@ const HeroUAE = () => {
                 Dreams to Reality isn’t just a story; it’s an inspiration!
               </b>
             </h2>
-
-            {/* <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="137"
-                height="14"
-                viewBox="0 0 137 14"
-                fill="none"
-              >
-                <path
-                  d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                  stroke="#FFC621"
-                  strokeWidth="4"
-                ></path>
-              </svg>
-            </div> */}
           </div>
 
           <div className="flex justify-center ">
@@ -1283,22 +857,6 @@ const HeroUAE = () => {
                 We Turned Dreams into Reality by Breaking All the Rules!
               </b>
             </h2>
-            {/* <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="137"
-                height="14"
-                viewBox="0 0 137 14"
-                fill="none"
-              >
-                <path
-                  d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                  stroke="#FFC621"
-                  strokeWidth="4"
-                ></path>
-              </svg>
-            </div> */}
-
             <p className="max-w-[1200px] text-center  text-[20px]  sm:text-[20px] md:text-[20px] lg:text-[24px] font-bold">
               We never had a big network or formal training when we started.
               Even better, we didn’t rely on what most people consider essential
@@ -1427,21 +985,6 @@ const HeroUAE = () => {
                 Imagined!
               </b>
             </h2>
-            {/* <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="137"
-                height="14"
-                viewBox="0 0 137 14"
-                fill="none"
-              >
-                <path
-                  d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                  stroke="#FFC621"
-                  strokeWidth="4"
-                ></path>
-              </svg>
-            </div> */}
 
             <div className=" mx-auto  mt-12 sm:py-[40px] sm:px-[50px] py-5 px-5 bg-secondary rounded-xl shadow-xl sm:max-w-[80%] max-w-[100%]">
               <div className="flex flex-col 2xl:flex-row justify-center gap-12 text-center lg:text-left items-center">
@@ -1564,21 +1107,6 @@ const HeroUAE = () => {
               What Will You Discover in This Book?
             </b>
           </h2>
-          {/* <div className="flex justify-center py-[10px]">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="137"
-              height="14"
-              viewBox="0 0 137 14"
-              fill="none"
-            >
-              <path
-                d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                stroke="#FFC621"
-                strokeWidth="4"
-              ></path>
-            </svg>
-          </div> */}
 
           <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-center items-stretch flex-wrap gap-4 md:px-10 lg:px-14 xl:px-20 mb-8 mt-8">
             <div className="w-full bg-black/60 rounded-xl p-8 flex flex-col justify-center">
@@ -1650,21 +1178,6 @@ const HeroUAE = () => {
                 Dreams to Reality is NOT Just Another Ordinary Book!
               </b>
             </h2>
-            {/* <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="137"
-                height="14"
-                viewBox="0 0 137 14"
-                fill="none"
-              >
-                <path
-                  d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                  stroke="#FFC621"
-                  strokeWidth="4"
-                ></path>
-              </svg>
-            </div> */}
 
             <div className=" mx-auto  mt-12 sm:py-[40px] sm:px-[50px] py-5 px-5 bg-secondary rounded-xl shadow-xl sm:max-w-[80%] max-w-[100%]">
               <div className="flex flex-col 2xl:flex-row justify-center gap-12 text-center lg:text-left items-center">
@@ -1789,21 +1302,6 @@ const HeroUAE = () => {
               Get Your Copy Now – Limited Stock Available!
             </b>
           </h2>
-          {/* <div className="flex justify-center py-[10px]">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="137"
-              height="14"
-              viewBox="0 0 137 14"
-              fill="none"
-            >
-              <path
-                d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                stroke="#FFC621"
-                strokeWidth="4"
-              ></path>
-            </svg>
-          </div> */}
 
           <div className="flex justify-center">
             <section className="2xl:w-[80%] flex flex-col lg:flex-row gap-5 mt-10 mb-10">
@@ -1850,22 +1348,6 @@ const HeroUAE = () => {
                 Dreams into Reality!
               </b>
             </h2>
-
-            {/* <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="137"
-                height="14"
-                viewBox="0 0 137 14"
-                fill="none"
-              >
-                <path
-                  d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-                  stroke="#FFC621"
-                  strokeWidth="4"
-                ></path>
-              </svg>
-            </div> */}
 
             <p className="max-w-[1200px] text-center  text-[20px] mt-8 sm:text-[20px] md:text-[20px] lg:text-[24px] font-medium">
               Let us know where to send your Book, and take the first step
