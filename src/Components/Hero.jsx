@@ -9,16 +9,20 @@ import GrowthInMotion from "./GrowthInMotion";
 import Discover from "./Discover";
 import MissionSection from "./MissionComponent";
 import BulletListSection from "./BulletListSection";
-import { cardData ,missionSectionsData } from "../data/BooksData";
+import { cardData, missionSectionsData } from "../data/BooksData";
 
 const LazyFooter = React.lazy(() => import("./Footer"));
+const FooterUAE = React.lazy(() => import("./FooterUAE"));
 
-const Hero = () => {
+const Hero = ({ country }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const seo = getSeoMeta("https://books.1xl.com/dreams-to-reality/in");
+  const seo = getSeoMeta(`https://books.1xl.com/dreams-to-reality/${country}`);
   const successUrl = window.location.origin + "/success";
   const failureUrl = window.location.origin + "/failure";
-
+  useEffect(() => {
+    console.log("Hero component mounted with country:", country);
+    console.log("window.location.pathname", window.location.pathname);
+  }, []);
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop =
@@ -32,6 +36,22 @@ const Hero = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  const baseUrl = "https://books.1xl.com/pay/";
+  const queryParams = {
+    type: "PRODUCT",
+    curr: country === "in" ? "INR" : "AED",
+    successUrl: successUrl,
+    failureUrl: failureUrl,
+    from: window.location.pathname,
+  };
+
+  const buildPayUrl = (productId) => {
+    const searchParams = new URLSearchParams({
+      ...queryParams,
+      productIds: productId,
+    });
+    return `${baseUrl}?${searchParams.toString()}`;
+  };
 
   return (
     <>
@@ -72,14 +92,15 @@ const Hero = () => {
                 <WhyAttend />
                 <div className="flex flex-col lg:flex-row gap-4 justify-center">
                   <a
-                    href={`/pay/?type=PRODUCT&curr=INR&productIds=67de9c03770d7aa5b35b4712&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
-                    // onClick={() => ToCheckout("67de9c03770d7aa5b35b4712")}
+                    // href={`/pay/?type=PRODUCT&curr=INR&productIds=67de9c03770d7aa5b35b4712&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
+                    href={buildPayUrl("67de9c03770d7aa5b35b4712")}
                     className="w-full lg:w-auto px-6 py-4 rounded-full bg-btn-primary text-white font-bold "
                   >
                     Grab Your Hardcover
                   </a>
                   <a
-                    href={`/pay/?type=PRODUCT&curr=INR&productIds=67dea774770d7aa5b35b4db2&&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
+                    href={buildPayUrl("67dea774770d7aa5b35b4db2")}
+                    // href={`/pay/?type=PRODUCT&curr=INR&productIds=67dea774770d7aa5b35b4db2&&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
                     //onClick={() => ToCheckout("67dea774770d7aa5b35b4db2")}
                     className="w-full lg:w-auto px-6 py-4 rounded-full bg-btn-primary text-white font-bold"
                   >
@@ -445,15 +466,17 @@ const Hero = () => {
 
                   <div className="max-w-full flex flex-col xl:flex-row gap-6 xl:gap-6 justify-center items-center xl:w-[90%] 2xl:w-[80%]">
                     <a
-                      href={`/pay/?type=PRODUCT&curr=INR&productIds=67de9c03770d7aa5b35b4712&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
+                      href={buildPayUrl("67de9c03770d7aa5b35b4712")}
+                      // href={`/pay/?type=PRODUCT&curr=INR&productIds=67de9c03770d7aa5b35b4712&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
                       //onClick={() => ToCheckout("67de9c03770d7aa5b35b4712")}
                       className="text-white mb-3 text-1xl w-full lg:w-full  rounded-full py-4 px-5 lg:px-15 text-center font-bold bg-btn-primary hover:bg-btn-primary/90  shadow-btn-primary/100"
                     >
                       Grab Your Hardcover
                     </a>
                     <a
+                      href={buildPayUrl("67dea774770d7aa5b35b4db2")}
                       //onClick={() => ToCheckout("67dea774770d7aa5b35b4db2")}
-                      href={`/pay/?type=PRODUCT&curr=INR&productIds=67dea774770d7aa5b35b4db2&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
+                      // href={`/pay/?type=PRODUCT&curr=INR&productIds=67dea774770d7aa5b35b4db2&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
                       className="text-white mb-3 text-1xl w-full lg:w-full  rounded-full py-4 px-5 lg:px-15 text-center font-bold bg-btn-primary hover:bg-btn-primary/90  shadow-btn-primary/100"
                     >
                       Grab Your E-Book
@@ -708,7 +731,8 @@ const Hero = () => {
           <div className="w-full flex flex-col justify-center items-center">
             <div className="max-w-full flex flex-col xl:flex-row gap-6 xl:gap-6 justify-center items-center xl:w-[90%] 2xl:w-[80%]">
               <a
-                href={`/pay/?type=PRODUCT&curr=INR&productIds=67dea774770d7aa5b35b4db2&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
+                href={buildPayUrl("67dea774770d7aa5b35b4db2")}
+                // href={`/pay/?type=PRODUCT&curr=INR&productIds=67dea774770d7aa5b35b4db2&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
                 //onClick={() => ToCheckout("67dea774770d7aa5b35b4db2")}
                 className="w-full  bg-btn-primary hover:bg-btn-primary/90 text-white py-3 px-4 sm:py-3.5 sm:px-7 font-bold text-base sm:text-xl md:text-lg flex items-center justify-center rounded-full shadow-btn-primary/100 tracking-tight"
               >
@@ -716,7 +740,8 @@ const Hero = () => {
               </a>
 
               <a
-                href={`/pay/?type=PRODUCT&curr=INR&productIds=67de9c03770d7aa5b35b4712&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
+                href={buildPayUrl("67de9c03770d7aa5b35b4712")}
+                // href={`/pay/?type=PRODUCT&curr=INR&productIds=67de9c03770d7aa5b35b4712&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
                 //onClick={() => ToCheckout("67de9c03770d7aa5b35b4712")}
                 className="w-full  bg-btn-primary hover:bg-btn-primary/90 text-white py-3 px-4 sm:py-3.5 sm:px-7 font-bold text-base sm:text-xl md:text-lg flex items-center justify-center rounded-full shadow-btn-primary/100 tracking-tight"
               >
@@ -727,7 +752,7 @@ const Hero = () => {
         </section>
       </div>
       <Suspense fallback={<div>Loading...</div>}>
-        <LazyFooter />
+        {country === "in" ? <LazyFooter /> : <FooterUAE />}
       </Suspense>
     </>
   );

@@ -36,12 +36,8 @@ function App() {
             <Routes>
               <Route element={<ScrollToTop />}>
                 <Route exact path="/" element={<MainPage />} />
-                <Route exact path="/dreams-to-reality/in" element={<Hero />} />
-                <Route
-                  exact
-                  path="/dreams-to-reality/ae"
-                  element={<HeroUAE />}
-                />{" "}
+                <Route exact path="/dreams-to-reality/in" element={<Hero country ="in"/>} />
+                <Route exact path="/dreams-to-reality/ae" element={<Hero country ="ae"/>} />
                 <Route exact path="/payment" element={<PaymentPage />} />
                 <Route exact path="/payment-form" element={<PaymentForm />} />
                 <Route exact path="/success" element={<Success />} />
