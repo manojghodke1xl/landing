@@ -12,6 +12,14 @@ module.exports = withMT({
         custom: ["25px", "25px", "10px", "50px", "80px"],
         "custom-feedback": ["45px", "20px", "30px", "220px"],
       },
+      fontSize: {
+        xs: "12px",
+        sm: "14px",
+        base: "16px",
+        md: "18px",
+        lg: "20px",
+        xl: "24px",
+      },
       colors: {
         secondary: "#202020",
         gray: "#3C3C3C",
