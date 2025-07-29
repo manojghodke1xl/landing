@@ -9,6 +9,7 @@ import GrowthInMotion from "./GrowthInMotion";
 import Discover from "./Discover";
 import MissionSection from "./MissionComponent";
 import BulletListSection from "./BulletListSection";
+import { missionSectionsData } from "../data/BooksData";
 
 const LazyFooter = React.lazy(() => import("./Footer"));
 
@@ -337,77 +338,9 @@ const Hero = () => {
         </section>
 
         <div className="bg-black rounded-lg pt-[40px]">
-          <MissionSection
-            heading="Mission50 – Our Boldest Leap Yet"
-            highlightedText="Mission50 – Our Boldest Leap Yet"
-            paragraphs={[
-              "We wanted to test everything we’d learned. So we set out on Mission50 in 2024, a 50-day tour across India with 120+ free events and a goal to reach 50,000 people.",
-              "It wasn’t a campaign. It was a commitment.",
-              "With our mom on the road and our dad cheering us on from afar, we ran this mission ourselves, planning, preparing, speaking, and sometimes just showing up even when we were exhausted.",
-              "We documented it all on JJMission Diary, a space where we share personal reflections, experiments, life hacks, and everything we learned in real time.",
-            ]}
-            imageSrc="/Images/mission-50.webp"
-            imageAlt="Mission50 – Our Boldest Leap Yet"
-            imageFirst={false}
-          />
-
-          <MissionSection
-            heading="The Road Wasn’t Easy"
-            highlightedText="The Road Wasn’t Easy"
-            paragraphs={[
-              "We faced illnesses. Language barriers. Travel fatigue. Sleepless nights.",
-              "But we learned that challenges aren’t setbacks, they’re reminders that we’re doing something real.",
-              "Every struggle added depth. Every obstacle made the mission matter more.",
-            ]}
-            imageSrc="/Images/RoadWasntEasy.webp"
-            imageAlt="The Road Wasn’t Easy"
-            imageFirst={true}
-          />
-
-          <MissionSection
-            heading="Team Dreams to Reality – The Real Heroes"
-            highlightedText="Team Dreams to Reality – The Real Heroes"
-            paragraphs={[
-              "We couldn’t have done it alone. This was a team journey.",
-              "Our mom was our co-creator, companion, and motivator on the road.",
-              "Our dad kept us grounded from miles away.",
-              "It takes a village, and we’re proud of ours.",
-            ]}
-            imageSrc="/Images/team.webp"
-            imageAlt="Team Dreams to Reality – The Real Heroes"
-            imageFirst={false}
-          />
-          <MissionSection
-            heading="What We Learned"
-            highlightedText="What We Learned"
-            paragraphs={[
-              <>
-                <strong>Age is irrelevant.</strong> We started at 10. We weren’t
-                waiting for permission; we gave it to ourselves.
-              </>,
-              <>
-                <strong>Giving creates growth.</strong> Every time we shared our
-                ideas, our time, or our voice, we received something bigger:
-                support, energy, and a deeper meaning.
-              </>,
-            ]}
-            imageSrc="/Images/what-learned.webp"
-            imageAlt="What We Learned"
-            imageFirst={true}
-          />
-
-          <MissionSection
-            heading="The Next Chapter: Dreams to Reality"
-            highlightedText="The Next Chapter: Dreams to Reality"
-            paragraphs={[
-              "Our latest initiative, Dreams to Reality, is about sharing the blueprint of our journey so others can start their own.",
-              "It's not about being fearless. It’s about showing up even when you’re scared.",
-              "It’s for those who are tired of waiting and ready to take one small step toward their dreams.",
-            ]}
-            imageSrc="/Images/TheNextChapter.webp"
-            imageAlt="The Next Chapter: Dreams to Reality"
-            imageFirst={false}
-          />
+          {missionSectionsData.map((section, index) => (
+            <MissionSection key={index} {...section} />
+          ))}
         </div>
         <div className="bg-secondary">
           <h2 className="w-full py-[25px] md:py-[40px]  px-10 md:px-18  text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px]  font-bold text-center">
