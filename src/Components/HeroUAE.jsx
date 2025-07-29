@@ -1,26 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { Link } from "react-router-dom";
-
-import logo from "/Images/logo-white.png";
-import HeroImage from "/Images/hero-img.png";
-import BookCopy from "/Images/book-copy.png";
-import Mission50 from "/Images/mission-50.png";
-import RoadWasntEasy from "/Images/road.png";
-import TeamDreamsToReality from "/Images/team.png";
-import TheNextChapter from "/Images/next-chapter.png";
-import Stories from "/Images/stories.png";
-import Learning from "/Images/what-learned.png";
-import Inspiration from "/Images/inspiration.png";
-import BreakingAllRules from "/Images/breaking-all-rules.png";
-import DreamsToRealityBook from "/Images/not-a-ordinary.png";
-import OurApproach from "/Images/freedom.png";
-import secondlast from "../assets/images/img-5.png";
 import { useNavigate } from "react-router-dom";
 import WhyAttend from "./WhyAttend";
 import Change from "./Change";
-import FooterUAE from "./FooterUAE";
 import { getSeoMeta } from "../utils/getSeoMeta";
 import Seo from "../Seo";
+
+const FooterUAE = React.lazy(() => import("./FooterUAE"));
 
 const HeroUAE = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -91,18 +77,20 @@ const HeroUAE = () => {
     //anchor.target = "_blank";
     anchor.click();
   };
-  return (
+  return ( 
     <>
       {seo && <Seo {...seo} />}
       <div className="w-full h-full px-[10px] md:px-10 ">
         <nav className="bg-gray-800 p-4">
           <div className="flex items-center sm:justify-between justify-center">
-            <div className="w-[233px] h-[41px] bg-gray-500 text-white flex items-center justify-center text-sm font-bold">
+            <div className="w-[233px] h-[70px] bg-gray-500 text-white flex items-center justify-center text-sm font-bold">
               <Link to="/">
                 <img
-                  src={logo}
+                  src="/Images/logo-white.webp"
                   className="w-42 h-auto mt-5"
                   alt="Dreams To Reality Logo_Horizontal"
+                  fetchpriority="high"
+                  decoding="async"
                 />
               </Link>
             </div>
@@ -124,7 +112,7 @@ const HeroUAE = () => {
                     Inspired Thousands!
                   </h2>
 
-                  <div className="flex justify-center py-[10px]">
+                  {/* <div className="flex justify-center py-[10px]">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="137"
@@ -138,24 +126,24 @@ const HeroUAE = () => {
                         strokeWidth="4"
                       ></path>
                     </svg>
-                  </div>
+                  </div> */}
                 </div>
                 <WhyAttend />
                 <div className="flex flex-col lg:flex-row gap-4 justify-center">
-                  <Link
-                    to={`/pay/?type=PRODUCT&curr=INR&productIds=67de9c03770d7aa5b35b4712&successUrl=${successUrl}&failureUrl=${failureUrl}`}
+                  <a
+                    href={`/pay/?type=PRODUCT&curr=INR&productIds=67de9c03770d7aa5b35b4712&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/ae`}
                     //onClick={() => ToCheckout("67de9c03770d7aa5b35b4712")}
                     className="w-full lg:w-auto px-6 py-4 rounded-full bg-btn-primary text-white font-bold"
                   >
                     Grab Your Hardcover
-                  </Link>
-                  <Link
-                    to={`/pay/?type=PRODUCT&curr=INR&productIds=67dea774770d7aa5b35b4db2&successUrl=${successUrl}&failureUrl=${failureUrl}`}
+                  </a>
+                  <a
+                    href={`/pay/?type=PRODUCT&curr=INR&productIds=67dea774770d7aa5b35b4db2&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/ae`}
                     // onClick={() => ToCheckout("67dea774770d7aa5b35b4db2")}
                     className="w-full lg:w-auto px-6 py-4 rounded-full bg-btn-primary text-white font-bold"
                   >
                     Grab Your E-Book
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
@@ -166,7 +154,7 @@ const HeroUAE = () => {
                   <div className="w-80 h-80 rounded-full bg-secondary opacity-90">
                     <div className="z-40">
                       {" "}
-                      <img src={HeroImage}></img>
+                      <img src="/Images/Hero-image.webp" loading="lazy"></img>
                     </div>
                   </div>
                 </div>
@@ -228,7 +216,7 @@ const HeroUAE = () => {
                 creates impact.
               </b>
             </h2>
-            <div>
+            {/* <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="137"
@@ -242,7 +230,7 @@ const HeroUAE = () => {
                   strokeWidth="4"
                 ></path>
               </svg>
-            </div>
+            </div> */}
           </div>
 
           <div className="flex flex-col justify-center items-center mb-5">
@@ -550,7 +538,7 @@ const HeroUAE = () => {
                 Every Year, A New Leap – Our Growth in Motion
               </b>
             </h2>
-            <div>
+            {/* <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="137"
@@ -564,7 +552,7 @@ const HeroUAE = () => {
                   strokeWidth="4"
                 ></path>
               </svg>
-            </div>
+            </div> */}
           </div>
           <section className="w-full flex flex-col justify-center gap-2  lg:px-10 xl:px-20 gap-y-6">
             <div className="flex flex-wrap justify-center w-full gap-4">
@@ -698,7 +686,7 @@ const HeroUAE = () => {
                 Mission50 – Our Boldest Leap Yet
               </b>
             </h2>
-            <div className="flex justify-center py-[10px]">
+            {/* <div className="flex justify-center py-[10px]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="137"
@@ -712,7 +700,7 @@ const HeroUAE = () => {
                   strokeWidth="4"
                 ></path>
               </svg>
-            </div>
+            </div> */}
 
             <div className="flex justify-center">
               <section className="2xl:w-[80%] flex flex-col lg:flex-row gap-5 mt-10 mb-10">
@@ -745,9 +733,10 @@ const HeroUAE = () => {
                 </div>
                 <div className="w-full flex justify-center flex-wrap">
                   <img
-                    src={Mission50}
+                    src="/Images/mission-50.webp"
                     className="w-full max-w-[600px] h-auto object-contain"
                     alt=""
+                    loading="lazy"
                   />
                 </div>
               </section>
@@ -758,7 +747,7 @@ const HeroUAE = () => {
             <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold">
               <b className="text-custom-amber">The Road Wasn’t Easy</b>
             </h2>
-            <div className="flex justify-center py-[10px]">
+            {/* <div className="flex justify-center py-[10px]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="137"
@@ -772,15 +761,16 @@ const HeroUAE = () => {
                   strokeWidth="4"
                 ></path>
               </svg>
-            </div>
+            </div> */}
 
             <div className="flex justify-center">
               <section className="2xl:w-[80%] flex flex-col lg:flex-row gap-5 mt-10 mb-10">
                 <div className="w-full flex justify-center flex-wrap">
                   <img
-                    src={RoadWasntEasy}
+                    src="/Images/RoadWasntEasy.webp"
                     className="w-full max-w-[600px] h-auto object-contain"
                     alt="The Road Wasn’t Easy"
+                    loading="lazy"
                   />
                 </div>
                 <div className="w-full items-center lg-[w-47%]">
@@ -811,7 +801,7 @@ const HeroUAE = () => {
                 Team Dreams to Reality – The Real Heroes
               </b>
             </h2>
-            <div className="flex justify-center py-[10px]">
+            {/* <div className="flex justify-center py-[10px]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="137"
@@ -825,7 +815,7 @@ const HeroUAE = () => {
                   strokeWidth="4"
                 ></path>
               </svg>
-            </div>
+            </div> */}
 
             <div className="flex justify-center">
               <section className="2xl:w-[80%] flex flex-col lg:flex-row gap-5 mt-10 mb-10">
@@ -852,9 +842,10 @@ const HeroUAE = () => {
                 </div>
                 <div className="w-full flex justify-center flex-wrap">
                   <img
-                    src={TeamDreamsToReality}
+                    src="/Images/team.webp"
                     className="w-full max-w-[600px] h-auto object-contain"
                     alt="Team Dreams to Reality – The Real Heroes"
+                    loading="lazy"
                   />
                 </div>
               </section>
@@ -865,7 +856,7 @@ const HeroUAE = () => {
             <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold">
               <b className="text-custom-amber">What We Learned</b>
             </h2>
-            <div className="flex justify-center py-[10px]">
+            {/* <div className="flex justify-center py-[10px]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="137"
@@ -879,15 +870,16 @@ const HeroUAE = () => {
                   strokeWidth="4"
                 ></path>
               </svg>
-            </div>
+            </div> */}
 
             <div className="flex justify-center">
               <section className="2xl:w-[80%] flex flex-col lg:flex-row gap-5 mt-10 mb-10">
                 <div className="w-full flex justify-center flex-wrap">
                   <img
-                    src={Learning}
+                    src="/Images/what-learned.webp"
                     className="w-full max-w-[600px] h-auto object-contain"
                     alt="What We Learned"
+                    loading="lazy"
                   />
                 </div>
                 <div className="w-full items-center lg-[w-47%]">
@@ -915,7 +907,7 @@ const HeroUAE = () => {
                 The Next Chapter: Dreams to Reality
               </b>
             </h2>
-            <div className="flex justify-center py-[10px]">
+            {/* <div className="flex justify-center py-[10px]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="137"
@@ -929,7 +921,7 @@ const HeroUAE = () => {
                   strokeWidth="4"
                 ></path>
               </svg>
-            </div>
+            </div> */}
 
             <div className="flex justify-center">
               <section className="2xl:w-[80%] flex flex-col lg:flex-row gap-5 mt-10 mb-10">
@@ -954,9 +946,10 @@ const HeroUAE = () => {
                 </div>
                 <div className="w-full flex justify-center flex-wrap">
                   <img
-                    src={TheNextChapter}
+                    src="/Images/TheNextChapter.webp"
                     className="w-full max-w-[600px] h-auto object-contain"
                     alt="The Next Chapter: Dreams to Reality"
+                    loading="lazy"
                   />
                 </div>
               </section>
@@ -964,7 +957,7 @@ const HeroUAE = () => {
           </section>
         </div>
 
-        <section className="bg-secondary rounded-xl py-[25px] md:py-[40px]">
+        {/* <section className="bg-secondary rounded-xl py-[25px] md:py-[40px]">
           <h2 className="w-full px-10 md:px-18 text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold text-center">
             <b className="text-custom-amber">
               Real Reactions, True Impact
@@ -1034,15 +1027,15 @@ const HeroUAE = () => {
               ></iframe>
             </div>
           </div>
-        </section>
+        </section> */}
 
-        <section className="bg-black rounded-xl pt-[20px]">
+        {/* <section className="bg-black rounded-xl pt-[20px]">
           <div className="flex flex-col justify-center items-center pb-[40px] mt-3">
             <div className="w-full mx-2 sm:mx-0 sm:w-[90%] lg:w-[70%] 2xl:w-[50%] flex flex-col justify-center items-center">
               <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold">
                 <b className="text-custom-amber">Our Story Isn’t Done</b>
               </h2>
-              <div className="flex justify-center py-[10px]">
+             <div className="flex justify-center py-[10px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="137"
@@ -1056,7 +1049,7 @@ const HeroUAE = () => {
                     strokeWidth="4"
                   ></path>
                 </svg>
-              </div>
+              </div> 
               <p className="mb-2 text-lg font-medium text-center pt-4">
                 It’s just proof that when you move with intention, the world
                 moves with you.
@@ -1068,31 +1061,31 @@ const HeroUAE = () => {
                 But this journey? It’s been nothing short of magical.
               </p>
               <div className="max-w-full flex flex-col xl:flex-row gap-6 xl:gap-6 justify-center items-center xl:w-[90%] 2xl:w-[80%]">
-                <Link
-                  to={`/pay/?type=PRODUCT&curr=INR&productIds=67de9c03770d7aa5b35b4712&successUrl=${successUrl}&failureUrl=${failureUrl}`}
+                <a
+                  href={`/pay/?type=PRODUCT&curr=INR&productIds=67de9c03770d7aa5b35b4712&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/ae`}
                   //onClick={() => ToCheckout("67de9c03770d7aa5b35b4712")}
                   className="text-white mb-3 text-1xl w-full lg:w-full  rounded-full py-4 px-10 lg:px-20 text-center font-bold bg-btn-primary hover:bg-btn-primary/90  shadow-btn-primary/100"
                 >
                   Grab Your Hardcover
-                </Link>
+                </a>
 
-                <Link
-                  to={`/pay/?type=PRODUCT&curr=INR&productIds=67dea774770d7aa5b35b4db2&successUrl=${successUrl}&failureUrl=${failureUrl}`}
+                <a
+                  href={`/pay/?type=PRODUCT&curr=INR&productIds=67dea774770d7aa5b35b4db2&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/ae`}
                   //  onClick={() => ToCheckout("67dea774770d7aa5b35b4db2")}
                   className="text-white mb-3 text-1xl w-full lg:w-full  rounded-full py-4 px-10 lg:px-20 text-center font-bold bg-btn-primary hover:bg-btn-primary/90  shadow-btn-primary/100"
                 >
                   Grab Your E-Book
-                </Link>
+                </a>
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         <div className="bg-secondary">
           <h2 className="w-full py-[25px] md:py-[40px]  px-10 md:px-18  text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px]  font-bold text-center">
             <b className="text-custom-amber">
               Stories That Stay With Us
-              <div className="flex justify-center py-[10px]">
+              {/* <div className="flex justify-center py-[10px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="137"
@@ -1106,7 +1099,7 @@ const HeroUAE = () => {
                     strokeWidth="4"
                   ></path>
                 </svg>
-              </div>
+              </div> */}
             </b>
           </h2>
 
@@ -1123,9 +1116,10 @@ const HeroUAE = () => {
             <section className="w-[90%] bg-secondar justify-center px-[15px] flex flex-col mt-12 gap-5">
               <div className="flex justify-center flex-wrap">
                 <img
-                  src={Stories}
+                  src="/Images/stories.webp"
                   className="w-full max-w-[700px] h-auto object-contain"
                   alt="Stories That Stay With Us"
+                  loading="lazy"
                 />
               </div>
               <div className="w-full flex flex-col justify-center items-center mt-3">
@@ -1218,7 +1212,7 @@ const HeroUAE = () => {
               </b>
             </h2>
 
-            <div>
+            {/* <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="137"
@@ -1232,7 +1226,7 @@ const HeroUAE = () => {
                   strokeWidth="4"
                 ></path>
               </svg>
-            </div>
+            </div> */}
           </div>
 
           <div className="flex justify-center ">
@@ -1251,29 +1245,30 @@ const HeroUAE = () => {
                   </p>
 
                   <div className="max-w-full flex flex-col xl:flex-row gap-6 xl:gap-6 justify-center items-center xl:w-[90%] 2xl:w-[80%]">
-                    <Link
-                      to={`/pay/?type=PRODUCT&curr=INR&productIds=67de9c03770d7aa5b35b4712&successUrl=${successUrl}&failureUrl=${failureUrl}`}
+                    <a
+                      href={`/pay/?type=PRODUCT&curr=INR&productIds=67de9c03770d7aa5b35b4712&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/ae`}
                       //onClick={() => ToCheckout("67de9c03770d7aa5b35b4712")}
                       className="text-white mb-3 text-1xl w-full lg:w-full  rounded-full py-4 px-10 lg:px-15 text-center font-bold bg-btn-primary hover:bg-btn-primary/90  shadow-btn-primary/100"
                     >
                       Grab Your Hardcover
-                    </Link>
+                    </a>
 
-                    <Link
-                      to={`/pay/?type=PRODUCT&curr=INR&productIds=67dea774770d7aa5b35b4db2&successUrl=${successUrl}&failureUrl=${failureUrl}`}
+                    <a
+                      href={`/pay/?type=PRODUCT&curr=INR&productIds=67dea774770d7aa5b35b4db2&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/ae`}
                       // onClick={() => ToCheckout("67dea774770d7aa5b35b4db2")}
                       className="text-white mb-3 text-1xl w-full lg:w-full  rounded-full py-4 px-10 lg:px-15 text-center font-bold bg-btn-primary hover:bg-btn-primary/90  shadow-btn-primary/100"
                     >
                       Grab Your E-Book
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
 
               <div className="w-full lg:w-[45%] flex justify-center items-center">
                 <img
-                  src={Inspiration}
+                  src="/Images/Inspiration.webp"
                   alt="Dreams to Reality isn’t just a story; it’s an inspiration!"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -1288,7 +1283,7 @@ const HeroUAE = () => {
                 We Turned Dreams into Reality by Breaking All the Rules!
               </b>
             </h2>
-            <div>
+            {/* <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="137"
@@ -1302,7 +1297,7 @@ const HeroUAE = () => {
                   strokeWidth="4"
                 ></path>
               </svg>
-            </div>
+            </div> */}
 
             <p className="max-w-[1200px] text-center  text-[20px]  sm:text-[20px] md:text-[20px] lg:text-[24px] font-bold">
               We never had a big network or formal training when we started.
@@ -1405,8 +1400,9 @@ const HeroUAE = () => {
                 <div className="w-full 2xl:w-1/3">
                   <img
                     className="w-full"
-                    src={BreakingAllRules}
+                    src="/Images/breaking-all-rules.webp"
                     alt="We Turned Dreams into Reality by Breaking All the Rules!"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -1431,7 +1427,7 @@ const HeroUAE = () => {
                 Imagined!
               </b>
             </h2>
-            <div>
+            {/* <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="137"
@@ -1445,7 +1441,7 @@ const HeroUAE = () => {
                   strokeWidth="4"
                 ></path>
               </svg>
-            </div>
+            </div> */}
 
             <div className=" mx-auto  mt-12 sm:py-[40px] sm:px-[50px] py-5 px-5 bg-secondary rounded-xl shadow-xl sm:max-w-[80%] max-w-[100%]">
               <div className="flex flex-col 2xl:flex-row justify-center gap-12 text-center lg:text-left items-center">
@@ -1544,8 +1540,9 @@ const HeroUAE = () => {
                 <div className="w-full 2xl:w-1/3">
                   <img
                     className="w-full"
-                    src={OurApproach}
+                    src="/Images/freedom.webp"
                     alt="Our Approach to Growth Has Given Us More Freedom Than We Ever Imagined!"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -1567,7 +1564,7 @@ const HeroUAE = () => {
               What Will You Discover in This Book?
             </b>
           </h2>
-          <div className="flex justify-center py-[10px]">
+          {/* <div className="flex justify-center py-[10px]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="137"
@@ -1581,7 +1578,7 @@ const HeroUAE = () => {
                 strokeWidth="4"
               ></path>
             </svg>
-          </div>
+          </div> */}
 
           <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-center items-stretch flex-wrap gap-4 md:px-10 lg:px-14 xl:px-20 mb-8 mt-8">
             <div className="w-full bg-black/60 rounded-xl p-8 flex flex-col justify-center">
@@ -1653,7 +1650,7 @@ const HeroUAE = () => {
                 Dreams to Reality is NOT Just Another Ordinary Book!
               </b>
             </h2>
-            <div>
+            {/* <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="137"
@@ -1667,7 +1664,7 @@ const HeroUAE = () => {
                   strokeWidth="4"
                 ></path>
               </svg>
-            </div>
+            </div> */}
 
             <div className=" mx-auto  mt-12 sm:py-[40px] sm:px-[50px] py-5 px-5 bg-secondary rounded-xl shadow-xl sm:max-w-[80%] max-w-[100%]">
               <div className="flex flex-col 2xl:flex-row justify-center gap-12 text-center lg:text-left items-center">
@@ -1748,7 +1745,7 @@ const HeroUAE = () => {
                 <div className="w-full 2xl:w-1/3">
                   <img
                     className="w-full"
-                    src={DreamsToRealityBook}
+                    src="/Images/not-a-ordinary.webp"
                     alt="Dreams to Reality is NOT Just Another Ordinary Book!"
                   />
                 </div>
@@ -1762,7 +1759,7 @@ const HeroUAE = () => {
                   own.
                 </b>
               </h2>
-              <div className="flex justify-center py-[10px]">
+              {/* <div className="flex justify-center py-[10px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="137"
@@ -1776,7 +1773,7 @@ const HeroUAE = () => {
                     strokeWidth="4"
                   ></path>
                 </svg>
-              </div>
+              </div> */}
               <p className="text-center mb-3 text-[20px] mt-4 sm:text-[20px] md:text-[20px] lg:text-[24px] text-semibolds">
                 Dreams to Reality will show you exactly how to break past
                 doubts, take bold action, and start achieving what once felt
@@ -1792,7 +1789,7 @@ const HeroUAE = () => {
               Get Your Copy Now – Limited Stock Available!
             </b>
           </h2>
-          <div className="flex justify-center py-[10px]">
+          {/* <div className="flex justify-center py-[10px]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="137"
@@ -1806,7 +1803,7 @@ const HeroUAE = () => {
                 strokeWidth="4"
               ></path>
             </svg>
-          </div>
+          </div> */}
 
           <div className="flex justify-center">
             <section className="2xl:w-[80%] flex flex-col lg:flex-row gap-5 mt-10 mb-10">
@@ -1836,7 +1833,7 @@ const HeroUAE = () => {
               </div>
               <div className="w-full flex justify-center flex-wrap">
                 <img
-                  src={BookCopy}
+                  src="/Images/LimitedBook.webp"
                   className="w-full max-w-[600px] h-auto object-contain"
                   alt="Get Your Copy Now – Limited Stock Available!"
                 />
@@ -1854,7 +1851,7 @@ const HeroUAE = () => {
               </b>
             </h2>
 
-            <div>
+            {/* <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="137"
@@ -1868,7 +1865,7 @@ const HeroUAE = () => {
                   strokeWidth="4"
                 ></path>
               </svg>
-            </div>
+            </div> */}
 
             <p className="max-w-[1200px] text-center  text-[20px] mt-8 sm:text-[20px] md:text-[20px] lg:text-[24px] font-medium">
               Let us know where to send your Book, and take the first step
@@ -1878,33 +1875,28 @@ const HeroUAE = () => {
 
           <div className="w-full flex flex-col justify-center items-center">
             <div className="max-w-full flex flex-col xl:flex-row gap-6 xl:gap-6 justify-center items-center xl:w-[90%] 2xl:w-[80%]">
-              {/* <button
-                    onClick={() => ToCheckout("67dea774770d7aa5b35b4db2")}
-                    className="w-full md:w-2/5 bg-btn-primary hover:bg-btn-primary/90 text-white py-3 px-4 sm:py-3.5 sm:px-7 font-bold text-base sm:text-xl md:text-lg flex items-center justify-center rounded-xl shadow-btn-primary/100 tracking-tight"
-                  >
-                    Paperback Book - Get Your Paperback Today
-                  </button> */}
-
-              <Link
-                to={`/pay/?type=PRODUCT&curr=INR&productIds=67dea774770d7aa5b35b4db2&successUrl=${successUrl}&failureUrl=${failureUrl}`}
+              <a
+                href={`/pay/?type=PRODUCT&curr=INR&productIds=67dea774770d7aa5b35b4db2&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/ae`}
                 //onClick={() => ToCheckout("67dea774770d7aa5b35b4db2")}
                 className="w-full  bg-btn-primary hover:bg-btn-primary/90 text-white py-3 px-4 sm:py-3.5 sm:px-7 font-bold text-base sm:text-xl md:text-lg flex items-center justify-center rounded-full shadow-btn-primary/100 tracking-tight"
               >
                 Grab Your E-Book
-              </Link>
+              </a>
 
-              <Link
-                to={`/pay/?type=PRODUCT&curr=INR&productIds=67de9c03770d7aa5b35b4712&successUrl=${successUrl}&failureUrl=${failureUrl}`}
+              <a
+                href={`/pay/?type=PRODUCT&curr=INR&productIds=67de9c03770d7aa5b35b4712&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/ae`}
                 // onClick={() => ToCheckout("67de9c03770d7aa5b35b4712")}
                 className="w-full  bg-btn-primary hover:bg-btn-primary/90 text-white py-3 px-4 sm:py-3.5 sm:px-7 font-bold text-base sm:text-xl md:text-lg flex items-center justify-center rounded-full shadow-btn-primary/100 tracking-tight"
               >
                 Grab Your Hardcover
-              </Link>
+              </a>
             </div>
           </div>
         </section>
       </div>
-      <FooterUAE />
+      <Suspense fallback={<div>Loading...</div>}>
+        <FooterUAE />
+      </Suspense>
     </>
   );
 };

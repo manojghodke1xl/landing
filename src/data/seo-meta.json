@@ -73,6 +73,24 @@
       "canonical": "https://books.1xl.com/privacy-policy",
       "robots": "No Index, Follow"
     },
+     {
+      "url": "https://books.1xl.com/privacy-policyUAE",
+      "meta": {
+        "title": "Privacy Policy – Dreams to Reality",
+        "description": "Read how Dreams to Reality protects your personal data. This privacy policy outlines our commitment to user privacy and data handling.",
+        "keywords": ""
+      },
+      "openGraph": {
+        "title": "Privacy Policy – Dreams to Reality",
+        "description": "Read how Dreams to Reality protects your personal data. This privacy policy outlines our commitment to user privacy and data handling."
+      },
+      "twitterCard": {
+        "title": "Privacy Policy – Dreams to Reality",
+        "description": "Read how Dreams to Reality protects your personal data. This privacy policy outlines our commitment to user privacy and data handling."
+      },
+      "canonical": "https://books.1xl.com/privacy-policyUAE",
+      "robots": "No Index, Follow"
+    },
     {
       "url": "https://books.1xl.com/terms-and-conditions",
       "meta": {
@@ -89,6 +107,24 @@
         "description": "Review the terms and conditions for using the Dreams to Reality website. Understand your rights, responsibilities, and our usage policies."
       },
       "canonical": "https://books.1xl.com/terms-and-conditions",
+      "robots": "No Index, Follow"
+    },
+      {
+      "url": "https://books.1xl.com/terms-and-conditionsUAE",
+      "meta": {
+        "title": "Terms and Conditions – Dreams to Reality",
+        "description": "Review the terms and conditions for using the Dreams to Reality website. Understand your rights, responsibilities, and our usage policies.",
+        "keywords": ""
+      },
+      "openGraph": {
+        "title": "Terms and Conditions – Dreams to Reality",
+        "description": "Review the terms and conditions for using the Dreams to Reality website. Understand your rights, responsibilities, and our usage policies."
+      },
+      "twitterCard": {
+        "title": "Terms and Conditions – Dreams to Reality",
+        "description": "Review the terms and conditions for using the Dreams to Reality website. Understand your rights, responsibilities, and our usage policies."
+      },
+      "canonical": "https://books.1xl.com/terms-and-conditionsUAE",
       "robots": "No Index, Follow"
     },
     {
@@ -127,6 +163,24 @@
       "canonical": "https://books.1xl.com/gdpr-policy",
       "robots": "No Index, Follow"
     },
+      {
+      "url": "https://books.1xl.com/gdpr-policyUAE",
+      "meta": {
+        "title": "GDPR Policy – Dreams to Reality",
+        "description": "Learn how Dreams to Reality collects, stores, and protects your personal data in compliance with GDPR. Your privacy and rights are our priority",
+        "keywords": ""
+      },
+      "openGraph": {
+        "title": "GDPR Policy – Dreams to Reality",
+        "description": "Learn how Dreams to Reality collects, stores, and protects your personal data in compliance with GDPR. Your privacy and rights are our priority"
+      },
+      "twitterCard": {
+        "title": "GDPR Policy – Dreams to Reality",
+        "description": "Learn how Dreams to Reality collects, stores, and protects your personal data in compliance with GDPR. Your privacy and rights are our priority"
+      },
+      "canonical": "https://books.1xl.com/gdpr-policyUAE",
+      "robots": "No Index, Follow"
+    },
     {
       "url": "https://books.1xl.com/contact-us",
       "meta": {
@@ -160,7 +214,7 @@
         "title": "Shipping & Return Policy – Dreams to Reality",
         "description": "Read how Dreams to Reality handles shipping timelines, delivery process, and return eligibility for both physical books and digital products."
       },
-      "canonical": "https://books.1xl.com/shipping-policy",
+      "canonical": "https://books.1xl.com/shipping-policyUAE",
       "robots": "No Index, Follow"
     }
   ]

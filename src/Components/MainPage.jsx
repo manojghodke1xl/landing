@@ -1,11 +1,11 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Link } from "react-router-dom";
-import indianFlag from "../assets/images/imageInd.png";
-import UAEFlag from "../assets/images/imageUAE.png";
-import Footer from "./Footer";
-import logo from "/Images/logo-white.png";
+import indianFlag from "../assets/images/imageInd.webp";
+import UAEFlag from "../assets/images/imageUAE.webp";
 import { getSeoMeta } from "../utils/getSeoMeta";
 import Seo from "../Seo";
+
+const LazyFooter = React.lazy(() => import("./Footer"));
 
 const MainPage = () => {
   // ✅ Variable declarations should be outside JSX
@@ -18,12 +18,13 @@ const MainPage = () => {
 
       <nav className="bg-gray-800 h-[100px] py-4 px-[56px]">
         <div className="flex items-center sm:justify-between justify-center">
-          <div className="w-[233px] h-[41px] bg-gray-500 text-white flex items-center justify-center text-sm font-bold">
+          <div className="w-[233px] h-[70px] bg-gray-500 text-white flex items-center justify-center text-sm font-bold">
             <Link to="/">
               <img
-                src={logo}
-                className="w-42 h-auto mt-5"
+                src="/Images/logo-white.webp"
+                className="w-42 h-auto mt-5 mb-5"
                 alt="Dreams To Reality Logo_Horizontal"
+                loading="lazy"
               />
             </Link>
           </div>
@@ -47,6 +48,7 @@ const MainPage = () => {
                 src={indianFlag}
                 alt="Indian Flag"
                 className="w-[150px] sm:w-[200px] md:w-[250px] xl:w-[300px]"
+                loading="lazy"
               />
               <h5 className="font-bold text-center pt-[20px]">India</h5>
             </Link>
@@ -58,14 +60,16 @@ const MainPage = () => {
                 src={UAEFlag}
                 alt="UAE Flag"
                 className="w-[150px] sm:w-[200px] md:w-[250px] xl:w-[300px]"
+                loading="lazy"
               />
               <h5 className="pt-[20px] font-bold text-center">UAE</h5>
             </Link>
           </div>
         </div>
       </section>
-
-      <Footer />
+      <Suspense fallback={<div>Loading...</div>}>
+        <LazyFooter />
+      </Suspense>
     </>
   );
 };

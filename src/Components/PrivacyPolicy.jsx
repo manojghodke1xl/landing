@@ -1,10 +1,9 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Link } from "react-router-dom";
 
-import logo from "/Images/logo.png";
-import Footer from "./Footer";
 import { getSeoMeta } from "../utils/getSeoMeta";
 import Seo from "../Seo";
+const LazyFooter = React.lazy(() => import("./Footer"));
 
 const PrivacyPolicy = () => {
   const seo = getSeoMeta("https://books.1xl.com/privacy-policy");
@@ -12,13 +11,13 @@ const PrivacyPolicy = () => {
     <>
       {seo && <Seo {...seo} />}
       <div style={{ color: "black" }} classname="">
-        <nav className="h-[100px] bg-white px-[56px] py-4">
+        <nav className="h-[100px] bg-black px-[56px] py-4">
           <div className="flex items-center sm:justify-between justify-center">
             {/* Logo Placeholder */}
             <div className="w-[233px] h-[41px] bg-gray-500 text-white flex items-center justify-center text-sm font-bold">
               <Link to="/">
                 <img
-                  src={logo}
+                  src="/Images/logo-white.webp"
                   className="w-42 h-auto mt-5"
                   alt="Dreams To Reality Logo_Horizontal"
                 />
@@ -455,7 +454,9 @@ const PrivacyPolicy = () => {
             </section>
           </div>
         </div>
-        <Footer />
+        <Suspense fallback={<div>Loading...</div>}>
+          <LazyFooter />
+        </Suspense>
       </div>
     </>
   );

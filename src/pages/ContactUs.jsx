@@ -1,13 +1,13 @@
-import { useState } from "react";
+import React, { useState, Suspense } from "react";
 // import toast, { Toaster } from "react-hot-toast";
 // import PhoneInput from "react-phone-input-2";
 // import "react-phone-input-2/lib/style.css";
-import Footer from "../Components/Footer";
 import PhoneInputWrapper from "../Components/PhoneInputWrapper";
-import logo from "/Images/logo-white.png";
 import { Link } from "react-router-dom";
 import { getSeoMeta } from "../utils/getSeoMeta";
 import Seo from "../Seo";
+
+const LazyFooter = React.lazy(() => import("../Components/Footer"));
 
 export default function ContactUs() {
   const seo = getSeoMeta("https://books.1xl.com/contact-us");
@@ -178,7 +178,7 @@ export default function ContactUs() {
           <div className="w-[233px] h-[41px] bg-gray-500 text-white flex items-center justify-center text-sm font-bold">
             <Link to="/">
               <img
-                src={logo}
+                src="/Images/logo-white.webp"
                 className="w-42 h-auto mt-5"
                 alt="Dreams To Reality Logo_Horizontal"
               />
@@ -470,7 +470,9 @@ export default function ContactUs() {
           </section>
         </div>
       </section>
-      <Footer />
+      <Suspense fallback={<div>Loading...</div>}>
+        <LazyFooter />
+      </Suspense>
     </>
   );
 }

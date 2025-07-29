@@ -1,17 +1,18 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Link } from "react-router-dom";
 import { getSeoMeta } from "../utils/getSeoMeta";
 import Seo from "../Seo";
-import logo from "/Images/logo.png";
-import FooterUAE from "./FooterUAE";
+import logo from "/Images/logo-white.webp";
+
+const FooterUAE = React.lazy(() => import("./FooterUAE"));
 
 export const GDPRPolicyUAE = () => {
-  const seo = getSeoMeta("https://books.1xl.com/gdpr-policy");
+  const seo = getSeoMeta("https://books.1xl.com/gdpr-policyUAE");
   return (
     <>
       {seo && <Seo {...seo} />}
       <div style={{ color: "black" }} classname="">
-        <nav className="h-[100px] bg-white px-[56px] py-4">
+        <nav className="h-[100px] bg-black px-[56px] py-4">
           <div className="flex items-center sm:justify-between justify-center">
             <div className="w-[233px] h-[41px] bg-gray-500 text-white flex items-center justify-center text-sm font-bold">
               <Link to="/">
@@ -1465,7 +1466,9 @@ export const GDPRPolicyUAE = () => {
             </section>
           </div>
         </div>
-        <FooterUAE />
+        <Suspense fallback={<div>Loading...</div>}>
+          <FooterUAE />
+        </Suspense>
       </div>
     </>
   );
