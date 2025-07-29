@@ -9,7 +9,7 @@ import GrowthInMotion from "./GrowthInMotion";
 import Discover from "./Discover";
 import MissionSection from "./MissionComponent";
 import BulletListSection from "./BulletListSection";
-import { missionSectionsData } from "../data/BooksData";
+import { cardData ,missionSectionsData } from "../data/BooksData";
 
 const LazyFooter = React.lazy(() => import("./Footer"));
 
@@ -18,38 +18,7 @@ const Hero = () => {
   const seo = getSeoMeta("https://books.1xl.com/dreams-to-reality/in");
   const successUrl = window.location.origin + "/success";
   const failureUrl = window.location.origin + "/failure";
-  const cardData = [
-    {
-      title: "Real Stories of Action, Not Just Advice",
-      description:
-        "Follow the journey of two young siblings who turned learning into impact, completing five 50-day missions that inspired 50,000+ lives across India",
-    },
-    {
-      title: "A Blueprint for Purpose-Driven Growth",
-      description:
-        "Learn how they developed skills like discipline, time management, public speaking, and focus through hands-on experience, not just theory.",
-    },
-    {
-      title: "How to Start Before You Feel Ready",
-      description:
-        "See how Jainam and Jivika launched projects like JJFuntime, 1XL, Jainam Jivika Foundation, and more by starting small and showing up consistently.",
-    },
-    {
-      title: "Lessons That Go Beyond Age or Background",
-      description:
-        "Discover how their faith, family, and mindset helped them tackle challenges from public speaking fears to health setbacks and come out stronger every time.",
-    },
-    {
-      title: "Tools to Turn Dreams Into Daily Practice",
-      description:
-        "From reading 50 books in 50 days to mastering 50 skills, this book shares the exact missions and frameworks that helped them turn learning into leadership.",
-    },
-    {
-      title: "A Deeper Meaning of Success",
-      description:
-        "Explore how giving back, serving others, and creating impact became more powerful than any certificate or award.",
-    },
-  ];
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop =
