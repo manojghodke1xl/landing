@@ -32,9 +32,7 @@ function App() {
     <HelmetProvider>
       <Router>
         <div className="bg-primary w-full h-fit">
-          <Suspense
-            fallback={<div className="text-center p-5">Loading...</div>}
-          >
+          <Suspense fallback={<></>}>
             <Routes>
               <Route element={<ScrollToTop />}>
                 <Route path="/" element={<MainPage />} />
