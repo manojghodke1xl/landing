@@ -186,7 +186,7 @@ const Hero = ({ country }) => {
           </div>
 
           <div className="flex flex-col justify-center items-center mb-5 -mt-6 sm:mt-0">
-            <p className="max-w-[1200px] text-start text-[18px] sm:text-xl font-medium tracking-wider">
+            <p className="max-w-[1200px] text-justify text-[18px] sm:text-xl font-medium tracking-wider">
               This is the true story of two young siblings and child prodigies
               who transformed their learnings into a mission of giving back,
               reaching over 50,000 people across India through 120+ events in
@@ -323,7 +323,7 @@ const Hero = ({ country }) => {
               <h2 className="text-center text-xl font-semibold mb-3">
                 A New Chapter Begins.
               </h2>
-              <p className="w-[90%] lg:w-[70%] text-md tracking-wide text-center">
+              <p className="w-[90%] lg:w-[70%] text-md tracking-wide text-justify">
                 We’re taking everything we’ve learned and scaling it into
                 something bigger - tools, blueprints, and guided missions to
                 help others ignite their own journeys. What’s coming next? Let’s
@@ -507,20 +507,20 @@ const Hero = ({ country }) => {
 
         <section className="pt-[40px] bg-secondary rounded-xl px-3 md:px-[28px]">
           <div className="w-full flex flex-col items-center gap-y-2 justify-center">
-            <h2 className="max-w-[1200px] px-10   md:px-18 text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold text-center ">
+            <h2 className="max-w-[1200px] px-5 -mt-6 md:px-18 text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold text-center ">
               <b className="text-custom-amber">
                 We Turned Dreams into Reality by Breaking All the Rules!
               </b>
             </h2>
             <div></div>
 
-            <p className="max-w-[1200px] text-center  text-[20px]  sm:text-[20px] md:text-[20px] lg:text-[24px] font-bold">
+            <p className="max-w-[1200px] text-center  text-[18px]  sm:text-[20px] md:text-[20px] lg:text-[24px] font-bold">
               We never had a big network or formal training when we started.
               Even better, we didn’t rely on what most people consider essential
               for success. Our journey had:
             </p>
 
-            <div className=" mx-auto mt-12 sm:py-[40px] sm:px-[50px] py-5 px-5 bg-black/70 rounded-xl shadow-xl sm:max-w-[80%] max-w-[100%]">
+            <div className=" mx-auto mt-6 sm:py-[40px] sm:px-[50px] py-5 px-5 bg-black/70 rounded-xl shadow-xl sm:max-w-[80%] max-w-[100%]">
               <Suspense fallback={<div className="text-white text-center">Loading...</div>}>
                 <LazyBulletListSection
                   heading="We didn’t have shortcuts, fame, or a head start."
@@ -537,18 +537,18 @@ const Hero = ({ country }) => {
               </Suspense>
             </div>
 
-            <div className="max-w-[1200px] text-[18px]  md:text-[20px] justify-center text-semibolds w-auto mt-10 pb-[40px] px-[30px] rounded-xl shadow-xl gap-10">
-              <p className="text-center mb-3 text-[20px]  sm:text-[20px] md:text-[20px] lg:text-[24px] text-semibolds">
+            <div className="max-w-[1200px] text-[18px]  md:text-[20px] justify-center text-semibolds w-auto mt-5 pb-[40px] px-[30px] rounded-xl shadow-xl gap-10">
+              <p className="text-center mb-3 text-[18px]  sm:text-[20px] md:text-[20px] lg:text-[24px] text-semibolds">
                 Sounds impossible, right? But here’s the truth:
               </p>
-              <h2 className="w-full text-center text-[20px]  sm:text-[20px] md:text-[20px] font-semibold lg:text-[32px]">
+              <h2 className="w-full text-center text-[18px]  sm:text-[20px] md:text-[20px] font-semibold lg:text-[32px]">
                 Success comes from actions, not circumstances.
               </h2>
             </div>
           </div>
         </section>
 
-        <section className=" bg-black grid justify-center rounded-xl py-[40px] px-[20px] relative">
+        <section className=" bg-black grid justify-center rounded-xl py-[30px] px-[20px] relative">
           <div className="w-full flex flex-col items-center gap-y-2 justify-center">
             <h2 className="max-w-[1200px] px-10   md:px-18 text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold text-center ">
               <b className="text-custom-amber">
@@ -558,7 +558,7 @@ const Hero = ({ country }) => {
             </h2>
             <div></div>
 
-            <div className=" mx-auto  mt-12 sm:py-[40px] sm:px-[50px] py-5 px-5 bg-secondary rounded-xl shadow-xl sm:max-w-[80%] max-w-[100%]">
+            <div className=" mx-auto  mt-2 sm:py-[40px] sm:px-[50px] py-5 px-5 bg-secondary rounded-xl shadow-xl sm:max-w-[80%] max-w-[100%]">
               <Suspense fallback={<div className="text-white text-center">Loading...</div>}>
                 <LazyBulletListSection
                   heading="By following a structured system of 50-day challenges, we were able to focus on what truly matters:"
@@ -575,8 +575,8 @@ const Hero = ({ country }) => {
               </Suspense>
             </div>
 
-            <div className="max-w-[1200px] text-[18px]  md:text-[20px] justify-center text-semibolds w-auto mt-10 px-[30px] gap-10">
-              <p className="text-center mb-3 text-[20px]  sm:text-[20px] md:text-[20px] lg:text-[24px] text-semibolds">
+            <div className="max-w-[1200px] text-[18px]  md:text-[20px] justify-center text-semibolds w-auto mt-2 px-[30px] gap-10">
+              <p className="text-center mb-3 text-[18px]  sm:text-[20px] md:text-[20px] lg:text-[24px] text-semibolds">
                 Through this approach, we’ve realised that success isn’t just
                 about achievements - it’s about freedom, growth, and making a
                 difference.
@@ -585,7 +585,7 @@ const Hero = ({ country }) => {
           </div>
         </section>
 
-        <section className="bg-secondary rounded-lg py-[40px]">
+        <section className="bg-secondary rounded-lg py-[10px]">
           <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold">
             <b className="text-custom-amber">
               What Will You Discover in This Book?
@@ -596,23 +596,23 @@ const Hero = ({ country }) => {
           </Suspense>
         </section>
 
-        <section className="pt-[40px] bg-black grid justify-center rounded-xl px-[20px] relative">
+        <section className="pt-[20px] bg-black grid justify-center rounded-xl px-[20px] relative">
           <div className="w-full flex flex-col items-center gap-y-2 justify-center">
-            <h2 className="max-w-[1200px] px-10   md:px-18 text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold text-center ">
+            <h2 className="max-w-[1200px] px-5 md:px-18 text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold text-center ">
               <b className="text-custom-amber">
                 Dreams to Reality is NOT Just Another Ordinary Book!
               </b>
             </h2>
             <div></div>
 
-            <div className=" mx-auto  mt-12 sm:py-[40px] sm:px-[50px] py-5 px-5 bg-secondary rounded-xl shadow-xl sm:max-w-[80%] max-w-[100%]">
+            <div className=" mx-auto  mt-12 sm:py-[40px] sm:px-[50px] py-3 px-5 mt-2 bg-secondary rounded-xl shadow-xl sm:max-w-[80%] max-w-[100%]">
               <div className="flex flex-col 2xl:flex-row justify-center gap-12 text-center lg:text-left items-center">
                 <div className="grid w-full text-left 2xl:w-2/3">
-                  <p className="text-[20px] md:text-[24px] font-medium mb-4">
+                  <p className="text-[18px] md:text-[24px] font-medium mb-4">
                     Unlike typical motivational books, Dreams to Reality isn’t
                     filled with complex theories or impractical advice.
                   </p>
-                  <h5 className="text-[20px] md:text-[28px] font-semibold mb-4">
+                  <h5 className="text-[18px] md:text-[28px] font-semibold mb-4">
                     Instead, this book offers:
                   </h5>
 
@@ -692,14 +692,14 @@ const Hero = ({ country }) => {
               </div>
             </div>
 
-            <div className="max-w-[1200px] text-[18px]  md:text-[20px] justify-center text-semibolds w-auto mt-10 pb-[40px] px-[30px] gap-10">
+            <div className="max-w-[1200px] text-[18px]  md:text-[20px] justify-center text-semibolds w-auto mt-10 pb-[40px] px-[15px] gap-10">
               <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold">
                 <b className="text-custom-amber">
                   The best part? You don’t have to figure it all out on your
                   own.
                 </b>
               </h2>
-              <p className="text-center mb-3 text-[20px] mt-4 sm:text-[20px] md:text-[20px] lg:text-[24px] text-semibolds">
+              <p className="text-justify leading-relaxed -mb-2 text-[18px] mt-2 sm:text-[20px] md:text-[20px] lg:text-[24px] text-semibolds">
                 Dreams to Reality will show you exactly how to break past
                 doubts, take bold action, and start achieving what once felt
                 impossible.
@@ -725,18 +725,16 @@ const Hero = ({ country }) => {
           />
         </section>
 
-        <section className="bg-black py-[40px] mb-8 rounded-xl px-[14px]">
-          <div className="mb-14 flex flex-col justify-center items-center gap-y-2">
-            <h2 className="max-w-full  text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold">
+        <section className="bg-black py-[40px] -mb-2 rounded-xl px-[14px]">
+          <div className="mb-14 flex flex-col justify-center items-center gap-y-2 mb-2">
+            <h2 className="max-w-full  text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold leading-snug -mb-5">
               <b className="text-custom-amber">
                 Join the Growing List of Action-Takers Who Are Turning Their
                 Dreams into Reality!
               </b>
             </h2>
 
-            <div></div>
-
-            <p className="max-w-[1200px] text-center  text-[20px] mt-8 sm:text-[20px] md:text-[20px] lg:text-[24px] font-medium">
+            <p className="max-w-[1200px] text-center  text-[18px] mt-8 sm:text-[20px] md:text-[20px] lg:text-[24px] font-medium">
               Let us know where to send your Book, and take the first step
               toward achieving your goals today!
             </p>

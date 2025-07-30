@@ -2,16 +2,16 @@ import React from "react";
 
 function GrowthCard({ year, description }) {
   return (
-    <div className="bg-dark-gray rounded-xl border border-white w-[97%] lg:w-[48%] 2xl:w-[23%] py-8 flex p-3 flex-col">
+    <div className="bg-dark-gray rounded-xl border border-white w-[97%] lg:w-[48%] 2xl:w-[23%] py-6 flex p-3 flex-col">
       <div className="w-full">
         <h2 className="font-semibold text-[16px] text-center"></h2>
       </div>
       <div className="w-full p-2 bg-custom-amber text-black my-3 rounded-xl">
-        <p className="font-semibold text-xl text-black text-center">
+        <p className="font-semibold text-lg text-black text-center">
           <b className="text-black">{year}</b>
         </p>
       </div>
-      <div className="font-medium text-start">
+      <div className="font-medium text-justify">
         <p className="mb-2 mt-3 text-white">{description}</p>
       </div>
     </div>

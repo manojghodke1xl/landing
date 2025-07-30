@@ -30,7 +30,7 @@ function MissionSection({
 
           {/* TEXT CONTENT */}
           <div className="w-full ">
-            <div className="w-[90%] flex flex-col items-start mb-5 lg:mb-10 mx-[15px] mt-0">
+            <div className="w-[90%] flex flex-col items-start mb-5 lg:mb-10 mx-[15px] -mt-5">
               <div className="w-full flex flex-col justify-center items-center gap-y-2">
                 {paragraphs.map((para, index) => (
                   <p

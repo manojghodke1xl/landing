@@ -28,7 +28,7 @@ const Change = () => {
       <div className="w-full flex flex-col mt-2 sm:mt-10 gap-3 justify-between items-center">
         <div className="w-full justify-center  flex flex-col xl:w-[75%] 2xl:w-[55%]">
           <div className="w-[90%] flex-col justify-center mx-[10px] lg:mx-[25px] -mb-8 sm:mb-10 lg:mb-0">
-            <p className="mb-2.5 text-start text-md xl:text-xl font-medium tracking-wider">
+            <p className="mb-2.5 text-justify text-md xl:text-xl font-medium tracking-wider">
               Dreams to Reality is the true story of two young siblings and
               child prodigies who turned bold dreams into nationwide impact -
               completing 120+ events in 50 days, inspiring over 50,000 lives
@@ -36,7 +36,7 @@ const Change = () => {
               discipline, embraced challenges, and proved that with the right
               mindset, age is never a limitation.
             </p>
-            <p className="mb-2.5 text-start text-md xl:text-xl font-medium tracking-wider">
+            <p className="mb-2.5 text-justify text-md xl:text-xl font-medium tracking-wider">
               This book isn’t just their story; it’s a blueprint for anyone
               ready to take action, break barriers, and lead with purpose.
             </p>
