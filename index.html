@@ -36,6 +36,16 @@
   <body>
     <div id="root"></div>
 
+    <!-- GTM noscript fallback for users with JS disabled -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-5R8VPDTQ"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
+    </noscript>
+
     <!-- Defer main app script -->
     <script type="module" src="/src/main.jsx" defer></script>
   </body>
