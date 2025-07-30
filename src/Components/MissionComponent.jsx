@@ -10,7 +10,7 @@ function MissionSection({
 }) {
   return (
     <section>
-      <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold">
+      <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] -mt-4 font-bold">
         <b className="text-custom-amber">{highlightedText}</b>
       </h2>
 
@@ -35,7 +35,7 @@ function MissionSection({
                 {paragraphs.map((para, index) => (
                   <p
                     key={index}
-                    className="w-[90%] text-justify text-[20px] sm:text-[20px] md:text-[20px] font-medium"
+                    className="w-[90%] text-justify text-[18px] sm:text-[20px] md:text-[20px] font-medium"
                   >
                     {para}
                   </p>

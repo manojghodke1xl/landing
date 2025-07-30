@@ -80,7 +80,7 @@ const Hero = ({ country }) => {
               <div className="w-[90%] flex flex-col items-center justify-center mx-[10px] gap-4 lg:mx-[25px] mb-10 lg:mb-0">
                 {/* Title Section inside left */}
                 <div className="flex flex-col items-center text-center">
-                  <h2 className="w-full pt-[0px] px-2 sm:px-10 md:px-18 text-[27px] xl:text-[40px] font-bold text-left">
+                  <h2 className="w-full pt-[0px] px-2 sm:px-10 md:px-18 text-[20px] sm:text-[27px] xl:text-[40px] font-bold text-left">
                     Check Out the{" "}
                     <b className="text-custom-amber">
                       Ultimate Success Blueprint
@@ -112,7 +112,7 @@ const Hero = ({ country }) => {
               </div>
             </div>
 
-            <div className="w-full flex flex-col items-center justify-center mt-4 sm:mt-7 xl:mt-0 xl:w-[35%]">
+            <div className="w-full flex flex-col items-center justify-center -mt-6 sm:mt-7 xl:mt-0 xl:w-[35%]">
               <div className="w-full flex justify-center relative px-5">
                 <div>
                   <div className="w-80 h-80 rounded-full bg-secondary opacity-90">
@@ -174,7 +174,7 @@ const Hero = ({ country }) => {
           <LazyChange />
         </Suspense>
 
-        <section className="py-14 px-[20px]">
+        <section className="py-8 sm:py-14 px-[20px]">
           <div className="w-full flex flex-col gap-y-4 justify-center pb-8 items-center">
             <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold">
               <b className="text-custom-amber">
@@ -185,8 +185,8 @@ const Hero = ({ country }) => {
             <div></div>
           </div>
 
-          <div className="flex flex-col justify-center items-center mb-5">
-            <p className="max-w-[1200px] text-center text-[20px] sm:text-xl font-medium tracking-wide">
+          <div className="flex flex-col justify-center items-center mb-5 -mt-6 sm:mt-0">
+            <p className="max-w-[1200px] text-start text-[18px] sm:text-xl font-medium tracking-wider">
               This is the true story of two young siblings and child prodigies
               who transformed their learnings into a mission of giving back,
               reaching over 50,000 people across India through 120+ events in
@@ -289,19 +289,19 @@ const Hero = ({ country }) => {
           </div>
 
           <div className="flex flex-col justify-center">
-            <p className="text-center text-[20px] sm:text-xl font-medium tracking-wide mt-4">
+            <p className="text-start text-[18px] sm:text-xl font-medium tracking-wide mt-4">
               This book reminds us that you don’t have to be extraordinary to
               create change; you just have to be intentional.
             </p>
-            <h4 className="text-center pt-4 text-[20px] sm:text-[20px] md:text-[20px] lg:text-[30px] font-bold tracking-wide ">
+            <h4 className="text-start pt-4 text-[18px] sm:text-[20px] md:text-[20px] lg:text-[30px] font-bold tracking-wide ">
               It’s not a story of luck; it’s a journey of choice, discipline,
               and heart.
             </h4>
           </div>
         </section>
 
-        <section className="py-[40px]  bg-secondary rounded-xl px-[5px]">
-          <div className="mb-14 flex flex-col justify-center items-center gap-y-4">
+        <section className="py-[20px] sm:py-[40px] bg-secondary rounded-xl px-[5px]">
+          <div className="mb-2 flex flex-col justify-center items-center gap-y-4">
             <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold">
               <b className="text-custom-amber">
                 Every Year, A New Leap – Our Growth in Motion
@@ -314,16 +314,16 @@ const Hero = ({ country }) => {
               <LazyGrowthInMotion />
             </Suspense>
 
-            <div className="flex flex-col items-center justify-center pb-[10px] mt-3">
+            <div className="flex flex-col items-center justify-center pb-[10px] -mt-2">
               <div className="w-fit p-2 px-10 sm:px-20 bg-custom-amber text-black my-3 rounded-xl">
                 <p className="font-semibold text-xl text-black text-center">
                   <b className="text-black">2025</b>
                 </p>
               </div>
-              <h2 className="text-center text-2xl font-semibold mb-3">
+              <h2 className="text-center text-xl font-semibold mb-3">
                 A New Chapter Begins.
               </h2>
-              <p className="w-[90%] lg:w-[70%] text-xl tracking-wide text-center">
+              <p className="w-[90%] lg:w-[70%] text-md tracking-wide text-center">
                 We’re taking everything we’ve learned and scaling it into
                 something bigger - tools, blueprints, and guided missions to
                 help others ignite their own journeys. What’s coming next? Let’s
@@ -346,7 +346,7 @@ const Hero = ({ country }) => {
           </h2>
 
           <div className="flex flex-col justify-center items-center">
-            <p className="max-w-[1200px] text-center text-[20px] sm:text-[20px] md:text-[20px] lg:text-[24px] font-bold">
+            <p className="max-w-[1200px] text-center text-[18px] sm:text-[20px] md:text-[20px] lg:text-[24px] font-bold">
               Behind every mission, campaign, and breakthrough, there’s a spark,
               and we’ve captured those sparks across two platforms designed to
               keep the momentum alive, to keep inspiring, and to turn ideas into
@@ -448,7 +448,7 @@ const Hero = ({ country }) => {
 
         <section className="py-14 bg-black flex flex-col items-center rounded-xl relative">
           <div className="w-full flex flex-col justify-center pb-50 items-center gap-y-2 mb-4 relative">
-            <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold">
+            <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] -mt-4 -mb-2 font-bold">
               <b className="text-custom-amber">
                 Dreams to Reality isn’t just a story; it’s an inspiration!
               </b>
@@ -460,19 +460,19 @@ const Hero = ({ country }) => {
           <div className="flex justify-center ">
             <div className="max-w-[1600px] flex flex-col lg:flex-row lg:px-14 xl:px-20 gap-3 justify-center">
               <div className="w-full justify-center flex flex-col lg:w-[55%]">
-                <div className="w-[90%] flex-col justify-center mx-[10px] lg:mx-[25px] mb-10 lg:mb-0">
-                  <p className="text-justify text-xl mb-4">
+                <div className="w-[90%] flex-col justify-center mx-[10px] lg:mx-[25px] mb-10 -mt-8 lg:mb-0">
+                  <p className="text-justify text-md mb-4">
                     And these platforms are how we keep that inspiration alive;
                     through action, creativity, and connection.
                   </p>
-                  <h3 className="text-3xl font-semibold mb-4">
+                  <h3 className="text-2xl font-semibold mb-4">
                     Be part of the next chapter.
                   </h3>
-                  <p className="text-justify text-xl mb-4">
+                  <p className="text-justify text-md mb-4">
                     Because the real magic begins when you take the first step.
                   </p>
 
-                  <div className="max-w-full flex flex-col xl:flex-row gap-6 xl:gap-6 justify-center items-center xl:w-[90%] 2xl:w-[80%]">
+                  <div className="max-w-full flex flex-col xl:flex-row gap-4 xl:gap-6 justify-center items-center xl:w-[90%] 2xl:w-[80%]">
                     <a
                       href={buildPayUrl("67de9c03770d7aa5b35b4712")}
                       // href={`/pay/?type=PRODUCT&curr=INR&productIds=67de9c03770d7aa5b35b4712&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
@@ -493,7 +493,7 @@ const Hero = ({ country }) => {
                 </div>
               </div>
 
-              <div className="w-full lg:w-[45%] flex justify-center items-center">
+              <div className="w-full lg:w-[45%] flex justify-center items-center -mt-8 sm:mt-0 -mb-4 sm:mb-0">
                 <img
                   src="/Images/Inspiration.webp"
                   alt="Dreams to Reality isn’t just a story; it’s an inspiration!"

@@ -11,7 +11,7 @@ function GrowthCard({ year, description }) {
           <b className="text-black">{year}</b>
         </p>
       </div>
-      <div className="font-medium text-center">
+      <div className="font-medium text-start">
         <p className="mb-2 mt-3 text-white">{description}</p>
       </div>
     </div>

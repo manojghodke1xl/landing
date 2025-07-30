@@ -61,7 +61,6 @@ input[type='number'] {
     background: transparent;
 }
 
-
 .stacked_form-fields>div:last-child [multiple], .stacked_form-fields>div:last-child [type=date], .stacked_form-fields>div:last-child [type=datetime-local], .stacked_form-fields>div:last-child [type=email], .stacked_form-fields>div:last-child [type=month], .stacked_form-fields>div:last-child [type=number], .stacked_form-fields>div:last-child [type=password], .stacked_form-fields>div:last-child [type=search], .stacked_form-fields>div:last-child [type=tel], .stacked_form-fields>div:last-child [type=time], .stacked_form-fields>div:last-child [type=url], .stacked_form-fields>div:last-child [type=week], .stacked_form-fields>div:last-child select, .stacked_form-fields>div:last-child textarea, .stacked_form-fields>div:last-child>[type=text] {
     border-bottom-right-radius: .375rem;
     border-bottom-left-radius: .375rem;
