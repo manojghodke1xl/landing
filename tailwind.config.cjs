@@ -7,6 +7,10 @@ module.exports = withMT({
     extend: {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
+        playfair: ['"Playfair Display"', 'serif'],
+        helvetica: ['"Helvetica World"', 'sans-serif'],
+        opensauce: ['"Open Sauce Semibold"', 'sans-serif'],
+        nunito: ['"Nunito"', 'sans-serif'],
       },
       padding: {
         custom: ["25px", "25px", "10px", "50px", "80px"],
@@ -26,8 +30,8 @@ module.exports = withMT({
         "custom-pay": "#F5F7F9",
         "dark-gray": "#303030",
         primary: "#000000",
-        "primary-light": "#1A1A1A",
-        "custom-primary": "#191919",
+        "primary-light": "#8f8f8f",
+        "custom-primary": "#582b81",
         "btn-primary": "#0067DE",
         "custom-amber": "#FFC621",
         "custom-gray-light": "#262626",
