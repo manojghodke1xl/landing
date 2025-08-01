@@ -2,11 +2,12 @@ import React, { Suspense } from "react";
 import { Link } from "react-router-dom";
 import { getSeoMeta } from "../utils/getSeoMeta";
 import Seo from "../Seo";
+import Footer from "./Footer";
 
 const LazyFooter = React.lazy(() => import("./Footer"));
 
 export const ShippingPolicy = () => {
-  const seo = getSeoMeta("https://books.1xl.com/shipping-policyUAE");
+  const seo = getSeoMeta("https://books.1xl.com/shipping-policy");
   return (
     <>
       {seo && <Seo {...seo} />}
@@ -325,7 +326,7 @@ export const ShippingPolicy = () => {
           </div>
         </div>
         <Suspense fallback={<div>Loading...</div>}>
-          <LazyFooter />
+          <Footer />
         </Suspense>
       </div>
     </>

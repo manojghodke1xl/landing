@@ -3,9 +3,7 @@ import { Link } from "react-router-dom";
 import { getSeoMeta } from "../utils/getSeoMeta";
 import Seo from "../Seo";
 import logo from "/Images/logo-white.webp";
-
-const FooterUAE = React.lazy(() => import("./FooterUAE"));
-
+const Footer = React.lazy(() => import("./Footer")); 
 export const GDPRPolicyUAE = () => {
   const seo = getSeoMeta("https://books.1xl.com/gdpr-policyUAE");
   return (
@@ -1467,7 +1465,7 @@ export const GDPRPolicyUAE = () => {
           </div>
         </div>
         <Suspense fallback={<div>Loading...</div>}>
-          <FooterUAE />
+          <Footer country={"UAE"} />
         </Suspense>
       </div>
     </>

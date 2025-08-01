@@ -5,7 +5,7 @@ import Seo from "../Seo";
 const LazyFooter = React.lazy(() => import("./Footer"));
 
 export const RefundPolicy = () => {
-  const seo = getSeoMeta("https://books.1xl.com/refund-policyUAE");
+  const seo = getSeoMeta("https://books.1xl.com/refund-policy");
   return (
     <>
       {seo && <Seo {...seo} />}

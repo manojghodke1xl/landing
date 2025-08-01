@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 import { Link } from "react-router-dom";
 import { getSeoMeta } from "../utils/getSeoMeta";
 import Seo from "../Seo";
+import Footer from "./Footer";
 
 const FooterUAE = React.lazy(() => import("./FooterUAE"));
 
@@ -336,7 +337,7 @@ const ShippingPolicyUAE = () => {
           </div>
         </div>
         <Suspense fallback={<div>Loading...</div>}>
-          <FooterUAE />
+           <Footer country={"UAE"} />
         </Suspense>
       </div>
     </>
