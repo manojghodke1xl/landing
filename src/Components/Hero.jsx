@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { getSeoMeta } from "../utils/getSeoMeta";
 import Seo from "../Seo";
 import { cardData, missionSectionsData } from "../data/BooksData";
+import { Check } from "lucide-react";
 
 const LazyFooter = React.lazy(() => import("./Footer"));
 const FooterUAE = React.lazy(() => import("./FooterUAE"));
@@ -56,14 +57,22 @@ const Hero = ({ country }) => {
   return (
     <>
       {seo && <Seo {...seo} />}
+<<<<<<< Updated upstream
       <div className="w-full h-full px-[10px] md:px-10  ">
         <nav className="bg-gray-800 p-4">
           <div className="flex items-center sm:justify-between justify-center">
             <div className="w-[233px] h-[70px] bg-gray-500 text-white flex items-center justify-center text-sm font-bold">
               <Link to="/">
+=======
+      <div className="w-full h-full px-[10px] md:px-10">
+        <nav className="bg-gray-800 p-4 bg-custom-primary">
+          <div className="flex items-center sm:justify-between justify-center bg-custom-primary">
+            <div className="w-[233px] h-[70px] bg-gray-500 text-white flex items-center justify-center text-sm font-bold bg-custom-primary">
+              <Link to="/" className="bg-custom-primary">
+>>>>>>> Stashed changes
                 <img
                   src="/Images/logo-white.webp"
-                  className="w-42 h-auto mt-5"
+                  className="w-42 h-auto mt-5 bg-custom-primary"
                   alt="Dreams To Reality Logo_Horizontal"
                   fetchpriority="high"
                   decoding="async"
@@ -74,18 +83,14 @@ const Hero = ({ country }) => {
           </div>
         </nav>
 
-        <div className="flex justify-center">
-          <section className="xl:w-[80%] flex flex-col xl:flex-row gap-5 mt-15 mb-10">
-            <div className="w-full flex flex-col items-center lg:flex-col-reverse xl:w-[65%]">
-              <div className="w-[90%] flex flex-col items-center justify-center mx-[10px] gap-4 lg:mx-[25px] mb-10 lg:mb-0">
+        <div className="flex justify-center bg-custom-primary">
+          <section className="w-full bg-custom-primary text-white flex flex-col xl:flex-row gap-5 mt-15 mb-10">
+            <div className="w-full flex flex-col items-start lg:flex-col-reverse xl:w-[65%] bg-custom-primary">
+              <div className="w-[90%] flex flex-col items-start justify-center mx-[10px] gap-4 lg:mx-[25px] mb-10 lg:mb-0 bg-custom-primary">
                 {/* Title Section inside left */}
-                <div className="flex flex-col items-center text-center">
-                  <h2 className="w-full pt-[0px] px-2 sm:px-10 md:px-18 text-[20px] sm:text-[27px] xl:text-[40px] font-bold text-left">
-                    Check Out the{" "}
-                    <b className="text-custom-amber">
-                      Ultimate Success Blueprint
-                    </b>{" "}
-                    of Two Young Siblings Who Took on Bold Challenges and
+                <div className="flex flex-col items-start text-left bg-custom-primary">
+                  <h2 className="font-playfair w-full pt-[30px] px-2 sm:px-10 md:px-18 text-23xl sm:text-4xl xl:text-5xl font-bold text-left text-white bg-custom-primary">
+                    Check Out the Ultimate Success Blueprint of Two Young Siblings Who Took on Bold Challenges and
                     Inspired Thousands!
                   </h2>
                 </div>
@@ -94,11 +99,11 @@ const Hero = ({ country }) => {
                 >
                   <LazyWhyAttend />
                 </Suspense>
-                <div className="flex flex-col lg:flex-row gap-4 justify-center">
+                <div className="flex flex-col lg:flex-row gap-4 justify-center px-10 md:px-16 bg-custom-primary">
                   <a
                     // href={`/pay/?type=PRODUCT&curr=INR&productIds=67de9c03770d7aa5b35b4712&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
                     href={buildPayUrl("67de9c03770d7aa5b35b4712")}
-                    className="w-full lg:w-auto px-6 py-4 rounded-full bg-btn-primary text-white font-bold "
+                    className="w-full lg:w-auto px-6 py-4 rounded-full bg-white text-custom-primary font-bold "
                   >
                     Grab Your Hardcover
                   </a>
@@ -106,7 +111,7 @@ const Hero = ({ country }) => {
                     href={buildPayUrl("67dea774770d7aa5b35b4db2")}
                     // href={`/pay/?type=PRODUCT&curr=INR&productIds=67dea774770d7aa5b35b4db2&&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
                     //onClick={() => ToCheckout("67dea774770d7aa5b35b4db2")}
-                    className="w-full lg:w-auto px-6 py-4 rounded-full bg-btn-primary text-white font-bold"
+                    className="w-full lg:w-auto px-6 py-4 border border-white rounded-full bg-custom-primary text-white font-bold"
                   >
                     Grab Your E-Book
                   </a>
@@ -114,81 +119,94 @@ const Hero = ({ country }) => {
               </div>
             </div>
 
-            <div className="w-full flex flex-col items-center justify-center -mt-6 sm:mt-7 xl:mt-0 xl:w-[35%]">
-              <div className="w-full flex justify-center relative px-5">
-                <div>
-                  <div className="w-80 h-80 rounded-full bg-secondary opacity-90">
-                    <div className="z-40">
-                      {" "}
-                      <img src="/Images/Hero-image.webp" loading="lazy"></img>
-                    </div>
+            <div className="w-full flex flex-col items-center justify-center -mt-6 sm:mt-7 xl:mt-0 xl:w-[35%] bg-custom-primary">
+              <div className="w-full flex justify-center relative px-5 bg-custom-primary">
+
+                <div className="w-90 h-90 rounded-full opacity-90">
+                  <div className="z-40">
+                    <img src="/Images/TheNextChapter.webp" loading="lazy"></img>
+
                   </div>
                 </div>
               </div>
-              <div className="w-[90%] h-fit mx-[25px] px-[20px]  py-[26px] rounded-2xl bg-secondary text-center mt-14 z-50">
-                <h4 className="text-2xl xl:text-3xl font-bold bg-secondary">
-                  Meet Two Young Visionaries
-                </h4>
-                <h5 className="mt-1 text-[20px] font-semibold">
-                  Discover the incredible story of two young prodigies.
-                </h5>
-                <div className=" h-32 md:h-28 mx-[25px] mt-5 px-[20px] py-[10px] rounded-2xl bg-gray text-center ">
-                  <div className="w-full flex justify-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="114"
-                      height="25"
-                      viewBox="0 0 114 25"
-                      fill="none"
-                    >
-                      <path
-                        d="M6.41603 22.5628L8.0826 15.358L2.49316 10.5122L9.87738 9.87116L12.749 3.07666L15.6207 9.87116L23.0049 10.5122L17.4154 15.358L19.082 22.5628L12.749 18.7425L6.41603 22.5628Z"
-                        fill="#FFC621"
-                      ></path>
-                      <path
-                        d="M28.5686 22.5625L30.2352 15.3578L24.6458 10.5119L32.03 9.87092L34.9016 3.07642L37.7732 9.87092L45.1575 10.5119L39.568 15.3578L41.2346 22.5625L34.9016 18.7422L28.5686 22.5625Z"
-                        fill="#FFC621"
-                      ></path>
-                      <path
-                        d="M50.7212 22.5625L52.3878 15.3578L46.7983 10.5119L54.1826 9.87092L57.0542 3.07642L59.9258 9.87092L67.31 10.5119L61.7206 15.3578L63.3872 22.5625L57.0542 18.7422L50.7212 22.5625Z"
-                        fill="#FFC621"
-                      ></path>
-                      <path
-                        d="M72.8738 22.5625L74.5404 15.3578L68.9509 10.5119L76.3351 9.87092L79.2068 3.07642L82.0784 9.87092L89.4626 10.5119L83.8732 15.3578L85.5398 22.5625L79.2068 18.7422L72.8738 22.5625Z"
-                        fill="#FFC621"
-                      ></path>
-                      <path
-                        d="M95.3601 22.5628L97.0267 15.358L91.4373 10.5122L98.8215 9.87116L101.693 3.07666L104.565 9.87116L111.949 10.5122L106.36 15.358L108.026 22.5628L101.693 18.7425L95.3601 22.5628Z"
-                        fill="#FFC621"
-                      ></path>
-                    </svg>
-                  </div>
-                  <h5 className="text-[15px] sm:text-xl mt-2">
-                    Proving that success is not limited by age.
-                  </h5>
-                </div>
-              </div>
+
             </div>
           </section>
         </div>
+        <section>
+          <div className="w-full flex flex-col items-center bg-custom-light justify-center py-30">
+            <div className="w-[90%] h-fit mx-[25px] px-[20px]  py-[26px] rounded-2xl text-center mt-14 z-50 bg-custom-light">
+              <h4 className="text-4xl md:text-5xl font-playfair font-bold bg-custom-light text-gray-900 mb-6">
+                Meet Two Young Visionaries
+              </h4>
+              <h5 className="mt-4 text-md text-gray-600 bg-custom-light">
+                Discover the incredible story of two young prodigies.
+              </h5>
+              <div className=" h-32 md:h-28 mx-[25px] mt-2 px-[20px] py-[10px] rounded-2xl text-center bg-custom-light">
+                <div className="w-full flex justify-center bg-custom-light">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="114"
+                    height="25"
+                    viewBox="0 0 114 25"
+                    fill="none"
+                  >
+                    <path
+                      d="M6.41603 22.5628L8.0826 15.358L2.49316 10.5122L9.87738 9.87116L12.749 3.07666L15.6207 9.87116L23.0049 10.5122L17.4154 15.358L19.082 22.5628L12.749 18.7425L6.41603 22.5628Z"
+                      fill="#FFC621"
+                    ></path>
+                    <path
+                      d="M28.5686 22.5625L30.2352 15.3578L24.6458 10.5119L32.03 9.87092L34.9016 3.07642L37.7732 9.87092L45.1575 10.5119L39.568 15.3578L41.2346 22.5625L34.9016 18.7422L28.5686 22.5625Z"
+                      fill="#FFC621"
+                    ></path>
+                    <path
+                      d="M50.7212 22.5625L52.3878 15.3578L46.7983 10.5119L54.1826 9.87092L57.0542 3.07642L59.9258 9.87092L67.31 10.5119L61.7206 15.3578L63.3872 22.5625L57.0542 18.7422L50.7212 22.5625Z"
+                      fill="#FFC621"
+                    ></path>
+                    <path
+                      d="M72.8738 22.5625L74.5404 15.3578L68.9509 10.5119L76.3351 9.87092L79.2068 3.07642L82.0784 9.87092L89.4626 10.5119L83.8732 15.3578L85.5398 22.5625L79.2068 18.7422L72.8738 22.5625Z"
+                      fill="#FFC621"
+                    ></path>
+                    <path
+                      d="M95.3601 22.5628L97.0267 15.358L91.4373 10.5122L98.8215 9.87116L101.693 3.07666L104.565 9.87116L111.949 10.5122L106.36 15.358L108.026 22.5628L101.693 18.7425L95.3601 22.5628Z"
+                      fill="#FFC621"
+                    ></path>
+                  </svg>
+                </div>
+                <h5 className="font-semibold mt-2 bg-custom-light text-lg text-gray-600 max-w-3xl mx-auto">
+                  Proving that success is not limited by age.
+                </h5>
+              </div>
+            </div>
+            <div className="w-full flex justify-center relative px-5 bg-custom-light -mt-6">
+
+              <div className="w-80 h-70 rounded-full opacity-90 bg-custom-light">
+                <div className="z-40 bg-custom-light">
+                  {" "}
+                  <img src="/Images/Hero-image.webp" loading="lazy" className="bg-custom-light"></img>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
 
         <Suspense fallback={<div className="text-center">Loading...</div>}>
           <LazyChange />
         </Suspense>
 
-        <section className="py-8 sm:py-14 px-[20px]">
-          <div className="w-full flex flex-col gap-y-4 justify-center pb-8 items-center">
-            <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold">
-              <b className="text-custom-amber">
+        <section className="py-8 sm:py-14 px-[20px] mb-10 bg-[#faf5f7] rounded-xl container mx-auto max-w-[90%]">
+          <div className="w-full flex flex-col gap-y-4 justify-center pb-8 items-center bg-[#faf5f7]">
+            <h2 className="w-full text-center text-2xl font-semibold bg-[#faf5f7]">
+              <b className="text-custom-primary mb-6 bg-[#faf5f7]">
                 Dreams to Reality is a testament to how purpose, not age,
                 creates impact.
               </b>
             </h2>
-            <div></div>
           </div>
 
-          <div className="flex flex-col justify-center items-center mb-5 -mt-6 sm:mt-0">
-            <p className="max-w-[1200px] text-justify text-[18px] sm:text-xl font-medium tracking-wider">
+          <div className="flex px-10 flex-col justify-center items-center mb-5 -mt-6 sm:mt-0 bg-[#faf5f7]">
+            <p className="font-helvetica bg-[#faf5f7] md:text-lg text-md text-gray-600 mb-8">
               This is the true story of two young siblings and child prodigies
               who transformed their learnings into a mission of giving back,
               reaching over 50,000 people across India through 120+ events in
@@ -198,91 +216,95 @@ const Hero = ({ country }) => {
             </p>
           </div>
 
-          <div className="myths-list flex flex-col gap-4 justify-center items-center">
-            <h4 className="text-2xl font-semibold mt-2">
+          <div className=" px-10 myths-list flex flex-col gap-4 justify-start items-start bg-[#faf5f7]">
+            <h4 className="text-lg font-bold -mt-4 bg-[#faf5f7] mb-4">
               Through their 50-day mission, they:
             </h4>
-            <ul className="list-none p-0">
-              <li className="flex items-center gap-3 mb-4">
+            <ul className="list-none p-0 bg-[#faf5f7]">
+              <li className="flex items-center gap-3 mb-4 bg-[#faf5f7]">
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="22"
-                    height="22"
+                    width="30"
+                    height="30"
                     viewBox="0 0 22 22"
                     fill="none"
+                    className="bg-[#faf5f7]"
                   >
-                    <circle cx="11" cy="11" r="11" fill="#25AB75"></circle>
+                    <circle cx="11" cy="11" r="11"></circle>
                     <path
                       d="M6.94042 9.69044L5.30351 11.3273L5.23804 11.3928L9.42851 15.5833L16.8928 8.11901L15.1904 6.41663L9.42851 12.1785L6.94042 9.69044Z"
-                      fill="white"
+                      fill="#582b81"
                     ></path>
                   </svg>
                 </span>
-                <span className="text-[18px] md:text-[20px] text-semibolds">
+                <span className="md:text-lg text-md text-semibolds bg-[#faf5f7] font-helvetica text-gray-600">
                   {" "}
                   Turned vision into impact - one day, one event at a time.
                 </span>
               </li>
-              <li className="flex items-center gap-3 mb-4">
+              <li className="flex items-center gap-3 mb-4 bg-[#faf5f7]">
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="22"
-                    height="22"
+                    width="30"
+                    height="30"
                     viewBox="0 0 22 22"
                     fill="none"
+                    className="bg-[#faf5f7]"
                   >
-                    <circle cx="11" cy="11" r="11" fill="#25AB75"></circle>
+                    <circle cx="11" cy="11" r="11"></circle>
                     <path
                       d="M6.94042 9.69044L5.30351 11.3273L5.23804 11.3928L9.42851 15.5833L16.8928 8.11901L15.1904 6.41663L9.42851 12.1785L6.94042 9.69044Z"
-                      fill="white"
+                      fill="#582b81"
                     ></path>
                   </svg>
                 </span>
-                <span className="text-[18px] md:text-[20px] text-semibolds">
+                <span className="md:text-lg text-md text-semibolds bg-[#faf5f7] font-helvetica text-gray-600">
                   {" "}
                   Faced doubts, setbacks, and uncertainty with resilience.
                 </span>
               </li>
-              <li className="flex items-center gap-3 mb-4">
+              <li className="flex items-center gap-3 mb-4 bg-[#faf5f7]">
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="22"
-                    height="22"
+                    width="30"
+                    height="30"
                     viewBox="0 0 22 22"
                     fill="none"
+                    className="bg-[#faf5f7]"
                   >
-                    <circle cx="11" cy="11" r="11" fill="#25AB75"></circle>
+                    <circle cx="11" cy="11" r="11"></circle>
                     <path
                       d="M6.94042 9.69044L5.30351 11.3273L5.23804 11.3928L9.42851 15.5833L16.8928 8.11901L15.1904 6.41663L9.42851 12.1785L6.94042 9.69044Z"
-                      fill="white"
+                      fill="#582b81"
                     ></path>
                   </svg>
                 </span>
-                <span className="text-[18px] md:text-[20px] text-semibolds">
+                <span className="md:text-lg text-md text-semibolds bg-[#faf5f7] font-helvetica text-gray-600">
                   Inspired 50,000+ people by showing what’s possible with
                   clarity and courage.
                 </span>
               </li>
-              <li className="flex items-center gap-3 mb-4">
+              <li className="flex items-center gap-3 mb-4 bg-[#faf5f7]">
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="22"
-                    height="22"
+                    width="30"
+                    height="30"
                     viewBox="0 0 22 22"
                     fill="none"
+                    className="bg-[#faf5f7]"
                   >
-                    <circle cx="11" cy="11" r="11" fill="#25AB75"></circle>
+                    <circle cx="11" cy="11" r="11"></circle>
                     <path
                       d="M6.94042 9.69044L5.30351 11.3273L5.23804 11.3928L9.42851 15.5833L16.8928 8.11901L15.1904 6.41663L9.42851 12.1785L6.94042 9.69044Z"
-                      fill="white"
+                      fill="#582b81"
                     ></path>
                   </svg>
                 </span>
-                <span className="text-[18px] md:text-[20px] text-semibolds">
+                <span className="md:text-lg text-md text-semibolds bg-[#faf5f7] font-helvetica text-gray-600">
                   Focused on growth, learning, and service, rather than just
                   goals.
                 </span>
@@ -290,12 +312,12 @@ const Hero = ({ country }) => {
             </ul>
           </div>
 
-          <div className="flex flex-col justify-center">
-            <p className="text-start text-[18px] sm:text-xl font-medium tracking-wide mt-4">
+          <div className=" px-10 flex flex-col justify-center bg-[#faf5f7]">
+            <p className="text-start text-md sm:text-lg text-gray-600 mb-2 mt-4 bg-[#faf5f7]">
               This book reminds us that you don’t have to be extraordinary to
               create change; you just have to be intentional.
             </p>
-            <h4 className="text-start pt-4 text-[18px] sm:text-[20px] md:text-[20px] lg:text-[30px] font-bold tracking-wide ">
+            <h4 className="text-start text-md sm:text-lg text-gray-600 bg-[#faf5f7] font-semibold">
               It’s not a story of luck; it’s a journey of choice, discipline,
               and heart.
             </h4>
@@ -530,6 +552,7 @@ const Hero = ({ country }) => {
             </div>
           </div>
 
+<<<<<<< Updated upstream
           <section className="bg-transparent mt-10 mx-10 py-[10px]">
             <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold bg-transparent">
               <b className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6 bg-transparent ">
@@ -549,115 +572,58 @@ const Hero = ({ country }) => {
           <div className="w-full flex flex-col items-center gap-y-2 justify-center">
             <h2 className="max-w-[1200px] px-5 md:px-18 text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold text-center ">
               <b className="text-custom-amber">
+=======
+        <section className="-py-3 px-4 bg-white" id="book-unique">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+>>>>>>> Stashed changes
                 Dreams to Reality is NOT Just Another Ordinary Book!
-              </b>
-            </h2>
-            <div></div>
-
-            <div className=" mx-auto  mt-12 sm:py-[40px] sm:px-[50px] py-3 px-5 mt-2 bg-secondary rounded-xl shadow-xl sm:max-w-[80%] max-w-[100%]">
-              <div className="flex flex-col 2xl:flex-row justify-center gap-12 text-center lg:text-left items-center">
-                <div className="grid w-full text-left 2xl:w-2/3">
-                  <p className="text-[18px] md:text-[24px] font-medium mb-4">
-                    Unlike typical motivational books, Dreams to Reality isn’t
-                    filled with complex theories or impractical advice.
-                  </p>
-                  <h5 className="text-[18px] md:text-[28px] font-semibold mb-4">
-                    Instead, this book offers:
-                  </h5>
-
-                  <div className="flex  justify-left gap-5 pb-4">
-                    <span>
-                      {" "}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="22"
-                        height="22"
-                        viewBox="0 0 22 22"
-                        fill="none"
-                      >
-                        <circle cx="11" cy="11" r="11" fill="#25AB75"></circle>
-                        <path
-                          d="M6.94042 9.69044L5.30351 11.3273L5.23804 11.3928L9.42851 15.5833L16.8928 8.11901L15.1904 6.41663L9.42851 12.1785L6.94042 9.69044Z"
-                          fill="white"
-                        ></path>
-                      </svg>
-                    </span>
-                    <p className="text-[18px] md:text-[20px] text-semibolds">
-                      Actionable guidance to help you move forward.
-                    </p>
-                  </div>
-                  <div className="flex  justify-left gap-5 pb-4">
-                    <span>
-                      {" "}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="22"
-                        height="22"
-                        viewBox="0 0 22 22"
-                        fill="none"
-                      >
-                        <circle cx="11" cy="11" r="11" fill="#25AB75"></circle>
-                        <path
-                          d="M6.94042 9.69044L5.30351 11.3273L5.23804 11.3928L9.42851 15.5833L16.8928 8.11901L15.1904 6.41663L9.42851 12.1785L6.94042 9.69044Z"
-                          fill="white"
-                        ></path>
-                      </svg>
-                    </span>
-                    <p className="text-[18px] md:text-[20px] text-semibolds">
-                      Real-life experiences from two young achievers who made a
-                      tangible impact.
-                    </p>
-                  </div>
-                  <div className="flex  justify-left gap-5 pb-4">
-                    <span>
-                      {" "}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="22"
-                        height="22"
-                        viewBox="0 0 22 22"
-                        fill="none"
-                      >
-                        <circle cx="11" cy="11" r="11" fill="#25AB75"></circle>
-                        <path
-                          d="M6.94042 9.69044L5.30351 11.3273L5.23804 11.3928L9.42851 15.5833L16.8928 8.11901L15.1904 6.41663L9.42851 12.1785L6.94042 9.69044Z"
-                          fill="white"
-                        ></path>
-                      </svg>
-                    </span>
-                    <p className="text-[18px] md:text-[20px] text-semibolds">
-                      Lessons learned through personal challenges and growth.
-                    </p>
-                  </div>
-                </div>
-                <div className="w-full 2xl:w-1/3">
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Unlike typical motivational books, Dreams to Reality isn’t filled with complex theories or impractical advice.
+              </p>
+            </div>
+            <div className="bg-purple-50 p-8 rounded-xl shadow-lg mb-16">
+              <h3 className="text-2xl font-bold text-purple-800 mb-6 text-center bg-purple-50">
+                Instead, this book offers:
+              </h3>
+              <div className="flex flex-col lg:flex-row items-start gap-8 bg-purple-50">
+                <ul className="space-y-6 text-lg lg:w-2/3 bg-purple-50">
+                  <li className="flex items-start gap-3 bg-purple-50">
+                    <Check className="text-purple-600 mt-1 flex-shrink-0 w-6 h-6 bg-purple-50" stroke="#9333ea" />
+                    <span className="bg-purple-50">Actionable guidance to help you move forward.</span>
+                  </li>
+                  <li className="flex items-start gap-3 bg-purple-50 bg-purple-50">
+                    <Check className="text-purple-600 mt-1 flex-shrink-0 w-6 h-6 bg-purple-50" stroke="#9333ea" />
+                    <span className="bg-purple-50 bg-purple-50">Real-life experiences from two young achievers who made a
+                      tangible impact.</span>
+                  </li>
+                  <li className="flex items-start gap-3 bg-purple-50">
+                    <Check className="text-purple-600 mt-1 flex-shrink-0 w-6 h-6 bg-purple-50"stroke="#9333ea" />
+                    <span className="bg-purple-50 bg-purple-50">Lessons learned through personal challenges and growth.</span>
+                  </li>
+                </ul>
+                <div className="w-full lg:w-1/3">
                   <img
-                    className="w-full"
+                    className="w-full h-auto rounded-xl"
                     src="/Images/not-a-ordinary.webp"
                     alt="Dreams to Reality is NOT Just Another Ordinary Book!"
                     loading="lazy"
                   />
                 </div>
               </div>
+              <div className="mt-8 text-center bg-purple-50">
+                <p className="text-lg font-semibold mb-2 bg-purple-50">The best part? You don’t have to figure it all out on your
+                  own.</p>
+                <p className="text-lg text-purple-800 bg-purple-50"> Dreams to Reality will show you exactly how to break past
+                  doubts, take bold action, and start achieving what once felt impossible.</p>
+              </div>
             </div>
+          </div >
+        </section >
 
-            <div className="max-w-[1200px] text-[18px]  md:text-[20px] justify-center text-semibolds w-auto mt-10 pb-[40px] px-[15px] gap-10">
-              <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold">
-                <b className="text-custom-amber">
-                  The best part? You don’t have to figure it all out on your
-                  own.
-                </b>
-              </h2>
-              <p className="text-justify leading-relaxed -mb-2 text-[18px] mt-2 sm:text-[20px] md:text-[20px] lg:text-[24px] text-semibolds">
-                Dreams to Reality will show you exactly how to break past
-                doubts, take bold action, and start achieving what once felt
-                impossible.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-secondary rounded-lg py-[40px]">
+        <section>
           <MissionSection
             heading="Get Your Copy Now – Limited Stock Available!"
             highlightedText="Get Your Copy Now – Limited Stock Available!"
@@ -711,7 +677,7 @@ const Hero = ({ country }) => {
             </div>
           </div>
         </section>
-      </div>
+      </div >
       <Suspense fallback={<div>Loading...</div>}>
         {country === "in" ? (
           <LazyFooter buildPayUrl={buildPayUrl} />

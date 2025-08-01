@@ -30,13 +30,14 @@ module.exports = withMT({
         "custom-pay": "#F5F7F9",
         "dark-gray": "#303030",
         primary: "#000000",
-        "primary-light": "#8f8f8f",
+        "primary-light": "#f4f1f1ff",
         "custom-primary": "#582b81",
         "btn-primary": "#0067DE",
         "custom-amber": "#FFC621",
         "custom-gray-light": "#262626",
         "feedback-div": "#3B3B3B",
         "custom-gray": "#272727",
+        "custom-light":"#f8f8f8dd",
       },
       keyframes: {
         moveLeftRight: {
