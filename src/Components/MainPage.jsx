@@ -16,7 +16,7 @@ const MainPage = () => {
       {/* ✅ Safely render Seo if seo is found */}
       {seo && <Seo {...seo} />}
 
-      <nav className="bg-gray-800 h-[100px] py-4 px-[56px]">
+      <nav className="bg-[] h-[100px] py-4 px-[56px]">
         <div className="flex items-center sm:justify-between justify-center">
           <div className="w-[233px] h-[70px] bg-gray-500 text-white flex items-center justify-center text-sm font-bold">
             <Link to="/">
@@ -32,16 +32,16 @@ const MainPage = () => {
       </nav>
 
       <section
-        className="bg-color-main h-[80vh] flex flex-col items-center"
+        className="bg-[#272727] text-white h-[80vh] flex flex-col items-center bg-transparent"
         id="main-page"
       >
-        <div className="container w-full flex flex-col items-center">
-          <h2 className="px-10 sm:px-14 md:px-18 pt-[50px] text-[20px] sm:text-[25px] md:text-[27px] xl:text-[46px] font-bold text-center">
+        <div className="container w-full flex flex-col items-center bg-transparent">
+          <h2 className="px-10 sm:px-14 md:px-18 pt-[50px] text-[20px] sm:text-[25px] md:text-[27px] xl:text-[46px] font-bold text-center text-white bg-transparent ">
             Hello! Select a country to purchase your book.
           </h2>
         </div>
 
-        <div className="container w-full flex flex-col sm:flex-row pt-[50px] md:pt-[150px] justify-center gap-[30px] sm:gap-[50px] md:gap-[100px] flags">
+        <div className="container bg-transparent w-full flex flex-col sm:flex-row pt-[50px] md:pt-[150px] justify-center gap-[30px] sm:gap-[50px] md:gap-[100px] flags">
           <div className="flex flex-col items-center">
             <Link to="/dreams-to-reality/in">
               <img
@@ -54,7 +54,7 @@ const MainPage = () => {
             </Link>
           </div>
 
-          <div className="flex flex-col items-center">
+          <div className="flex bg-transparent flex-col items-center">
             <Link to="/dreams-to-reality/ae">
               <img
                 src={UAEFlag}

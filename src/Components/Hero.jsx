@@ -57,19 +57,11 @@ const Hero = ({ country }) => {
   return (
     <>
       {seo && <Seo {...seo} />}
-<<<<<<< Updated upstream
-      <div className="w-full h-full px-[10px] md:px-10  ">
-        <nav className="bg-gray-800 p-4">
-          <div className="flex items-center sm:justify-between justify-center">
-            <div className="w-[233px] h-[70px] bg-gray-500 text-white flex items-center justify-center text-sm font-bold">
-              <Link to="/">
-=======
       <div className="w-full h-full px-[10px] md:px-10">
         <nav className="bg-gray-800 p-4 bg-custom-primary">
           <div className="flex items-center sm:justify-between justify-center bg-custom-primary">
             <div className="w-[233px] h-[70px] bg-gray-500 text-white flex items-center justify-center text-sm font-bold bg-custom-primary">
               <Link to="/" className="bg-custom-primary">
->>>>>>> Stashed changes
                 <img
                   src="/Images/logo-white.webp"
                   className="w-42 h-auto mt-5 bg-custom-primary"
@@ -90,8 +82,8 @@ const Hero = ({ country }) => {
                 {/* Title Section inside left */}
                 <div className="flex flex-col items-start text-left bg-custom-primary">
                   <h2 className="font-playfair w-full pt-[30px] px-2 sm:px-10 md:px-18 text-23xl sm:text-4xl xl:text-5xl font-bold text-left text-white bg-custom-primary">
-                    Check Out the Ultimate Success Blueprint of Two Young Siblings Who Took on Bold Challenges and
-                    Inspired Thousands!
+                    Check Out the Ultimate Success Blueprint of Two Young
+                    Siblings Who Took on Bold Challenges and Inspired Thousands!
                   </h2>
                 </div>
                 <Suspense
@@ -121,15 +113,12 @@ const Hero = ({ country }) => {
 
             <div className="w-full flex flex-col items-center justify-center -mt-6 sm:mt-7 xl:mt-0 xl:w-[35%] bg-custom-primary">
               <div className="w-full flex justify-center relative px-5 bg-custom-primary">
-
                 <div className="w-90 h-90 rounded-full opacity-90">
                   <div className="z-40">
                     <img src="/Images/TheNextChapter.webp" loading="lazy"></img>
-
                   </div>
                 </div>
               </div>
-
             </div>
           </section>
         </div>
@@ -179,15 +168,17 @@ const Hero = ({ country }) => {
               </div>
             </div>
             <div className="w-full flex justify-center relative px-5 bg-custom-light -mt-6">
-
               <div className="w-80 h-70 rounded-full opacity-90 bg-custom-light">
                 <div className="z-40 bg-custom-light">
                   {" "}
-                  <img src="/Images/Hero-image.webp" loading="lazy" className="bg-custom-light"></img>
+                  <img
+                    src="/Images/Hero-image.webp"
+                    loading="lazy"
+                    className="bg-custom-light"
+                  ></img>
                 </div>
               </div>
             </div>
-
           </div>
         </section>
 
@@ -552,7 +543,6 @@ const Hero = ({ country }) => {
             </div>
           </div>
 
-<<<<<<< Updated upstream
           <section className="bg-transparent mt-10 mx-10 py-[10px]">
             <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold bg-transparent">
               <b className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6 bg-transparent ">
@@ -568,20 +558,19 @@ const Hero = ({ country }) => {
             </Suspense>
           </section>
         </div>
-        <section className="pt-[20px] bg-black grid justify-center rounded-xl px-[20px] relative">
+        {/* <section className="pt-[20px] bg-black grid justify-center rounded-xl px-[20px] relative">
           <div className="w-full flex flex-col items-center gap-y-2 justify-center">
             <h2 className="max-w-[1200px] px-5 md:px-18 text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold text-center ">
-              <b className="text-custom-amber">
-=======
+              <b className="text-custom-amber"></b> */}
         <section className="-py-3 px-4 bg-white" id="book-unique">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6">
->>>>>>> Stashed changes
                 Dreams to Reality is NOT Just Another Ordinary Book!
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Unlike typical motivational books, Dreams to Reality isn’t filled with complex theories or impractical advice.
+                Unlike typical motivational books, Dreams to Reality isn’t
+                filled with complex theories or impractical advice.
               </p>
             </div>
             <div className="bg-purple-50 p-8 rounded-xl shadow-lg mb-16">
@@ -591,17 +580,32 @@ const Hero = ({ country }) => {
               <div className="flex flex-col lg:flex-row items-start gap-8 bg-purple-50">
                 <ul className="space-y-6 text-lg lg:w-2/3 bg-purple-50">
                   <li className="flex items-start gap-3 bg-purple-50">
-                    <Check className="text-purple-600 mt-1 flex-shrink-0 w-6 h-6 bg-purple-50" stroke="#9333ea" />
-                    <span className="bg-purple-50">Actionable guidance to help you move forward.</span>
+                    <Check
+                      className="text-purple-600 mt-1 flex-shrink-0 w-6 h-6 bg-purple-50"
+                      stroke="#9333ea"
+                    />
+                    <span className="bg-purple-50">
+                      Actionable guidance to help you move forward.
+                    </span>
                   </li>
                   <li className="flex items-start gap-3 bg-purple-50 bg-purple-50">
-                    <Check className="text-purple-600 mt-1 flex-shrink-0 w-6 h-6 bg-purple-50" stroke="#9333ea" />
-                    <span className="bg-purple-50 bg-purple-50">Real-life experiences from two young achievers who made a
-                      tangible impact.</span>
+                    <Check
+                      className="text-purple-600 mt-1 flex-shrink-0 w-6 h-6 bg-purple-50"
+                      stroke="#9333ea"
+                    />
+                    <span className="bg-purple-50 bg-purple-50">
+                      Real-life experiences from two young achievers who made a
+                      tangible impact.
+                    </span>
                   </li>
                   <li className="flex items-start gap-3 bg-purple-50">
-                    <Check className="text-purple-600 mt-1 flex-shrink-0 w-6 h-6 bg-purple-50"stroke="#9333ea" />
-                    <span className="bg-purple-50 bg-purple-50">Lessons learned through personal challenges and growth.</span>
+                    <Check
+                      className="text-purple-600 mt-1 flex-shrink-0 w-6 h-6 bg-purple-50"
+                      stroke="#9333ea"
+                    />
+                    <span className="bg-purple-50 bg-purple-50">
+                      Lessons learned through personal challenges and growth.
+                    </span>
                   </li>
                 </ul>
                 <div className="w-full lg:w-1/3">
@@ -614,14 +618,20 @@ const Hero = ({ country }) => {
                 </div>
               </div>
               <div className="mt-8 text-center bg-purple-50">
-                <p className="text-lg font-semibold mb-2 bg-purple-50">The best part? You don’t have to figure it all out on your
-                  own.</p>
-                <p className="text-lg text-purple-800 bg-purple-50"> Dreams to Reality will show you exactly how to break past
-                  doubts, take bold action, and start achieving what once felt impossible.</p>
+                <p className="text-lg font-semibold mb-2 bg-purple-50">
+                  The best part? You don’t have to figure it all out on your
+                  own.
+                </p>
+                <p className="text-lg text-purple-800 bg-purple-50">
+                  {" "}
+                  Dreams to Reality will show you exactly how to break past
+                  doubts, take bold action, and start achieving what once felt
+                  impossible.
+                </p>
               </div>
             </div>
-          </div >
-        </section >
+          </div>
+        </section>
 
         <section>
           <MissionSection
@@ -639,45 +649,7 @@ const Hero = ({ country }) => {
             imageFirst={false}
           />
         </section>
-
-        <section className="bg-black py-[40px] -mb-2 rounded-xl px-[14px]">
-          <div className="mb-14 flex flex-col justify-center items-center gap-y-2 mb-2">
-            <h2 className="max-w-full  text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold leading-snug -mb-5">
-              <b className="text-custom-amber">
-                Join the Growing List of Action-Takers Who Are Turning Their
-                Dreams into Reality!
-              </b>
-            </h2>
-
-            <p className="max-w-[1200px] text-center  text-[18px] mt-8 sm:text-[20px] md:text-[20px] lg:text-[24px] font-medium">
-              Let us know where to send your Book, and take the first step
-              toward achieving your goals today!
-            </p>
-          </div>
-
-          <div className="w-full flex flex-col justify-center items-center">
-            <div className="max-w-full flex flex-col xl:flex-row gap-6 xl:gap-6 justify-center items-center xl:w-[90%] 2xl:w-[80%]">
-              <a
-                href={buildPayUrl("67dea774770d7aa5b35b4db2")}
-                // href={`/pay/?type=PRODUCT&curr=INR&productIds=67dea774770d7aa5b35b4db2&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
-                //onClick={() => ToCheckout("67dea774770d7aa5b35b4db2")}
-                className="w-full  bg-btn-primary hover:bg-btn-primary/90 text-white py-3 px-4 sm:py-3.5 sm:px-7 font-bold text-base sm:text-xl md:text-lg flex items-center justify-center rounded-full shadow-btn-primary/100 tracking-tight"
-              >
-                Grab Your E-Book
-              </a>
-
-              <a
-                href={buildPayUrl("67de9c03770d7aa5b35b4712")}
-                // href={`/pay/?type=PRODUCT&curr=INR&productIds=67de9c03770d7aa5b35b4712&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
-                //onClick={() => ToCheckout("67de9c03770d7aa5b35b4712")}
-                className="w-full  bg-btn-primary hover:bg-btn-primary/90 text-white py-3 px-4 sm:py-3.5 sm:px-7 font-bold text-base sm:text-xl md:text-lg flex items-center justify-center rounded-full shadow-btn-primary/100 tracking-tight"
-              >
-                Grab Your Hardcover
-              </a>
-            </div>
-          </div>
-        </section>
-      </div >
+      </div>
       <Suspense fallback={<div>Loading...</div>}>
         {country === "in" ? (
           <LazyFooter buildPayUrl={buildPayUrl} />
