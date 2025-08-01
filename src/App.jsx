@@ -1,7 +1,7 @@
 // src/App.jsx
 import React, { Suspense, lazy } from "react";
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 
 // Lazy imports
@@ -31,7 +31,7 @@ function App() {
   return (
     <HelmetProvider>
       <Router>
-        <div className="bg-primary w-full h-fit">
+        <div className="w-full h-fit">
           <Suspense fallback={<></>}>
             <Routes>
               <Route element={<ScrollToTop />}>
@@ -70,7 +70,8 @@ function App() {
                   element={<ShippingPolicyUAE />}
                 />
                 <Route path="/gdpr-policyUAE" element={<GDPRPolicyUAE />} />
-                <Route path="/contact-us" element={<ContactUs />} />
+                <Route path="/contact-us/:countryCode" element={<ContactUs />} />
+                <Route path="/contact-us" element={<Navigate to="/contact-us/in" />} />
                 <Route path="*" element={<MainPage />} />
               </Route>
             </Routes>

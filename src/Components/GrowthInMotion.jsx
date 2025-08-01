@@ -45,8 +45,8 @@ const events = [
 
 export default function GrowthInMotion() {
   return (
-    <div className=" py-16 px-4 md:px-20 bg-purple-100">
-      <h2 className="text-4xl font-bold text-center text-[#120C66] mb-20 bg-purple-100 ">
+    <div className="py-16 px-4 md:px-20 bg-[#faf5f7]">
+      <h2 className="text-4xl font-bold text-center text-[#120C66] mb-20 bg-[#faf5f7] ">
         Every Year, A New Leap – Our Growth in Motion
       </h2>
 
@@ -55,23 +55,23 @@ export default function GrowthInMotion() {
         return isEven ? (
           <div
             key={index}
-            className="flex h-auto md:h-[150px] w-full text-left mb-10 md:mb-0 bg-purple-100  "
+            className="flex h-auto md:h-[150px] w-full text-left mb-10 md:mb-0 bg-[#faf5f7] "
           >
             {/* Left side */}
-            <div className="flex w-full md:flex-row flex-col bg-purple-100">
-              <div className="w-full md:w-[51%] h-full flex items-start justify-end pr-4 bg-purple-100">
-                <div className="text-right  pt-4 bg-purple-100">
-                  <h3 className="text-purple-800 font-bold text-xl bg-purple-100">
+            <div className="flex w-full md:flex-row flex-col bg-[#faf5f7]">
+              <div className="w-full md:w-[51%] h-full flex items-start justify-end pr-4 bg-[#faf5f7]">
+                <div className="text-right  pt-4 bg-[#faf5f7]">
+                  <h3 className="text-purple-800 font-bold text-xl bg-[#faf5f7]">
                     {event.year}
                   </h3>
-                  <h4 className="font-semibold text-purple-600 text-lg bg-purple-100">
+                  <h4 className="font-semibold text-purple-600 text-lg bg-[#faf5f7]">
                     {event.title}
                   </h4>
                 </div>
               </div>
 
               {/* Timeline marker */}
-              <div className="flex flex-col items-center justify-center bg-purple-100">
+              <div className="flex flex-col items-center justify-center bg-[#faf5f7]">
                 <div className="w-8 h-8 rounded-full bg-purple-600  text-white font-bold flex items-center justify-center border-4 border-purple-100 shadow-md z-10 mx-4 my-8 md:my-0">
                   ✓
                 </div>
@@ -79,8 +79,8 @@ export default function GrowthInMotion() {
               </div>
 
               {/* Right side */}
-              <div className="w-full md:w-[50%] h-full flex pt-4 pl-4 mt-4 md:mt-0 bg-purple-100">
-                <p className="text-gray-700 text-sm bg-purple-100">
+              <div className="w-full md:w-[50%] h-full flex pt-4 pl-4 mt-4 md:mt-0 bg-[#faf5f7]">
+                <p className="text-gray-700 text-sm bg-[#faf5f7]">
                   {event.description}
                 </p>
               </div>
@@ -89,17 +89,17 @@ export default function GrowthInMotion() {
         ) : (
           <div
             key={index}
-            className="flex h-auto md:h-[150px] w-full text-left mb-10 md:mb-0 bg-purple-100"
+            className="flex h-auto md:h-[150px] w-full text-left mb-10 md:mb-0 bg-[#faf5f7]"
           >
             {/* Left side */}
-            <div className="w-full h-full flex pt-4 pl-4 mt-4 md:mt-0 bg-purple-100">
-              <p className="text-gray-700 text-sm bg-purple-100">
+            <div className="w-full h-full flex pt-4 pl-4 mt-4 md:mt-0 bg-[#faf5f7]">
+              <p className="text-gray-700 text-sm bg-[#faf5f7]">
                 {event.description}
               </p>
             </div>
 
             {/* Timeline marker */}
-            <div className="flex flex-col   items-center justify-center bg-purple-100">
+            <div className="flex flex-col   items-center justify-center bg-[#faf5f7]">
               <div className="w-8 h-8 rounded-full bg-purple-600 text-white font-bold flex items-center justify-center border-4 border-purple-100 shadow-md z-10 mx-4 my-8 md:my-0">
                 ✓
               </div>
@@ -107,13 +107,13 @@ export default function GrowthInMotion() {
             </div>
 
             {/* Right side */}
-            <div className="flex w-full md:flex-row flex-col bg-purple-100">
-              <div className="w-full h-full flex items-start bg-purple-100 justify-end pr-4">
-                <div className="text-right  pt-4 bg-purple-100">
-                  <h3 className="text-purple-800 font-bold bg-purple-100 text-xl">
+            <div className="flex w-full md:flex-row flex-col bg-[#faf5f7]">
+              <div className="w-full h-full flex items-start bg-[#faf5f7] justify-end pr-4">
+                <div className="text-right  pt-4 bg-[#faf5f7]">
+                  <h3 className="text-purple-800 font-bold bg-[#faf5f7] text-xl">
                     {event.year}
                   </h3>
-                  <h4 className="font-semibold text-purple-600 bg-purple-100 text-lg">
+                  <h4 className="font-semibold text-purple-600 bg-[#faf5f7] text-lg">
                     {event.title}
                   </h4>
                 </div>
