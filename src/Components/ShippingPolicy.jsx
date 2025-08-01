@@ -2,30 +2,30 @@ import React, { Suspense } from "react";
 import { Link } from "react-router-dom";
 import { getSeoMeta } from "../utils/getSeoMeta";
 import Seo from "../Seo";
-import Footer from "./Footer";
+import Header from "./Header";
 
-const LazyFooter = React.lazy(() => import("./Footer"));
+const Footer = React.lazy(() => import("./Footer"));
 
 export const ShippingPolicy = () => {
   const seo = getSeoMeta("https://books.1xl.com/shipping-policy");
   return (
     <>
       {seo && <Seo {...seo} />}
-      <div style={{ color: "black" }} classname="">
-        <nav className="h-[100px] bg-black px-[56px] py-4">
-          <div className="flex items-center sm:justify-between justify-center">
-            {/* Logo Placeholder */}
-            <div className="w-[233px] h-[41px] bg-gray-500 text-white flex items-center justify-center text-sm font-bold">
+      <div style={{ color: "black" }}>
+        <Header />
+        {/* <nav className="h-[100px] bg-black px-[56px] py-4">
+          <div className="flex items-center sm:justify-between justify-center h-full bg-black">
+            <div className="flex items-center justify-center h-full bg-black">
               <Link to="/">
                 <img
                   src="/Images/logo-white.webp"
-                  className="w-42 h-auto mt-5"
-                  alt="Dreams To Reality Logo_Horizontal"
+                  className="w-[168px] h-auto bg-black"
+                  alt="Dreams To Reality Logo"
                 />
               </Link>
             </div>
           </div>
-        </nav>
+        </nav> */}
         <div style={{ color: "black" }} className="w-full bg-white">
           <div className="container mx-auto px-4 pb-6">
             <section className="bg-white  pb-6   mb-6">

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { getSeoMeta } from "../utils/getSeoMeta";
 import Seo from "../Seo";
 import Footer from "./Footer";
+import Header from "./Header";
 
 const FooterUAE = React.lazy(() => import("./FooterUAE"));
 
@@ -11,31 +12,8 @@ export const RefundPolicyUAE = () => {
   return (
     <>
       {seo && <Seo {...seo} />}
-      <div style={{ color: "black" }} classname="">
-        <nav className="h-[100px] bg-black px-[56px] py-4">
-          <div className="flex items-center sm:justify-between justify-center">
-            {/* Logo Placeholder */}
-            <div className="w-[233px] h-[41px] bg-gray-500 text-white flex items-center justify-center text-sm font-bold">
-              <Link to="/">
-                <img
-                  src="/Images/logo-white.webp"
-                  className="w-42 h-auto mt-5"
-                  alt="Dreams To Reality Logo_Horizontal"
-                />
-              </Link>
-            </div>
-
-            {/* Navigation Links */}
-            {/* <div className="flex flex-grow justify-center space-x-8">
-                    <a href="#" className="text-white hover:text-gray-400">
-                      Support
-                    </a>
-                    <a href="#" className="text-white hover:text-gray-400">
-                      Order Now
-                    </a>
-                  </div> */}
-          </div>
-        </nav>
+      <div style={{ color: "black" }}>
+        <Header />
         <div style={{ color: "black" }} className="w-full bg-white">
           <div className="container mx-auto px-4 pb-6">
             <section className="bg-white  pb-6   mb-6">
@@ -48,7 +26,7 @@ export const RefundPolicyUAE = () => {
 
               <ol
                 style={{ color: "black" }}
-                classname="privacy-policy-intro-list"
+                className="privacy-policy-intro-list"
               >
                 <li style={{ color: "black" }} className="pt-[10px]">
                   <strong

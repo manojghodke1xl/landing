@@ -6,6 +6,7 @@ import PhoneInputWrapper from "../Components/PhoneInputWrapper";
 import { Link } from "react-router-dom";
 import { getSeoMeta } from "../utils/getSeoMeta";
 import Seo from "../Seo";
+import Header from "../Components/Header";
 
 const LazyFooter = React.lazy(() => import("../Components/Footer"));
 
@@ -173,19 +174,7 @@ export default function ContactUs() {
   return (
     <>
       {seo && <Seo {...seo} />}
-      <nav className="bg-gray-800 p-4">
-        <div className="flex items-center sm:justify-between justify-center">
-          <div className="w-[233px] h-[41px] bg-gray-500 text-white flex items-center justify-center text-sm font-bold">
-            <Link to="/">
-              <img
-                src="/Images/logo-white.webp"
-                className="w-42 h-auto mt-5"
-                alt="Dreams To Reality Logo_Horizontal"
-              />
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <Header />
       <section className="w-full p-5">
         <div className="w-full bg-black">
           <section className="container mx-auto md:w-[78%]">

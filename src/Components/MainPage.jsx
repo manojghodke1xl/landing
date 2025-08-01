@@ -4,6 +4,7 @@ import indianFlag from "../assets/images/imageInd.webp";
 import UAEFlag from "../assets/images/imageUAE.webp";
 import { getSeoMeta } from "../utils/getSeoMeta";
 import Seo from "../Seo";
+import Header from "./Header";
 
 const LazyFooter = React.lazy(() => import("./Footer"));
 
@@ -16,20 +17,7 @@ const MainPage = () => {
       {/* ✅ Safely render Seo if seo is found */}
       {seo && <Seo {...seo} />}
 
-      <nav className="bg-[] h-[100px] py-4 px-[56px]">
-        <div className="flex items-center sm:justify-between justify-center">
-          <div className="w-[233px] h-[70px] bg-gray-500 text-white flex items-center justify-center text-sm font-bold">
-            <Link to="/">
-              <img
-                src="/Images/logo-white.webp"
-                className="w-42 h-auto mt-5 mb-5"
-                alt="Dreams To Reality Logo_Horizontal"
-                loading="lazy"
-              />
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <Header />
 
       <section
         className="bg-[#272727] text-white h-[80vh] flex flex-col items-center bg-transparent"
