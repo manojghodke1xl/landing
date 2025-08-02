@@ -105,7 +105,7 @@ function Whythisbook() {
               } mx-auto`}
             >
               <div className="text-center flex flex-col md:gap-[28] gap-4 mb-16">
-                <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                <h2 className="font-playfair text-3xl md:text-5xl font-bold text-gray-900 mb-6">
                   {heading}
                 </h2>
                 <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -122,12 +122,15 @@ function Whythisbook() {
               </div>
 
               <div className="bg-purple-50 p-8 rounded-xl shadow-lg mb-16">
-                <h3 className="text-2xl font-bold text-purple-800 mb-6 text-center">
+                <h3 className="text-lg md:text-2xl font-bold text-purple-800 mb-6 ">
                   {subheading}
                 </h3>
                 <ul className="space-y-6 text-lg">
                   {bulletPoints.map((point, i) => (
-                    <li key={i} className="flex items-start gap-3">
+                    <li
+                      key={i}
+                      className="text-md md:text-lg flex items-start gap-3"
+                    >
                       <Check
                         className="text-purple-600 mt-1 flex-shrink-0 w-6 h-6"
                         stroke="#9333ea"

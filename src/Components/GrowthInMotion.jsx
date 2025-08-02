@@ -47,10 +47,10 @@ const Timeline = () => {
   ];
 
   return (
-    <section className="py-24 px-4 bg-purple-50" id="timeline">
+    <section className="py-4 px-4 bg-purple-50" id="timeline">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="font-playfair text-xl md:text-4xl font-bold text-gray-900 mb-6">
             Every Year, A New Leap – Our Growth in Motion
           </h2>
         </div>

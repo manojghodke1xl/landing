@@ -18,7 +18,7 @@ const Discover = ({ cards = [] }) => {
       "
           />
 
-          <h3 className="md:text-2xl text-xl font-bold text-purple-800 mb-3">
+          <h3 className="text-lg md:text-2xl  font-bold text-purple-800 mb-3">
             {card.title}
           </h3>
           <p className="md:text-lg text-gray-700">{card.description}</p>
