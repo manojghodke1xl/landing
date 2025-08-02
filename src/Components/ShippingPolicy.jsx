@@ -10,7 +10,7 @@ const LazyFooter = React.lazy(() => import("./Footer"));
 
 export const ShippingPolicy = () => {
   const seo = getSeoMeta("https://books.1xl.com/shipping-policy");
-   const { countryCode } = useParams();
+  const { countryCode } = useParams();
   const selectedCountry = getSelectedCountry(countryCode);
   return (
     <>
@@ -115,13 +115,7 @@ export const ShippingPolicy = () => {
                         Registered Address:{" "}
                       </strong>
 
-                      <a
-                        href="https://maps.app.goo.gl/mCvV6mqmRgEaRtLL6"
-                        target="_blank"
-                        className="text-blue-500 hover:underline"
-                      >
-                        {selectedCountry.address}
-                      </a>
+                      {selectedCountry.address}
                     </li>
                     <li style={{ color: "black" }} className="pt-[10px]">
                       <strong
@@ -329,8 +323,8 @@ export const ShippingPolicy = () => {
           </div>
         </div>
         <Suspense fallback={<div>Loading...</div>}>
-                  <LazyFooter country="/ae" />
-                </Suspense>
+          <LazyFooter code="/in" />
+        </Suspense>
       </div>
     </>
   );

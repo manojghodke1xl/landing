@@ -1,4 +1,4 @@
-import React, { useState, Suspense } from "react";
+import React, { useState, Suspense, useEffect } from "react";
 // import toast, { Toaster } from "react-hot-toast";
 // import PhoneInput from "react-phone-input-2";
 // import "react-phone-input-2/lib/style.css";
@@ -29,9 +29,12 @@ export default function ContactUs() {
   const [phoneError, setPhoneError] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
-   const { countryCode } = useParams();
-   const selectedCountry = getSelectedCountry(countryCode);
-   
+  const { countryCode } = useParams();
+  useEffect(() => {
+    console.log("county code", window.location.pathname);
+  }, []);
+  const selectedCountry = getSelectedCountry(window.location.pathname);
+
   const handleFocus = () => setIsFocused(true);
   const handleBlur = () => setIsFocused(false);
 
@@ -174,16 +177,16 @@ export default function ContactUs() {
     tempCountryCode: "91",
     editNumber: false,
   });
-  
+
   return (
     <>
       {seo && <Seo {...seo} />}
       <Header />
       <section className="w-full p-5">
-        <div className="w-full bg-black">
+        <div className="w-full ">
           <section className="container mx-auto md:w-[78%]">
             <div
-              className="flex flex-col items-center md:flex-row gap-8 md:gap-12 p-3 sm:p-6 md:px-4 xl:px-8 bg-black shadow-even-lg"
+              className="flex flex-col items-center md:flex-row gap-8 md:gap-12 p-3 sm:p-6 md:px-4 xl:px-8  shadow-even-lg"
               style={{ justifyContent: "space-between" }}
             >
               <div className="flex flex-col  w-full md:w-[55%] xl:w-[60%]">
@@ -202,7 +205,7 @@ export default function ContactUs() {
                         Full Name<span className="text-red-500">*</span>
                       </label>
                       <input
-                        className="bg-black flex w-full py-2.5 p-2 border-2 border-white focus:border-blue-200 outline-none placeholder:text-muted-foreground focus-visible:outline-none  rounded-xl"
+                        className=" flex  text-white w-full py-2.5 p-2 border-2 border-[#D0D5DD] focus:border-blue-200 outline-none placeholder:text-muted-foreground focus-visible:outline-none  focus:ring-0 focus:outline-none rounded-xl"
                         id="name"
                         // required
                         placeholder="Full Name"
@@ -230,7 +233,7 @@ export default function ContactUs() {
                         Email ID<span className="text-red-500">*</span>
                       </label>
                       <input
-                        className="flex bg-black text-white w-full py-2.5 p-2 border-2 border-[#D0D5DD] focus:border-blue-200 outline-none placeholder:text-muted-foreground focus-visible:outline-none  focus:ring-0 focus:outline-none rounded-xl"
+                        className="flex  text-white w-full py-2.5 p-2 border-2 border-[#D0D5DD] focus:border-blue-200 outline-none placeholder:text-muted-foreground focus-visible:outline-none  focus:ring-0 focus:outline-none rounded-xl"
                         id="email"
                         // required
                         placeholder="Email ID"
@@ -297,7 +300,7 @@ export default function ContactUs() {
                         Address<span className="text-red-500">*</span>
                       </label>
                       <input
-                        className="bg-black text-white flex w-full py-2.5 p-2 border-2 border-[#D0D5DD] focus:border-blue-200 outline-none placeholder:text-muted-foreground focus-visible:outline-none file:bg-transparent rounded-xl"
+                        className=" text-white flex w-full py-2.5 p-2 border-2 border-[#D0D5DD] focus:border-blue-200 outline-none placeholder:text-muted-foreground focus-visible:outline-none file:bg-transparent rounded-xl"
                         // required
                         id="address"
                         placeholder="Address"
@@ -318,7 +321,7 @@ export default function ContactUs() {
                       Subject<span className="text-red-500">*</span>
                     </label>
                     <input
-                      className="flex bg-black text-white w-full py-2.5 p-2 border-2 border-[#D0D5DD] focus:border-blue-200 outline-none placeholder:text-muted-foreground focus-visible:outline-none  focus:ring-0 focus:outline-none rounded-xl"
+                      className="flex  text-white w-full py-2.5 p-2 border-2 border-[#D0D5DD] focus:border-blue-200 outline-none placeholder:text-muted-foreground focus-visible:outline-none  focus:ring-0 focus:outline-none rounded-xl"
                       id="subject"
                       // required
                       placeholder="Subject"
@@ -339,7 +342,7 @@ export default function ContactUs() {
                       Message<span className="text-red-500">*</span>
                     </label>
                     <textarea
-                      className="bg-black flex w-full py-2.5 p-2 border-2 border-[#D0D5DD] focus:border-blue-200 outline-none placeholder:text-muted-foreground focus-visible:outline-none file:bg-transparent focus:ring-0 focus:outline-none rounded-xl"
+                      className=" flex w-full py-2.5 p-2 border-2 border-[#D0D5DD] focus:border-blue-200 outline-none placeholder:text-muted-foreground focus-visible:outline-none file:bg-transparent focus:ring-0 focus:outline-none rounded-xl"
                       id="message"
                       placeholder="Message"
                       value={formData.message}
@@ -368,7 +371,7 @@ export default function ContactUs() {
               </div>
               <div className="border rounded-xl w-full flex flex-col justify-center h-fit md:w-[40%] xl:w-[35%] bg-gradient-to-b from-blue-500 via-blue-700 to-blue-950 text-white py-10 px-4 md:px-3 xl:px-6 2xl:px-8">
                 <h4 className="text-left text-4xl font-bold text-white mb-7 tracking-wide">
-                  Don&apos;t Hesitate To Contact Us
+                  Contact Us
                 </h4>
 
                 <div className="flex flex-col sm:flex-row gap-4 mb-7">
@@ -419,11 +422,11 @@ export default function ContactUs() {
                     <span className="text-lg text-gray-300 font-medium tracking-wide">
                       <a
                         className=" hover:underline"
-                        href="mailto:Books@1xl.com"
+                        href="mailto:contact@1XL.com"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        Books@1xl.com
+                        contact@1xl.com
                       </a>
                     </span>
                   </div>
@@ -446,14 +449,7 @@ export default function ContactUs() {
                       Office Address ({selectedCountry.label})
                     </span>
                     <span className="text-lg text-gray-300 font-medium tracking-wide">
-                      <a
-                        className=" hover:underline"
-                        href="https://maps.app.goo.gl/FjPzuQdEFipKoLSL8"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {selectedCountry.address}
-                      </a>
+                      {selectedCountry.address}
                     </span>
                   </div>
                 </div>
@@ -463,7 +459,11 @@ export default function ContactUs() {
         </div>
       </section>
       <Suspense fallback={<div>Loading...</div>}>
-        <LazyFooter/>
+        {window.location.pathname == "/contact-us/ae" ? (
+          <LazyFooter />
+        ) : (
+          <LazyFooter country="UAE" code="/ae" />
+        )}
       </Suspense>
     </>
   );

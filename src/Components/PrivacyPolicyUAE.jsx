@@ -105,14 +105,7 @@ const PrivacyPolicyUAE = () => {
                   >
                     Registered Address:{" "}
                   </strong>
-
-                  <a
-                    href="https://maps.app.goo.gl/Pokd7YycSGaH4p9A6"
-                    target="_blank"
-                    className="text-blue-500 hover:underline"
-                  >
-                    2007, The Exchange Tower, Business Bay, Dubai, U.A.E.
-                  </a>
+                  9, 1XL Avenue, DIP, Dubai, U.A.E.
                 </li>
                 <li style={{ color: "black" }} className="pt-[10px]">
                   <strong
@@ -442,7 +435,7 @@ const PrivacyPolicyUAE = () => {
           </div>
         </div>
         <Suspense fallback={<div>Loading...</div>}>
-          <Footer country={"UAE"} />
+          <Footer country={"UAE"} code="/ae" />
         </Suspense>
       </div>
     </>

@@ -10,9 +10,11 @@ const Discover = ({ cards = [] }) => {
         >
           <div
             className="
+            animate-slideInLeft
         absolute left-0 top-0 h-full w-1 bg-blue-500
         transition-transform duration-300
         origin-top scale-y-50 group-hover:scale-y-100
+
       "
           />
 

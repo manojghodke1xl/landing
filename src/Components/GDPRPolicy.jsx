@@ -11,7 +11,7 @@ const LazyFooter = React.lazy(() => import("./Footer"));
 
 export const GDPRPolicy = () => {
   const seo = getSeoMeta("https://books.1xl.com/gdpr-policy");
-   const { countryCode } = useParams();
+  const { countryCode } = useParams();
   const selectedCountry = getSelectedCountry(countryCode);
   return (
     <>
@@ -100,16 +100,10 @@ export const GDPRPolicy = () => {
                           color: "black",
                         }}
                       >
-                        Registered Address:{" "}
+                        Registered Address:
                       </strong>
 
-                      <a
-                        href="https://maps.app.goo.gl/mCvV6mqmRgEaRtLL6"
-                        target="_blank"
-                        className="text-blue-500 hover:underline"
-                      >
-                        {selectedCountry.address}
-                      </a>
+                      {selectedCountry.address}
                     </li>
                     <li style={{ color: "black" }} className="pt-[10px]">
                       <strong
@@ -1480,8 +1474,8 @@ export const GDPRPolicy = () => {
             </section>
           </div>
         </div>
-       <Suspense fallback={<div>Loading...</div>}>
-          <LazyFooter country="/ae" />
+        <Suspense fallback={<div>Loading...</div>}>
+          <LazyFooter code="/in" />
         </Suspense>
       </div>
     </>

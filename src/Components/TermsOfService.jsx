@@ -10,7 +10,7 @@ const LazyFooter = React.lazy(() => import("./Footer"));
 
 const TermsOfService = () => {
   const seo = getSeoMeta("https://books.1xl.com/terms-and-conditions");
-   const { countryCode } = useParams();
+  const { countryCode } = useParams();
   const selectedCountry = getSelectedCountry(countryCode);
   return (
     <>
@@ -113,13 +113,7 @@ const TermsOfService = () => {
                     Registered Address:{" "}
                   </strong>
 
-                  <a
-                    href="https://maps.app.goo.gl/mCvV6mqmRgEaRtLL6"
-                    target="_blank"
-                    className="text-blue-500 hover:underline"
-                  >
-                    {selectedCountry.address}
-                  </a>
+                  {selectedCountry.address}
                 </li>
                 <li style={{ color: "black" }} className="pt-[10px]">
                   <strong
@@ -2017,7 +2011,7 @@ const TermsOfService = () => {
           </div>
         </div>
         <Suspense fallback={<div>Loading...</div>}>
-          <LazyFooter country="/ae" />
+          <LazyFooter code="/in" />
         </Suspense>
       </div>
     </>

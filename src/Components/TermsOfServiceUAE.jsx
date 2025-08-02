@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { getSeoMeta } from "../utils/getSeoMeta";
 import Seo from "../Seo";
 import Header from "./Header";
+import Footer from "./Footer";
 
 const FooterUAE = React.lazy(() => import("./FooterUAE"));
 
@@ -108,14 +109,7 @@ const TermsOfServiceUAE = () => {
                   >
                     Registered Address:{" "}
                   </strong>
-
-                  <a
-                    href="https://maps.app.goo.gl/Pokd7YycSGaH4p9A6"
-                    target="_blank"
-                    className="text-blue-500 hover:underline"
-                  >
-                    2007, The Exchange Tower, Business Bay, Dubai, U.A.E.
-                  </a>
+                  2007, The Exchange Tower, Business Bay, Dubai, U.A.E.
                 </li>
                 <li style={{ color: "black" }} className="pt-[10px]">
                   <strong
@@ -2011,7 +2005,7 @@ const TermsOfServiceUAE = () => {
           </div>
         </div>
         <Suspense fallback={<div>Loading...</div>}>
-          <FooterUAE />
+          <Footer country={"UAE"} code="/ae" />
         </Suspense>
       </div>
     </>

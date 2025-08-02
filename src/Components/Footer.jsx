@@ -5,13 +5,20 @@ const Footer = (props) => {
   const year = new Date().getFullYear();
   const pathname = location.pathname;
   const country = props.country || "";
+  const code = props.code || "/in";
   const policyLinks = [
-    { label: "Privacy Policy", path: `/privacy-policy${country}` },
-    { label: "Contact Us", path: `/contact-us${country}` },
-    { label: "Terms and Conditions", path: `/terms-and-conditions${country}` },
-    { label: "Refund Policy", path: `/refund-policy${country}` },
-    { label: "Shipping/Return Policy", path: `/shipping-policy${country}` },
-    { label: "GDPR Policy", path: `/gdpr-policy${country}` },
+    { label: "Privacy Policy", path: `/privacy-policy${country}${code}` },
+    { label: "Contact Us", path: `/contact-us${code}` },
+    {
+      label: "Terms and Conditions",
+      path: `/terms-and-conditions${country}${code}`,
+    },
+    { label: "Refund Policy", path: `/refund-policy${country}${code}` },
+    {
+      label: "Shipping/Return Policy",
+      path: `/shipping-policy${country}${code}`,
+    },
+    { label: "GDPR Policy", path: `/gdpr-policy${country}${code}` },
   ];
 
   return (

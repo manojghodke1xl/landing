@@ -27,7 +27,7 @@ const PrivacyPolicy = () => {
 
               <ol
                 style={{ color: "black" }}
-                classname="privacy-policy-intro-list"
+                className="privacy-policy-intro-list"
               >
                 <li style={{ color: "black" }} className="pt-[10px]">
                   <strong
@@ -100,13 +100,7 @@ const PrivacyPolicy = () => {
                     Registered Address:{" "}
                   </strong>
 
-                  <a
-                    href="https://maps.app.goo.gl/mCvV6mqmRgEaRtLL6"
-                    target="_blank"
-                    className="text-blue-500 hover:underline"
-                  >
-                    {selectedCountry.address}
-                  </a>
+                  {selectedCountry.address}
                 </li>
                 <li style={{ color: "black" }} className="pt-[10px]">
                   <strong
@@ -436,7 +430,7 @@ const PrivacyPolicy = () => {
           </div>
         </div>
         <Suspense fallback={<div>Loading...</div>}>
-          <LazyFooter country="/ae"/>
+          <LazyFooter code="/in" />
         </Suspense>
       </div>
     </>

@@ -74,6 +74,7 @@ module.exports = withMT({
         xl: "1100px", // Custom breakpoint at 1100px
       },
     },
+    
   },
   plugins: [],
 });
