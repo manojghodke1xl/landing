@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { getSeoMeta } from "../utils/getSeoMeta";
 import Seo from "../Seo";
 import { cardData, missionSectionsData } from "../data/BooksData";
-import { Check } from "lucide-react";
 import StoriesThatStay from "./StoriesThatStay";
 import Whythisbook from "./Whythisbook";
 
@@ -128,139 +127,11 @@ const Hero = ({ country }) => {
             </div>
           </section>
         </div>
-        <Suspense fallback={<div className="text-center">Loading...</div>}>
-          <LazyChange />
-        </Suspense>
-
-        <section className="py-8 sm:py-14 px-[20px] mb-10 bg-[#faf5f7] rounded-xl container mx-auto max-w-[90%]">
-          <div className="w-full flex flex-col gap-y-4 justify-center pb-8 items-center bg-[#faf5f7]">
-            <h2 className="w-full text-center text-2xl font-semibold bg-[#faf5f7]">
-              <b className="text-custom-primary mb-6 bg-[#faf5f7]">
-                Dreams to Reality is a testament to how purpose, not age,
-                creates impact.
-              </b>
-            </h2>
-          </div>
-
-          <div className="flex px-10 flex-col justify-center items-center mb-5 -mt-6 sm:mt-0 bg-[#faf5f7]">
-            <p className="font-helvetica bg-[#faf5f7] md:text-lg text-md text-gray-600 mb-8">
-              This is the true story of two young siblings and child prodigies
-              who transformed their learnings into a mission of giving back,
-              reaching over 50,000 people across India through 120+ events in
-              just 50 days. Their journey wasn’t just about personal growth; it
-              was rooted in service, contribution, and the desire to spark
-              possibility in every life they touched.
-            </p>
-          </div>
-
-          <div className=" px-10 myths-list flex flex-col gap-4 justify-start items-start bg-[#faf5f7]">
-            <h4 className="text-lg font-bold -mt-4 bg-[#faf5f7] mb-4">
-              Through their 50-day mission, they:
-            </h4>
-            <ul className="list-none p-0 bg-[#faf5f7]">
-              <li className="flex items-center gap-3 mb-4 bg-[#faf5f7]">
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="30"
-                    height="30"
-                    viewBox="0 0 22 22"
-                    fill="none"
-                    className="bg-[#faf5f7]"
-                  >
-                    <circle cx="11" cy="11" r="11"></circle>
-                    <path
-                      d="M6.94042 9.69044L5.30351 11.3273L5.23804 11.3928L9.42851 15.5833L16.8928 8.11901L15.1904 6.41663L9.42851 12.1785L6.94042 9.69044Z"
-                      fill="#582b81"
-                    ></path>
-                  </svg>
-                </span>
-                <span className="md:text-lg text-md text-semibolds bg-[#faf5f7] font-helvetica text-gray-600">
-                  {" "}
-                  Turned vision into impact - one day, one event at a time.
-                </span>
-              </li>
-              <li className="flex items-center gap-3 mb-4 bg-[#faf5f7]">
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="30"
-                    height="30"
-                    viewBox="0 0 22 22"
-                    fill="none"
-                    className="bg-[#faf5f7]"
-                  >
-                    <circle cx="11" cy="11" r="11"></circle>
-                    <path
-                      d="M6.94042 9.69044L5.30351 11.3273L5.23804 11.3928L9.42851 15.5833L16.8928 8.11901L15.1904 6.41663L9.42851 12.1785L6.94042 9.69044Z"
-                      fill="#582b81"
-                    ></path>
-                  </svg>
-                </span>
-                <span className="md:text-lg text-md text-semibold bg-[#faf5f7] font-helvetica text-gray-600">
-                  {" "}
-                  Faced doubts, setbacks, and uncertainty with resilience.
-                </span>
-              </li>
-              <li className="flex items-center gap-3 mb-4 bg-[#faf5f7]">
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="30"
-                    height="30"
-                    viewBox="0 0 22 22"
-                    fill="none"
-                    className="bg-[#faf5f7]"
-                  >
-                    <circle cx="11" cy="11" r="11"></circle>
-                    <path
-                      d="M6.94042 9.69044L5.30351 11.3273L5.23804 11.3928L9.42851 15.5833L16.8928 8.11901L15.1904 6.41663L9.42851 12.1785L6.94042 9.69044Z"
-                      fill="#582b81"
-                    ></path>
-                  </svg>
-                </span>
-                <span className="md:text-lg text-md text-semibold bg-[#faf5f7] font-helvetica text-gray-600">
-                  Inspired 50,000+ people by showing what’s possible with
-                  clarity and courage.
-                </span>
-              </li>
-              <li className="flex items-center gap-3 mb-4 bg-[#faf5f7]">
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="30"
-                    height="30"
-                    viewBox="0 0 22 22"
-                    fill="none"
-                    className="bg-[#faf5f7]"
-                  >
-                    <circle cx="11" cy="11" r="11"></circle>
-                    <path
-                      d="M6.94042 9.69044L5.30351 11.3273L5.23804 11.3928L9.42851 15.5833L16.8928 8.11901L15.1904 6.41663L9.42851 12.1785L6.94042 9.69044Z"
-                      fill="#582b81"
-                    ></path>
-                  </svg>
-                </span>
-                <span className="md:text-lg text-md text-semibolds bg-[#faf5f7] font-helvetica text-gray-600">
-                  Focused on growth, learning, and service, rather than just
-                  goals.
-                </span>
-              </li>
-            </ul>
-          </div>
-
-          <div className=" px-10 flex flex-col justify-center bg-[#faf5f7]">
-            <p className="text-start text-md sm:text-lg text-gray-600 mb-2 mt-4 bg-[#faf5f7]">
-              This book reminds us that you don’t have to be extraordinary to
-              create change; you just have to be intentional.
-            </p>
-            <h4 className="text-start text-md sm:text-lg text-gray-600 bg-[#faf5f7] font-semibold">
-              It’s not a story of luck; it’s a journey of choice, discipline,
-              and heart.
-            </h4>
-          </div>
+        <section className="w-full  ">
+          <Suspense fallback={<div className="text-center">Loading...</div>}>
+            <LazyChange />
+          </Suspense>
         </section>
-
         <section className="w-full  ">
           <Suspense fallback={<div className="text-center">Loading...</div>}>
             <LazyGrowthInMotion />

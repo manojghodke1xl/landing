@@ -1,34 +1,48 @@
 import React from "react";
-
+import { Check } from "lucide-react";
 const Change = () => {
   return (
-    <section className="-mt-2 sm:mt-14 py-[40px] rounded-xl relative">
-      <div className="w-full flex flex-col justify-center items-center gap-y-2 mb-4 relative">
-        <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] -mt-4 sm:mt-0 font-bold">
+    <section className="py-8 sm:py-14 px-[20px] mb-10 rounded-xl container mx-auto max-w-[90%]">
+      <div className="text-center mb-10">
+        <h2 className="text-4xl md:text-5xl font-playfair font-bold text-gray-900">
           <b className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             What is Dreams to Reality All About?
           </b>
         </h2>
-        <div>
-          {/* <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="137"
-            height="14"
-            viewBox="0 0 137 14"
-            fill="none"
-          >
-            <path
-              d="M0.76312 11.4852C24.298 5.0368 84.1832 -3.98656 135.445 11.5072"
-              stroke="#FFC621"
-              strokeWidth="4"
-            ></path>
-          </svg> */}
-        </div>
       </div>
-      <div className="w-full flex flex-col mt-2 sm:mt-10 gap-3 justify-between items-center">
-        <div className="w-full justify-center  flex flex-col xl:w-[75%] 2xl:w-[55%]">
-          <div className="w-[90%] flex-col justify-center mx-[10px] lg:mx-[25px] -mb-8 sm:mb-10 lg:mb-0">
-            <p className="font-helvetica text-dark-gray md:text-lg text-md text-gray-600 max-w-3xl mx-auto mb-8">
+      <div className="flex flex-col lg:flex-row items-start gap-10">
+        <div className="w-full lg:w-1/2 flex flex-col justify-center -mt-12">
+          <img
+            src="/Images/BookCopy.webp"
+            className="w-full max-w-[500px] h-[400px] object-contain"
+            alt="Dreams to Reality"
+            loading="lazy"
+          />
+          <div className="myths-list flex flex-col gap-4 justify-start -mt-10 items-start">
+            <h4 className="text-lg font-bold mb-2">
+              Through their 50-day mission, they:
+            </h4>
+            <ul className="list-none ">
+              {[
+                "Turned vision into impact - one day, one event at a time.",
+                "Faced doubts, setbacks, and uncertainty with resilience.",
+                "Inspired 50,000+ people by showing what’s possible with clarity and courage.",
+                "Focused on growth, learning, and service, rather than just goals.",
+              ].map((point, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <Check
+                    className="text-purple-600 mt-1 flex-shrink-0 w-6 h-6"
+                    stroke="#9333ea"
+                  />
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div className="w-full lg:w-1/2 flex flex-row gap-6 justify-between items-start flex-wrap">
+          <div className="flex-1 min-w-[200px]">
+            <p className="font-helvetica text-dark-gray md:text-lg text-md text-gray-600">
               Dreams to Reality is the true story of two young siblings and
               child prodigies who turned bold dreams into nationwide impact -
               completing 120+ events in 50 days, inspiring over 50,000 lives
@@ -36,21 +50,31 @@ const Change = () => {
               discipline, embraced challenges, and proved that with the right
               mindset, age is never a limitation.
             </p>
-            <p className="font-helvetica text-dark-gray md:text-lg text-md text-gray-600 max-w-3xl mx-auto mb-8">
+            <div className="flex-1 min-w-[200px]"></div>
+            <p className="font-helvetica text-dark-gray md:text-lg text-md text-gray-600">
               This book isn’t just their story; it’s a blueprint for anyone
               ready to take action, break barriers, and lead with purpose.
             </p>
-
-            <div className="flex justify-center flex-wrap my-8">
-              <img
-                src="/Images/BookCopy.webp"
-                className="w-full h-auto object-contain"
-                alt="Dreams to Reality"
-                loading="lazy"
-              />
-            </div>
           </div>
+          <p className="font-helvetica md:text-lg text-md text-gray-600 mb-6">
+            This is the true story of two young siblings and child prodigies
+            who transformed their learnings into a mission of giving back,
+            reaching over 50,000 people across India through 120+ events in
+            just 50 days. Their journey wasn’t just about personal growth; it
+            was rooted in service, contribution, and the desire to spark
+            possibility in every life they touched.
+          </p>
         </div>
+      </div>
+      <div className=" px-10 flex flex-col justify-center">
+        <p className="text-center text-md sm:text-lg text-gray-600 mb-2 mt-4">
+          This book reminds us that you don’t have to be extraordinary to
+          create change; you just have to be intentional.
+        </p>
+        <h4 className="text-center text-md sm:text-lg text-gray-600 font-semibold">
+          It’s not a story of luck; it’s a journey of choice, discipline,
+          and heart.
+        </h4>
       </div>
     </section>
   );
