@@ -60,12 +60,12 @@ const Hero = ({ country }) => {
       {seo && <Seo {...seo} />}
       <div className="w-full h-full px-[10px] md:px-10">
         <nav className="bg-gray-800 p-4 bg-custom-primary">
-          <div className="flex items-center sm:justify-between justify-center bg-custom-primary">
-            <div className="w-[233px] h-[70px] bg-gray-500 text-white flex items-center justify-center text-sm font-bold bg-custom-primary">
-              <Link to="/" className="bg-custom-primary">
+          <div className="flex items-center sm:justify-between justify-center">
+            <div className="w-[233px] h-[70px] bg-gray-500 text-white flex items-center justify-center text-sm font-bold">
+              <Link to="/">
                 <img
                   src="/Images/logo-white.webp"
-                  className="w-42 h-auto mt-5 bg-custom-primary"
+                  className="w-42 h-auto mt-5"
                   alt="Dreams To Reality Logo_Horizontal"
                   fetchpriority="high"
                   decoding="async"
@@ -75,58 +75,47 @@ const Hero = ({ country }) => {
             </div>
           </div>
         </nav>
-
-        <div className="flex justify-center bg-custom-primary">
-          <section className="w-full bg-custom-primary text-white flex flex-col xl:flex-row gap-5 mt-15 mb-10">
-            <div className="w-full flex flex-col items-start lg:flex-col-reverse xl:w-[65%] bg-custom-primary">
-              <div className="w-[90%] flex flex-col items-start justify-center mx-[10px] gap-4 lg:mx-[25px] mb-10 lg:mb-0 bg-custom-primary">
-                {/* Title Section inside left */}
-                <div className="flex flex-col items-start text-left bg-custom-primary">
-                  <h2 className="font-playfair w-full pt-[30px] px-2 sm:px-10 md:px-18 text-23xl sm:text-4xl xl:text-5xl font-bold text-left text-white bg-custom-primary">
-                    Check Out the Ultimate Success Blueprint of Two Young
-                    Siblings Who Took on Bold Challenges and Inspired Thousands!
-                  </h2>
-                </div>
-                <Suspense
-                  fallback={<div className="text-center">Loading...</div>}
+        <section className="min-h-screen flex items-center justify-center bg-custom-primary text-white px-4 py-10">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div className="text-center md:text-left">
+              <h2 className="font-playfair text-3xl md:text-5xl font-bold mb-6 leading-tight text-purple-50">
+                Check Out the Ultimate Success Blueprint of Two Young
+                Siblings Who Took on Bold Challenges and Inspired Thousands!
+              </h2>
+              <Suspense
+                fallback={<div className="text-center">Loading...</div>}
+              >
+                <LazyWhyAttend />
+              </Suspense>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <a
+                  // href={`/pay/?type=PRODUCT&curr=INR&productIds=67de9c03770d7aa5b35b4712&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
+                  href={buildPayUrl("67de9c03770d7aa5b35b4712")}
+                  className="bg-white text-purple-900 hover:bg-purple-100 text-lg px-8 py-6 rounded-full font-semibold flex items-center gap-2 "
                 >
-                  <LazyWhyAttend />
-                </Suspense>
-                <div className="flex flex-col lg:flex-row gap-4 justify-center px-10 md:px-16 bg-custom-primary">
-                  <a
-                    // href={`/pay/?type=PRODUCT&curr=INR&productIds=67de9c03770d7aa5b35b4712&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
-                    href={buildPayUrl("67de9c03770d7aa5b35b4712")}
-                    className="w-full lg:w-auto px-6 py-4 rounded-full bg-white text-custom-primary font-bold "
-                  >
-                    Grab Your Hardcover
-                  </a>
-                  <a
-                    href={buildPayUrl("67dea774770d7aa5b35b4db2")}
-                    // href={`/pay/?type=PRODUCT&curr=INR&productIds=67dea774770d7aa5b35b4db2&&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
-                    //onClick={() => ToCheckout("67dea774770d7aa5b35b4db2")}
-                    className="w-full lg:w-auto px-6 py-4 border border-white rounded-full bg-custom-primary text-white font-bold"
-                  >
-                    Grab Your E-Book
-                  </a>
-                </div>
+                  Grab Your Hardcover
+                </a>
+                <a
+                  href={buildPayUrl("67dea774770d7aa5b35b4db2")}
+                  // href={`/pay/?type=PRODUCT&curr=INR&productIds=67dea774770d7aa5b35b4db2&&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
+                  //onClick={() => ToCheckout("67dea774770d7aa5b35b4db2")}
+                  className="bg-purple-700 text-white border-2 border-white hover:bg-purple-600 text-lg px-8 py-6 rounded-full font-semibold"
+                >
+                  Grab Your E-Book
+                </a>
               </div>
             </div>
+            <div className="relative">
+              <img
+                src="/Images/TheNextChapter.webp"
+                loading="lazy"
+                className="rounded-lg shadow-2xl mx-auto max-w-full transition-transform duration-500 hover:rotate-12"
+              />
+            </div>
+          </div>
+        </section>
 
-            <div className="w-full flex flex-col items-center justify-center -mt-6 sm:mt-7 xl:mt-0 xl:w-[35%] bg-custom-primary">
-              <div className="w-full flex justify-center relative px-5 bg-custom-primary">
-                <div className="w-90 h-90 rounded-full opacity-90">
-                  <div className="z-40">
-                    <img
-                      src="/Images/TheNextChapter.webp"
-                      loading="lazy"
-                      className="transition-transform duration-500 hover:rotate-12"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
+
         <section className="w-full  ">
           <Suspense fallback={<div className="text-center">Loading...</div>}>
             <LazyChange />

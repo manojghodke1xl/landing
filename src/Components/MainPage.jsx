@@ -18,9 +18,8 @@ const MainPage = () => {
       {seo && <Seo {...seo} />}
 
       <Header />
-
       <section
-        className="bg-[#272727] text-white h-[80vh] flex flex-col items-center bg-transparent"
+        className="bg-[#272727] text-white h-[80vh] flex flex-col items-center bg-black"
         id="main-page"
       >
         <div className="container w-full flex flex-col items-center bg-transparent">
@@ -28,7 +27,6 @@ const MainPage = () => {
             Hello! Select a country to purchase your book.
           </h2>
         </div>
-
         <div className="container bg-transparent w-full flex flex-col sm:flex-row pt-[50px] md:pt-[150px] justify-center gap-[30px] sm:gap-[50px] md:gap-[100px] flags">
           <div className="flex flex-col items-center">
             <Link to="/dreams-to-reality/in">
@@ -38,10 +36,9 @@ const MainPage = () => {
                 className="w-[150px] sm:w-[200px] md:w-[250px] xl:w-[300px]"
                 loading="lazy"
               />
-              <h5 className="font-bold text-center pt-[20px]">India</h5>
+              <h5 className="font-bold text-center pt-[20px] text-white">India</h5>
             </Link>
           </div>
-
           <div className="flex bg-transparent flex-col items-center">
             <Link to="/dreams-to-reality/ae">
               <img
@@ -50,7 +47,7 @@ const MainPage = () => {
                 className="w-[150px] sm:w-[200px] md:w-[250px] xl:w-[300px]"
                 loading="lazy"
               />
-              <h5 className="pt-[20px] font-bold text-center">UAE</h5>
+              <h5 className="pt-[20px] font-bold text-center text-white">UAE</h5>
             </Link>
           </div>
         </div>
