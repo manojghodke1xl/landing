@@ -117,73 +117,17 @@ const Hero = ({ country }) => {
               <div className="w-full flex justify-center relative px-5 bg-custom-primary">
                 <div className="w-90 h-90 rounded-full opacity-90">
                   <div className="z-40">
-                    <img src="/Images/TheNextChapter.webp" loading="lazy"></img>
+                    <img
+                      src="/Images/TheNextChapter.webp"
+                      loading="lazy"
+                      className="transition-transform duration-500 hover:rotate-12"
+                    />
                   </div>
                 </div>
               </div>
             </div>
           </section>
         </div>
-        {/* <section>
-          <div className="w-full flex flex-col items-center bg-custom-light justify-center py-30">
-            <div className="w-[90%] h-fit mx-[25px] px-[20px]  py-[26px] rounded-2xl text-center mt-14 z-50 bg-custom-light">
-              <h4 className="text-4xl md:text-5xl font-playfair font-bold bg-custom-light text-gray-900 mb-6">
-                Meet Two Young Visionaries
-              </h4>
-              <h5 className="mt-4 text-md text-gray-600 bg-custom-light">
-                Discover the incredible story of two young prodigies.
-              </h5>
-              <div className=" h-32 md:h-28 mx-[25px] mt-2 px-[20px] py-[10px] rounded-2xl text-center bg-custom-light">
-                <div className="w-full flex justify-center bg-custom-light">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="114"
-                    height="25"
-                    viewBox="0 0 114 25"
-                    fill="none"
-                  >
-                    <path
-                      d="M6.41603 22.5628L8.0826 15.358L2.49316 10.5122L9.87738 9.87116L12.749 3.07666L15.6207 9.87116L23.0049 10.5122L17.4154 15.358L19.082 22.5628L12.749 18.7425L6.41603 22.5628Z"
-                      fill="#FFC621"
-                    ></path>
-                    <path
-                      d="M28.5686 22.5625L30.2352 15.3578L24.6458 10.5119L32.03 9.87092L34.9016 3.07642L37.7732 9.87092L45.1575 10.5119L39.568 15.3578L41.2346 22.5625L34.9016 18.7422L28.5686 22.5625Z"
-                      fill="#FFC621"
-                    ></path>
-                    <path
-                      d="M50.7212 22.5625L52.3878 15.3578L46.7983 10.5119L54.1826 9.87092L57.0542 3.07642L59.9258 9.87092L67.31 10.5119L61.7206 15.3578L63.3872 22.5625L57.0542 18.7422L50.7212 22.5625Z"
-                      fill="#FFC621"
-                    ></path>
-                    <path
-                      d="M72.8738 22.5625L74.5404 15.3578L68.9509 10.5119L76.3351 9.87092L79.2068 3.07642L82.0784 9.87092L89.4626 10.5119L83.8732 15.3578L85.5398 22.5625L79.2068 18.7422L72.8738 22.5625Z"
-                      fill="#FFC621"
-                    ></path>
-                    <path
-                      d="M95.3601 22.5628L97.0267 15.358L91.4373 10.5122L98.8215 9.87116L101.693 3.07666L104.565 9.87116L111.949 10.5122L106.36 15.358L108.026 22.5628L101.693 18.7425L95.3601 22.5628Z"
-                      fill="#FFC621"
-                    ></path>
-                  </svg>
-                </div>
-                <h5 className="font-semibold mt-2 bg-custom-light text-lg text-gray-600 max-w-3xl mx-auto">
-                  Proving that success is not limited by age.
-                </h5>
-              </div>
-            </div>
-            <div className="w-full flex justify-center relative px-5 bg-custom-light -mt-6">
-              <div className="w-80 h-70 rounded-full opacity-90 bg-custom-light">
-                <div className="z-40 bg-custom-light">
-                  {" "}
-                  <img
-                    src="/Images/Hero-image.webp"
-                    loading="lazy"
-                    className="bg-custom-light"
-                  ></img>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> */}
-
         <Suspense fallback={<div className="text-center">Loading...</div>}>
           <LazyChange />
         </Suspense>
@@ -351,110 +295,21 @@ const Hero = ({ country }) => {
             <LazyDiscover cards={cardData} />
           </Suspense>
         </section>
-
-        {/* <div className="bg-secondary text-center mb-16">
-          <h2 className="w-full py-[25px] md:py-[40px]  px-10 md:px-18  text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px]  font-bold text-center">
-            <b className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Stories That Stay With Us
-            </b>
-          </h2>
-
-          <div className="flex flex-col justify-center items-center">
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Behind every mission, campaign, and breakthrough, there’s a spark,
-              and we’ve captured those sparks across two platforms designed to
-              keep the momentum alive, to keep inspiring, and to turn ideas into
-              impact for thousands more.
-            </p>
-          </div>
-
-          <div className="flex justify-center items-center">
-            <section className="w-[90%] bg-secondar justify-center px-[15px] flex flex-col mt-12 gap-5">
-              <div className="flex justify-center flex-wrap">
-                <img
-                  src="/Images/stories.webp"
-                  className="w-full max-w-[700px] h-auto object-contain"
-                  alt="Stories That Stay With Us"
-                  loading="lazy"
-                />
-              </div>
-              <div className="w-full flex flex-col justify-center items-center mt-3">
-                <div className="w-[90%] flex flex-col items-cetner justify-center  mx-[25px] mt-0">
-                  <div className="w-full flex flex-col justify-between">
-                    <div className="grid md:grid-cols-2 gap-12 mb-3">
-                      <div className="mb-3 w-full bg-[#FAF5FF] p-8 rounded-xl hover:scale-105 transition shadow-md  rounded-xl p-4 sm:px-6">
-                        <div className="flex  pb-2 bg-[#FAF5FF]">
-                          <h3 className="text-2xl font-bold text-purple-800 mb-4 bg-[#FAF5FF]">
-                            JJFuntime
-                          </h3>
-                        </div>
-                        <p className="text-justify font-medium text-gray-700 text-[18px] bg-[#FAF5FF]">
-                          While the book captures our mindset, JJFuntime
-                          captures the magic of curiosity. This is where science
-                          becomes a playground where imagination leads the way,
-                          and learning feels like fun. With 150k+ subscribers
-                          and counting, this platform proves that big dreams can
-                          start with small experiments.
-                        </p>
-                        <div className="text-start mt-4 bg-[#FAF5FF]">
-                          <a
-                            href="https://www.youtube.com/@JJFuntime"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-block bg-purple-700 hover:bg-purple-800 text-white font-semibold text-sm px-5 py-2 rounded-lg transition duration-200"
-                          >
-                            JJFuntime
-                          </a>
-                        </div>
-                      </div>
-                      <div className="mb-3 w-full hover:scale-105 transition bg-[#FAF5FF] p-8 rounded-xl shadow-md  rounded-xl p-4 sm:px-6">
-                        <div className="flex  pb-2 bg-[#FAF5FF]">
-                          <h3 className="text-2xl font-bold text-purple-800 mb-4 bg-[#FAF5FF]">
-                            JJMission Diary
-                          </h3>
-                        </div>
-                        <p className="text-justify font-medium text-gray-700 text-[18px] bg-[#FAF5FF]">
-                          This is the raw, real extension of our growth journey.
-                          From late-night study hacks and day-to-day reflections
-                          to lessons from our 50-day missions, JJMission Diary
-                          documents the behind-the-scenes of turning dreams into
-                          action. It’s not about being fearless; it’s about
-                          showing up with purpose, even when it’s tough.
-                        </p>
-                        <div className="text-start mt-4 bg-[#FAF5FF]">
-                          <a
-                            href="https://www.youtube.com/@JJMissionDiary"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-block bg-purple-700 hover:bg-purple-800 text-white font-semibold text-sm px-5 py-2 rounded-lg transition duration-200"
-                          >
-                            JJMission Diary
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-        </div> */}
-
-        <section className="text-center max-w-3xl mx-auto">
+        <section className="text-center max-w-3xl md:my-10 mx-auto">
           <div className="w-full flex flex-col justify-center  items-center mb-4 relative">
             <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] -mt-4 -mb-2 font-bold">
-              <b className="text-2xl font-semibold text-purple-800 mb-4">
+              <b className="text-2xl md:text-3xl font-semibold text-purple-800 mb-4">
                 Dreams to Reality isn’t just a story; it’s an inspiration!
               </b>
             </h2>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-lg md:text-2xl text-gray-600 mb-8">
               And these platforms are how we keep that inspiration alive;
               through action, creativity, and connection.
             </p>
-            <h3 className="text-xl font-semibold text-gray-700">
+            <h3 className="text-xl md:text-2xl font-semibold text-gray-700">
               Be part of the next chapter.
             </h3>
-            <p className="text-lg text-gray-700">
+            <p className="text-lg  md:text-xl text-gray-700">
               Because the real magic begins when you take the first step.
             </p>
             {/* Buttons */}
@@ -478,197 +333,9 @@ const Hero = ({ country }) => {
           </div>
         </section>
 
-        <div className="w-full flex flex-col justify-center items-center px-10 bg-[#F9FAFB]">
+        <div className="w-full flex flex-col md:my-15 justify-center items-center px-10 bg-[#F9FAFB]">
           <Whythisbook />
-          {/* <div className="mt-16 bg-white rounded-xl overflow-hidden shadow-xl">
-            <div className=" bg-gradient-to-r from-purple-800 to-purple-900 text-white p-8 text-center">
-              <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6 bg-transparent text-white">
-                We Turned Dreams into Reality by Breaking All the Rules!
-              </h2>
-              <p className="text-xl max-w-3xl mx-auto  bg-transparent text-white">
-                We never had a big network or formal training when we started.
-                Even better, we didn't rely on what most people consider
-                essential for success. Our journey had:
-              </p>
-            </div>
-            <div className="p-8 ">
-              <div className="flex">
-                <div className="space-y-4 text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
-                  <p>We didn't have shortcuts, fame, or a head start.</p>
-                  <p className="font-semibold">
-                    What we did have was stubborn determination,
-                  </p>
-                  <p>A strong willingness to learn,</p>
-                  <p>Consistency through every challenge,</p>
-                  <p>And a habit of taking on one bold mission every year.</p>
-                </div>
-                <div className="w-full 2xl:w-1/3">
-                  <img
-                    className="w-full"
-                    src="/Images/breaking-all-rules.webp"
-                    alt="We Turned Dreams into Reality by Breaking All the Rules!"
-                    loading="lazy"
-                  />{" "}
-                </div>
-              </div>
-              <div className="text-center max-w-3xl mx-auto">
-                <p className="text-xl mb-2">
-                  Sounds impossible, right? But here's the truth:
-                </p>
-                <p className="text-2xl font-bold text-purple-800">
-                  Success comes from actions, not circumstances.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="mt-16 bg-white rounded-xl overflow-hidden shadow-xl">
-            <div className=" bg-gradient-to-r from-purple-800 to-purple-900 text-white p-8 text-center">
-              <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6 bg-transparent text-white">
-                Our Approach to Growth Has Given Us More Freedom Than We Ever
-                Imagined!
-              </h2>
-              <p className="text-xl max-w-3xl mx-auto  bg-transparent text-white">
-                By following a structured system of 50-day challenges, we were
-                able to focus on what truly matters:
-              </p>
-            </div>
-            <div className="p-8 ">
-              <div className="flex">
-                <div className="space-y-4 text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
-                  <p>Taking on new challenges without hesitation.</p>
-                  <p>Building confidence through real experiences.</p>
-                  <p>Learning, growing, and inspiring others along the way.</p>
-                  <p>
-                    Creating a life of impact by helping others achieve their
-                    dreams.
-                  </p>
-                </div>
-                <div className="w-full 2xl:w-1/3">
-                  <img
-                    className="w-full"
-                    src="/Images/freedom.webp"
-                    alt=" Our Approach to Growth Has Given Us More Freedom Than We Ever
-                Imagined!"
-                    loading="lazy"
-                  />{" "}
-                </div>
-              </div>
-              <div className="text-center max-w-3xl mt-4 mx-auto">
-                <p className="text-2xl font-bold text-purple-800">
-                  Through this approach, we've realised that success isn't just
-                  about achievements - it's about freedom, growth, and making a
-                  difference.
-                </p>
-              </div>
-            </div>
-          </div> */}
-
-          {/* <section className="bg-transparent mt-10 mx-10 py-[10px]">
-            <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold bg-transparent">
-              <b className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6 bg-transparent ">
-                What Will You Discover in This Book?
-              </b>
-            </h2>
-            <Suspense
-              fallback={
-                <div className="text-white text-center">Loading...</div>
-              }
-            >
-              <LazyDiscover cards={cardData} />
-            </Suspense>
-          </section> */}
         </div>
-        {/* <section className="pt-[20px] bg-black grid justify-center rounded-xl px-[20px] relative">
-          <div className="w-full flex flex-col items-center gap-y-2 justify-center">
-            <h2 className="max-w-[1200px] px-5 md:px-18 text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold text-center ">
-              <b className="text-custom-amber"></b> */}
-        {/* <section className="-py-3 px-4 bg-white" id="book-unique">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Dreams to Reality is NOT Just Another Ordinary Book!
-              </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Unlike typical motivational books, Dreams to Reality isn’t
-                filled with complex theories or impractical advice.
-              </p>
-            </div>
-            <div className="bg-purple-50 p-8 rounded-xl shadow-lg mb-16">
-              <h3 className="text-2xl font-bold text-purple-800 mb-6 text-center bg-purple-50">
-                Instead, this book offers:
-              </h3>
-              <div className="flex flex-col lg:flex-row items-start gap-8 bg-purple-50">
-                <ul className="space-y-6 text-lg lg:w-2/3 bg-purple-50">
-                  <li className="flex items-start gap-3 bg-purple-50">
-                    <Check
-                      className="text-purple-600 mt-1 flex-shrink-0 w-6 h-6 bg-purple-50"
-                      stroke="#9333ea"
-                    />
-                    <span className="bg-purple-50">
-                      Actionable guidance to help you move forward.
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-3 bg-purple-50 bg-purple-50">
-                    <Check
-                      className="text-purple-600 mt-1 flex-shrink-0 w-6 h-6 bg-purple-50"
-                      stroke="#9333ea"
-                    />
-                    <span className="bg-purple-50 bg-purple-50">
-                      Real-life experiences from two young achievers who made a
-                      tangible impact.
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-3 bg-purple-50">
-                    <Check
-                      className="text-purple-600 mt-1 flex-shrink-0 w-6 h-6 bg-purple-50"
-                      stroke="#9333ea"
-                    />
-                    <span className="bg-purple-50 bg-purple-50">
-                      Lessons learned through personal challenges and growth.
-                    </span>
-                  </li>
-                </ul>
-                <div className="w-full lg:w-1/3">
-                  <img
-                    className="w-full h-auto rounded-xl"
-                    src="/Images/not-a-ordinary.webp"
-                    alt="Dreams to Reality is NOT Just Another Ordinary Book!"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-              <div className="mt-8 text-center bg-purple-50">
-                <p className="text-lg font-semibold mb-2 bg-purple-50">
-                  The best part? You don’t have to figure it all out on your
-                  own.
-                </p>
-                <p className="text-lg text-purple-800 bg-purple-50">
-                  {" "}
-                  Dreams to Reality will show you exactly how to break past
-                  doubts, take bold action, and start achieving what once felt
-                  impossible.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <MissionSection
-            heading="Get Your Copy Now – Limited Stock Available!"
-            highlightedText="Get Your Copy Now – Limited Stock Available!"
-            paragraphs={[
-              "We’ve printed only a few copies of Dreams to Reality for this special giveaway – and they’re going fast.",
-              "Once these copies are gone, it could be months before more are available.",
-              "The good news? Your copy is still available – right now.",
-              "But time is running out…",
-              "If you’re serious about turning your goals into reality, don’t wait – grab your copy today before it’s gone!",
-            ]}
-            imageSrc="/Images/LimitedBook.webp"
-            imageAlt="Limited Book Cover"
-            imageFirst={false}
-          />
-        </section> */}
       </div>
       <Suspense fallback={<div>Loading...</div>}>
         {country === "in" ? (

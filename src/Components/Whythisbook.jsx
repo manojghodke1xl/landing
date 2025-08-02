@@ -96,7 +96,7 @@ function Whythisbook() {
         return (
           <section
             key={index}
-            className="w-[382px] md:w-full py-3 px-4 bg-white"
+            className="w-[382px] md:w-full py-3 px-4 bg-white md:my-10"
             id={`book-unique-${index}`}
           >
             <div
