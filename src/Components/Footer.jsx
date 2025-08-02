@@ -7,7 +7,7 @@ const Footer = (props) => {
   const country = props.country || "";
   const policyLinks = [
     { label: "Privacy Policy", path: `/privacy-policy${country}` },
-    { label: "Contact Us", path: `/contact-us` },
+    { label: "Contact Us", path: `/contact-us${country}` },
     { label: "Terms and Conditions", path: `/terms-and-conditions${country}` },
     { label: "Refund Policy", path: `/refund-policy${country}` },
     { label: "Shipping/Return Policy", path: `/shipping-policy${country}` },

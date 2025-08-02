@@ -2,11 +2,16 @@ import React, { Suspense } from "react";
 import { Link } from "react-router-dom";
 import { getSeoMeta } from "../utils/getSeoMeta";
 import Seo from "../Seo";
+import { useParams } from "react-router-dom";
+import { getSelectedCountry } from "../utils/addresses";
+import Header from "./Header";
 
 const LazyFooter = React.lazy(() => import("./Footer"));
 
 const TermsOfService = () => {
   const seo = getSeoMeta("https://books.1xl.com/terms-and-conditions");
+   const { countryCode } = useParams();
+  const selectedCountry = getSelectedCountry(countryCode);
   return (
     <>
       {seo && <Seo {...seo} />}
@@ -113,8 +118,7 @@ const TermsOfService = () => {
                     target="_blank"
                     className="text-blue-500 hover:underline"
                   >
-                    3, Jainam Tower, 3, Sai Park, Belthika Nagar, Thergaon
-                    (Chinchwad), Pune - 411033, Maharashtra, India
+                    {selectedCountry.address}
                   </a>
                 </li>
                 <li style={{ color: "black" }} className="pt-[10px]">
@@ -2013,7 +2017,7 @@ const TermsOfService = () => {
           </div>
         </div>
         <Suspense fallback={<div>Loading...</div>}>
-          <LazyFooter />
+          <LazyFooter country="/ae" />
         </Suspense>
       </div>
     </>

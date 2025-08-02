@@ -4,11 +4,15 @@ import { getSeoMeta } from "../utils/getSeoMeta";
 import Seo from "../Seo";
 import logo from "/Images/logo-white.webp";
 import Header from "./Header";
+import { useParams } from "react-router-dom";
+import { getSelectedCountry } from "../utils/addresses";
 
 const LazyFooter = React.lazy(() => import("./Footer"));
 
 export const GDPRPolicy = () => {
   const seo = getSeoMeta("https://books.1xl.com/gdpr-policy");
+   const { countryCode } = useParams();
+  const selectedCountry = getSelectedCountry(countryCode);
   return (
     <>
       {seo && <Seo {...seo} />}
@@ -104,8 +108,7 @@ export const GDPRPolicy = () => {
                         target="_blank"
                         className="text-blue-500 hover:underline"
                       >
-                        3, Jainam Tower, 3, Sai Park, Belthika Nagar, Thergaon
-                        (Chinchwad), Pune - 411033, Maharashtra, India
+                        {selectedCountry.address}
                       </a>
                     </li>
                     <li style={{ color: "black" }} className="pt-[10px]">
@@ -1477,8 +1480,8 @@ export const GDPRPolicy = () => {
             </section>
           </div>
         </div>
-        <Suspense fallback={<div>Loading...</div>}>
-          <LazyFooter />
+       <Suspense fallback={<div>Loading...</div>}>
+          <LazyFooter country="/ae" />
         </Suspense>
       </div>
     </>

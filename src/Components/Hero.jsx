@@ -339,9 +339,9 @@ const Hero = ({ country }) => {
       </div>
       <Suspense fallback={<div>Loading...</div>}>
         {country === "in" ? (
-          <LazyFooter buildPayUrl={buildPayUrl} />
+          <LazyFooter buildPayUrl={buildPayUrl} country="/in"/>
         ) : (
-          <LazyFooter buildPayUrl={buildPayUrl} country={"UAE"} />
+          <LazyFooter buildPayUrl={buildPayUrl} country="/ae" />
         )}
       </Suspense>
     </>

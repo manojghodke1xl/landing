@@ -1,7 +1,7 @@
 // src/App.jsx
 import React, { Suspense, lazy } from "react";
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 
 // Lazy imports
@@ -31,7 +31,7 @@ function App() {
   return (
     <HelmetProvider>
       <Router>
-        <div className="bg-primary w-full h-fit">
+        <div className="w-full h-fit">
           <Suspense fallback={<></>}>
             <Routes>
               <Route element={<ScrollToTop />}>
@@ -48,14 +48,16 @@ function App() {
                 <Route path="/payment-form" element={<PaymentForm />} />
                 <Route path="/success" element={<Success />} />
                 <Route path="/failure" element={<Failure />} />
-                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                <Route
-                  path="/terms-and-conditions"
-                  element={<TermsOfService />}
-                />
-                <Route path="/refund-policy" element={<RefundPolicy />} />
-                <Route path="/shipping-policy" element={<ShippingPolicy />} />
-                <Route path="/gdpr-policy" element={<GDPRPolicy />} />
+                <Route path="/privacy-policy/:countryCode" element={<PrivacyPolicy />} />
+                <Route path="/privacy-policy" element={<Navigate to="/privacy-policy/in" />} />
+                <Route path="/terms-and-conditions/:countryCode" element={<TermsOfService />}/>
+                <Route path="/terms-and-conditions" element={<Navigate to="/terms-and-conditions/in" />} />
+                <Route path="/refund-policy/:countryCode" element={<RefundPolicy />} />
+                <Route path="/refund-policy" element={<Navigate to="/refund-policy/in" />} />
+                <Route path="/shipping-policy/:countryCode" element={<ShippingPolicy />} />
+                <Route path="/shipping-policy" element={<Navigate to="/shipping-policy/in" />} />
+                <Route path="/gdpr-policy/:countryCode" element={<GDPRPolicy />} />
+                <Route path="/gdpr-policy" element={<Navigate to="/gdpr-policy/in" />} />
                 <Route
                   path="/privacy-policyUAE"
                   element={<PrivacyPolicyUAE />}
@@ -70,7 +72,8 @@ function App() {
                   element={<ShippingPolicyUAE />}
                 />
                 <Route path="/gdpr-policyUAE" element={<GDPRPolicyUAE />} />
-                <Route path="/contact-us" element={<ContactUs />} />
+                <Route path="/contact-us/:countryCode" element={<ContactUs />} />
+                <Route path="/contact-us" element={<Navigate to="/contact-us/in" />} />
                 <Route path="*" element={<MainPage />} />
               </Route>
             </Routes>
