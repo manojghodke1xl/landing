@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import { getSeoMeta } from "../utils/getSeoMeta";
 import Seo from "../Seo";
 import Header from "../Components/Header";
-import { useParams } from "react-router-dom";
 
 const LazyFooter = React.lazy(() => import("../Components/Footer"));
 
@@ -22,13 +21,13 @@ export default function ContactUs() {
     message: "",
     phoneCode: "91",
   });
+
   const [errors, setErrors] = useState({});
   const [isFocused, setIsFocused] = useState(false);
   const [phoneError, setPhoneError] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
-   const { countryCode } = useParams();
-   
+
   const handleFocus = () => setIsFocused(true);
   const handleBlur = () => setIsFocused(false);
 
@@ -171,19 +170,7 @@ export default function ContactUs() {
     tempCountryCode: "91",
     editNumber: false,
   });
-const addresses = {
-    in: {
-      label: "India",
-      address:
-        "3, Jainam Tower, 3, Sai Park, Belthika Nagar, Thergaon (Chinchwad), Pune - 411033, Maharashtra, India.",
-      link: "https://maps.app.goo.gl/FjPzuQdEFipKoLSL8",
-    },
-    ae: {
-      label: "U.A.E.",
-      address: "9, 1XL Avenue, DIP, Dubai, U.A.E.",
-    },
-  };
-  const selected = addresses[countryCode] || addresses["in"];
+
   return (
     <>
       {seo && <Seo {...seo} />}
@@ -432,7 +419,7 @@ const addresses = {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        contact@1XL.com
+                        Books@1xl.com
                       </a>
                     </span>
                   </div>
@@ -451,8 +438,8 @@ const addresses = {
                     </svg>
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-xl text-black font-semibold tracking-wide">
-                      Office Address ({selected.label})
+                    <span className="text-xl text-white font-semibold tracking-wide">
+                      Office Address
                     </span>
                     <span className="text-lg text-gray-300 font-medium tracking-wide">
                       <a
@@ -461,7 +448,8 @@ const addresses = {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        {selected.address}
+                        3, Jainam Tower, 3, Sai Park, Belthika Nagar, Thergaon
+                        (Chinchwad), Pune - 411033, Maharashtra, India.
                       </a>
                     </span>
                   </div>

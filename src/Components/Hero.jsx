@@ -186,7 +186,7 @@ const Hero = ({ country }) => {
           <LazyChange />
         </Suspense>
 
-        <section className="py-8 sm:py-14 px-[20px] mb-10 bg-[#faf5f7] rounded-xl container mx-auto max-w-6xl mx-auto">
+        <section className="py-8 sm:py-14 px-[20px] mb-10 bg-[#faf5f7] rounded-xl container mx-auto max-w-[90%]">
           <div className="w-full flex flex-col gap-y-4 justify-center pb-8 items-center bg-[#faf5f7]">
             <h2 className="w-full text-center text-2xl font-semibold bg-[#faf5f7]">
               <b className="text-custom-primary mb-6 bg-[#faf5f7]">
@@ -315,13 +315,13 @@ const Hero = ({ country }) => {
           </div>
         </section>
 
-        <section className="max-w-6xl mx-auto lg:px-10 xl:px-20 bg-[#faf5f7]">
+        <section className="w-full lg:px-10 xl:px-20 bg-purple-100">
           <Suspense fallback={<div className="text-center">Loading...</div>}>
             <LazyGrowthInMotion />
           </Suspense>
         </section>
 
-        <div className="text-white pt-[40px]">
+        <div className="bg-gradient-to-br from-purple-800 to-purple-900 text-white pt-[40px]">
           {missionSectionsData.map((section, index) => (
             <Suspense
               fallback={
@@ -459,9 +459,9 @@ const Hero = ({ country }) => {
           </div>
         </section>
 
-        <div className=" max-w-6xl mx-auto w-full flex flex-col justify-center items-center px-10 bg-[#F9FAFB]">
+        <div className="w-full flex flex-col justify-center items-center px-10 bg-[#F9FAFB]">
           <div className="mt-16 bg-white rounded-xl overflow-hidden shadow-xl">
-            <div className="bg-gradient-to-r from-purple-800 to-purple-900 text-white p-8 text-center">
+            <div className=" bg-gradient-to-r from-purple-800 to-purple-900 text-white p-8 text-center">
               <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6 bg-transparent text-white">
                 We Turned Dreams into Reality by Breaking All the Rules!
               </h2>
@@ -558,7 +558,10 @@ const Hero = ({ country }) => {
             </Suspense>
           </section>
         </div>
-      
+        {/* <section className="pt-[20px] bg-black grid justify-center rounded-xl px-[20px] relative">
+          <div className="w-full flex flex-col items-center gap-y-2 justify-center">
+            <h2 className="max-w-[1200px] px-5 md:px-18 text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold text-center ">
+              <b className="text-custom-amber"></b> */}
         <section className="-py-3 px-4 bg-white" id="book-unique">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -649,9 +652,9 @@ const Hero = ({ country }) => {
       </div>
       <Suspense fallback={<div>Loading...</div>}>
         {country === "in" ? (
-          <LazyFooter buildPayUrl={buildPayUrl} country="/in" />
+          <LazyFooter buildPayUrl={buildPayUrl} />
         ) : (
-          <LazyFooter buildPayUrl={buildPayUrl} country="/ae" />
+          <LazyFooter buildPayUrl={buildPayUrl} country={"UAE"} />
         )}
       </Suspense>
     </>

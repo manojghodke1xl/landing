@@ -5,9 +5,9 @@ const Footer = (props) => {
   const year = new Date().getFullYear();
   const pathname = location.pathname;
   const country = props.country || "";
-    const policyLinks = [
+  const policyLinks = [
     { label: "Privacy Policy", path: `/privacy-policy${country}` },
-    { label: "Contact Us", path: `/contact-us${country}` },
+    { label: "Contact Us", path: `/contact-us` },
     { label: "Terms and Conditions", path: `/terms-and-conditions${country}` },
     { label: "Refund Policy", path: `/refund-policy${country}` },
     { label: "Shipping/Return Policy", path: `/shipping-policy${country}` },
