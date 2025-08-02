@@ -339,7 +339,7 @@ const Hero = ({ country }) => {
           <StoriesThatStay />
         </div>
 
-        <section className="bg-transparent mt-10 mx-10 py-[10px]">
+        <section className="bg-transparent mt-10 md:mx-10 py-[10px]">
           <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold bg-transparent">
             <b className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6 bg-transparent ">
               What Will You Discover in This Book?

@@ -82,12 +82,12 @@ function MissionSection({
     <section className="w-[100%] md:w-[30%] bg-white flex flex-col shadow-md md:rounded-2xl p-6 md:p-10 items-center gap-6 md:gap-12 max-w-6xl mx-auto md:my-10 my-2">
       <div className="w-full">
         {heading && (
-          <h2 className="text-lg  md:text-3xl font-playfair text-gray-800 md:mb-4 bg-none">
+          <h2 className="text-xl  md:text-3xl font-playfair text-gray-800 md:mb-4 bg-none">
             {heading}
           </h2>
         )}
 
-        <p className=" text-[14px] md:text-lg text-gray-600 mb-3 leading-relaxed  bg-none">
+        <p className=" text-lg md:text-lg text-gray-600 mb-3 leading-relaxed  bg-none">
           {displayedText}
           {!isExpanded && isLong && "..."}
         </p>
