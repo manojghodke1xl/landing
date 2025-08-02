@@ -5,6 +5,8 @@ import { getSeoMeta } from "../utils/getSeoMeta";
 import Seo from "../Seo";
 import { cardData, missionSectionsData } from "../data/BooksData";
 import { Check } from "lucide-react";
+import StoriesThatStay from "./StoriesThatStay";
+import Whythisbook from "./Whythisbook";
 
 const LazyFooter = React.lazy(() => import("./Footer"));
 const FooterUAE = React.lazy(() => import("./FooterUAE"));
@@ -122,7 +124,7 @@ const Hero = ({ country }) => {
             </div>
           </section>
         </div>
-        <section>
+        {/* <section>
           <div className="w-full flex flex-col items-center bg-custom-light justify-center py-30">
             <div className="w-[90%] h-fit mx-[25px] px-[20px]  py-[26px] rounded-2xl text-center mt-14 z-50 bg-custom-light">
               <h4 className="text-4xl md:text-5xl font-playfair font-bold bg-custom-light text-gray-900 mb-6">
@@ -180,7 +182,7 @@ const Hero = ({ country }) => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         <Suspense fallback={<div className="text-center">Loading...</div>}>
           <LazyChange />
@@ -251,7 +253,7 @@ const Hero = ({ country }) => {
                     ></path>
                   </svg>
                 </span>
-                <span className="md:text-lg text-md text-semibolds bg-[#faf5f7] font-helvetica text-gray-600">
+                <span className="md:text-lg text-md text-semibold bg-[#faf5f7] font-helvetica text-gray-600">
                   {" "}
                   Faced doubts, setbacks, and uncertainty with resilience.
                 </span>
@@ -273,7 +275,7 @@ const Hero = ({ country }) => {
                     ></path>
                   </svg>
                 </span>
-                <span className="md:text-lg text-md text-semibolds bg-[#faf5f7] font-helvetica text-gray-600">
+                <span className="md:text-lg text-md text-semibold bg-[#faf5f7] font-helvetica text-gray-600">
                   Inspired 50,000+ people by showing what’s possible with
                   clarity and courage.
                 </span>
@@ -315,13 +317,13 @@ const Hero = ({ country }) => {
           </div>
         </section>
 
-        <section className="w-full lg:px-10 xl:px-20 bg-purple-100">
+        <section className="w-full  ">
           <Suspense fallback={<div className="text-center">Loading...</div>}>
             <LazyGrowthInMotion />
           </Suspense>
         </section>
 
-        <div className="bg-gradient-to-br from-purple-800 to-purple-900 text-white pt-[40px]">
+        <div className="bg-purple-50 text-white pt-10 w-full lg:px-10 xl:px-20 md:mt-5 md:flex md:flex-wrap md:gap-4 ">
           {missionSectionsData.map((section, index) => (
             <Suspense
               fallback={
@@ -333,7 +335,24 @@ const Hero = ({ country }) => {
             </Suspense>
           ))}
         </div>
-        <div className="bg-secondary text-center mb-16">
+        <div className="text-centre my-8">
+          <StoriesThatStay />
+        </div>
+
+        <section className="bg-transparent mt-10 mx-10 py-[10px]">
+          <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold bg-transparent">
+            <b className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6 bg-transparent ">
+              What Will You Discover in This Book?
+            </b>
+          </h2>
+          <Suspense
+            fallback={<div className="text-white text-center">Loading...</div>}
+          >
+            <LazyDiscover cards={cardData} />
+          </Suspense>
+        </section>
+
+        {/* <div className="bg-secondary text-center mb-16">
           <h2 className="w-full py-[25px] md:py-[40px]  px-10 md:px-18  text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px]  font-bold text-center">
             <b className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Stories That Stay With Us
@@ -419,7 +438,7 @@ const Hero = ({ country }) => {
               </div>
             </section>
           </div>
-        </div>
+        </div> */}
 
         <section className="text-center max-w-3xl mx-auto">
           <div className="w-full flex flex-col justify-center  items-center mb-4 relative">
@@ -460,7 +479,8 @@ const Hero = ({ country }) => {
         </section>
 
         <div className="w-full flex flex-col justify-center items-center px-10 bg-[#F9FAFB]">
-          <div className="mt-16 bg-white rounded-xl overflow-hidden shadow-xl">
+          <Whythisbook />
+          {/* <div className="mt-16 bg-white rounded-xl overflow-hidden shadow-xl">
             <div className=" bg-gradient-to-r from-purple-800 to-purple-900 text-white p-8 text-center">
               <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6 bg-transparent text-white">
                 We Turned Dreams into Reality by Breaking All the Rules!
@@ -541,9 +561,9 @@ const Hero = ({ country }) => {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
 
-          <section className="bg-transparent mt-10 mx-10 py-[10px]">
+          {/* <section className="bg-transparent mt-10 mx-10 py-[10px]">
             <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold bg-transparent">
               <b className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6 bg-transparent ">
                 What Will You Discover in This Book?
@@ -556,13 +576,13 @@ const Hero = ({ country }) => {
             >
               <LazyDiscover cards={cardData} />
             </Suspense>
-          </section>
+          </section> */}
         </div>
         {/* <section className="pt-[20px] bg-black grid justify-center rounded-xl px-[20px] relative">
           <div className="w-full flex flex-col items-center gap-y-2 justify-center">
             <h2 className="max-w-[1200px] px-5 md:px-18 text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold text-center ">
               <b className="text-custom-amber"></b> */}
-        <section className="-py-3 px-4 bg-white" id="book-unique">
+        {/* <section className="-py-3 px-4 bg-white" id="book-unique">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -648,7 +668,7 @@ const Hero = ({ country }) => {
             imageAlt="Limited Book Cover"
             imageFirst={false}
           />
-        </section>
+        </section> */}
       </div>
       <Suspense fallback={<div>Loading...</div>}>
         {country === "in" ? (

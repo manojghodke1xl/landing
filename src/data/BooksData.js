@@ -95,6 +95,18 @@ export const missionSectionsData = [
     imageAlt: "The Next Chapter: Dreams to Reality",
     imageFirst: false,
   },
+  {
+    heading: "The Next Chapter: Dreams to Reality",
+    highlightedText: "The Next Chapter: Dreams to Reality",
+    paragraphs: [
+      "Our latest initiative, Dreams to Reality, is about sharing the blueprint of our journey so others can start their own.",
+      "It's not about being fearless. It’s about showing up even when you’re scared.",
+      "It’s for those who are tired of waiting and ready to take one small step toward their dreams.",
+    ],
+    imageSrc: "/Images/TheNextChapter.webp",
+    imageAlt: "The Next Chapter: Dreams to Reality",
+    imageFirst: false,
+  },
 ];
 // src/data/bulletListData.js
 

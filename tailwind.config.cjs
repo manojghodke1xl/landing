@@ -7,10 +7,10 @@ module.exports = withMT({
     extend: {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
-        playfair: ['"Playfair Display"', 'serif'],
-        helvetica: ['"Helvetica World"', 'sans-serif'],
-        opensauce: ['"Open Sauce Semibold"', 'sans-serif'],
-        nunito: ['"Nunito"', 'sans-serif'],
+        playfair: ['"Playfair Display"', "serif"],
+        helvetica: ['"Helvetica World"', "sans-serif"],
+        opensauce: ['"Open Sauce Semibold"', "sans-serif"],
+        nunito: ['"Nunito"', "sans-serif"],
       },
       padding: {
         custom: ["25px", "25px", "10px", "50px", "80px"],
@@ -25,11 +25,11 @@ module.exports = withMT({
         xl: "24px",
       },
       colors: {
-        secondary: "#202020",
+        // secondary: "#202020",
         gray: "#3C3C3C",
         "custom-pay": "#F5F7F9",
         "dark-gray": "#303030",
-        primary: "#000000",
+        // primary: "#000000",
         "primary-light": "#f4f1f1ff",
         "custom-primary": "#582b81",
         "btn-primary": "#0067DE",
@@ -37,7 +37,7 @@ module.exports = withMT({
         "custom-gray-light": "#262626",
         "feedback-div": "#3B3B3B",
         "custom-gray": "#272727",
-        "custom-light":"#f8f8f8dd",
+        "custom-light": "#f8f8f8dd",
       },
       keyframes: {
         moveLeftRight: {
