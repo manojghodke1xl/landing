@@ -100,9 +100,8 @@ function Whythisbook() {
             id={`book-unique-${index}`}
           >
             <div
-              className={`max-w-6xl flex gap-x-8 items-center flex-col md:flex-row ${
-                isOdd ? "md:flex-row-reverse" : ""
-              } mx-auto`}
+              className={`max-w-6xl flex gap-x-8 items-center flex-col md:flex-row ${isOdd ? "md:flex-row-reverse" : ""
+                } mx-auto`}
             >
               <div className="text-center flex flex-col md:gap-[28] gap-4 mb-16">
                 <h2 className="font-playfair text-3xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -113,7 +112,7 @@ function Whythisbook() {
                 </p>
                 <div className="w-full">
                   <img
-                    className="w-full h-auto rounded-xl"
+                    className="w-[520px] h-[276px] rounded-xl"
                     src={imageSrc}
                     alt={imageAlt}
                     loading="lazy"
