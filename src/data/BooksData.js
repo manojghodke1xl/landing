@@ -140,3 +140,18 @@ const bulletListData = [
 ];
 
 export default bulletListData;
+export const profileImages = [
+  { imageSrc: "https://www.donebook.com/assets/images/pf-tm-25.jpg" },
+  { imageSrc: "https://www.donebook.com/assets/images/pf-tm-25.jpg" },
+  { imageSrc: "https://www.donebook.com/assets/images/pf-tm-25.jpg" },
+  { imageSrc: "https://www.donebook.com/assets/images/pf-tm-25.jpg" },
+  { imageSrc: "https://www.donebook.com/assets/images/pf-tm-25.jpg" },
+  { imageSrc: "https://www.donebook.com/assets/images/pf-tm-25.jpg" },
+  { imageSrc: "https://www.donebook.com/assets/images/pf-tm-25.jpg" },
+  { imageSrc: "https://www.donebook.com/assets/images/pf-tm-25.jpg" },
+  { imageSrc: "https://www.donebook.com/assets/images/pf-tm-25.jpg" },
+  { imageSrc: "https://www.donebook.com/assets/images/pf-tm-25.jpg" },
+  { imageSrc: "https://www.donebook.com/assets/images/pf-tm-25.jpg" },
+  { imageSrc: "https://www.donebook.com/assets/images/pf-tm-25.jpg" },
+
+]

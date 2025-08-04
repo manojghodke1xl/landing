@@ -3,10 +3,9 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { getSeoMeta } from "../utils/getSeoMeta";
 import Seo from "../Seo";
-import { cardData, missionSectionsData } from "../data/BooksData";
+import { cardData, missionSectionsData, profileImages } from "../data/BooksData";
 import StoriesThatStay from "./StoriesThatStay";
 import Whythisbook from "./Whythisbook";
-
 const LazyFooter = React.lazy(() => import("./Footer"));
 const FooterUAE = React.lazy(() => import("./FooterUAE"));
 const LazyGrowthInMotion = lazy(() => import("./GrowthInMotion"));
@@ -161,14 +160,14 @@ const Hero = ({ country }) => {
             <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] -mt-4 -mb-2 font-bold">
               <b className="text-2xl md:text-3xl font-semibold text-purple-800 my-6 md:my-4">
                 Join the Growing List of Action-Takers Who Are Turning Their
-              Dreams into Reality!
+                Dreams into Reality!
               </b>
             </h2>
             <p className="text-lg md:text-2xl text-gray-600 my-8">
-             Let us know where to send your Book, and take the first step
+              Let us know where to send your Book, and take the first step
               toward achieving your goals today!
             </p>
-           
+
             {/* Buttons */}
             <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
               {/* Hardcover Button */}
@@ -186,6 +185,34 @@ const Hero = ({ country }) => {
               >
                 Grab Your E-Book
               </a>
+            </div>
+          </div>
+        </section>
+        <section className="text-center max-w-8xl md:my-10 mx-auto">
+          <div className="w-full flex flex-col justify-center items-center mb-4 relative">
+            <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold bg-transparent">
+              <b className="font-playfair text-3xl md:text-5xl font-bold text-gray-900 mb-6 bg-transparent ">
+                Image heading
+              </b>
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-6 gap-2 mt-10">
+              {profileImages.map((img, index) => (
+                <div
+                  key={index}
+                  className="w-full h-auto md:w-[218px] md:h-[350px]
+                  rounded-lg mx-[5px] mb-[10px] p-2
+                  shadow-sm bg-white 
+                  transition duration-300 ease-in-out 
+                  hover:scale-105 hover:shadow-md"
+                >
+                  <img
+                    src={img.imageSrc}
+                    loading="lazy"
+                    alt={`Profile ${index + 1}`}
+                    className="w-full h-full rounded-lg"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </section>
