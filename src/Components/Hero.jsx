@@ -91,7 +91,7 @@ const Hero = ({ country }) => {
                 <a
                   // href={`/pay/?type=PRODUCT&curr=INR&productIds=67de9c03770d7aa5b35b4712&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
                   href={buildPayUrl("67de9c03770d7aa5b35b4712")}
-                  className="bg-white text-purple-900 hover:bg-purple-100 text-lg px-8 py-6 rounded-full font-semibold flex items-center gap-2 "
+                  className="bg-white text-purple-900 hover:bg-purple-100 justify-center text-lg px-8 py-4 rounded-full font-semibold flex items-center gap-2 "
                 >
                   Grab Your Hardcover
                 </a>
@@ -99,7 +99,7 @@ const Hero = ({ country }) => {
                   href={buildPayUrl("67dea774770d7aa5b35b4db2")}
                   // href={`/pay/?type=PRODUCT&curr=INR&productIds=67dea774770d7aa5b35b4db2&&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
                   //onClick={() => ToCheckout("67dea774770d7aa5b35b4db2")}
-                  className="bg-purple-700 text-white border-2 border-white hover:bg-purple-600 text-lg px-8 py-6 rounded-full font-semibold"
+                  className="bg-purple-700 text-white border-2 border-white hover:bg-purple-600 text-lg px-8 py-4 rounded-full font-semibold"
                 >
                   Grab Your E-Book
                 </a>
