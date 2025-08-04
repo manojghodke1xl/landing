@@ -81,7 +81,7 @@ const bookSectionData = [
 
 function Whythisbook() {
   return (
-    <div>
+    <div className="px-4">
       {bookSectionData.map((section, index) => {
         const {
           heading,
@@ -93,55 +93,67 @@ function Whythisbook() {
           closing,
         } = section;
         const isOdd = index % 2 !== 0;
+
         return (
           <section
             key={index}
-            className="w-[382px] md:w-full py-3 px-4 bg-white md:my-10"
+            className="w-full max-w-screen-xl mx-auto py-8 md:py-16"
             id={`book-unique-${index}`}
           >
             <div
-              className={`max-w-6xl flex gap-x-8 items-center flex-col md:flex-row ${isOdd ? "md:flex-row-reverse" : ""
-                } mx-auto`}
+              className={`flex flex-col md:flex-row ${
+                isOdd ? "md:flex-row-reverse" : ""
+              } md:h-[100%] items-stretch gap-10`}
             >
-              <div className="text-center flex flex-col md:gap-[28] gap-4 mb-16">
-                <h2 className="font-playfair text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+              {/* Left side - Text + Image */}
+              <div className="w-full md:w-1/2 flex flex-col justify-center text-center gap-6">
+                <h2 className="font-playfair text-2xl md:text-5xl font-bold text-gray-900">
                   {heading}
                 </h2>
-                <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                  {description}
-                </p>
-                <div className="w-full">
+                <p className="text-lg text-gray-600">{description}</p>
+                <div className="w-full mx-auto">
                   <img
-                    className="w-[520px] h-[276px] rounded-xl"
                     src={imageSrc}
                     alt={imageAlt}
+                    className="w-full max-w-md md:max-w-lg rounded-xl object-cover mx-auto"
                     loading="lazy"
                   />
                 </div>
               </div>
 
-              <div className="bg-purple-50 p-8 rounded-xl shadow-lg mb-16">
-                <h3 className="text-lg md:text-2xl font-bold text-purple-800 mb-6 ">
+              {/* Right side - Bullet points + closing */}
+              <div className="w-full md:w-1/2 bg-purple-50 p-6 md:p-10 rounded-xl shadow-lg flex flex-col justify-center">
+                <h3 className="text-lg md:text-2xl font-bold text-purple-800 mb-4 md:mb-6">
                   {subheading}
                 </h3>
-                <ul className="space-y-6 text-lg">
+                <ul className="space-y-4 text-left">
                   {bulletPoints.map((point, i) => (
                     <li
                       key={i}
                       className="text-md md:text-lg flex items-start gap-3"
                     >
                       <Check
-                        className="text-purple-600 mt-1 flex-shrink-0 w-6 h-6"
+                        className="text-purple-600 mt-1 w-6 h-6 flex-shrink-0"
                         stroke="#9333ea"
                       />
                       <span>{point}</span>
                     </li>
                   ))}
                 </ul>
-                <div className="mt-8 text-center">
-                  <p className="text-lg font-semibold mb-2">{closing.title}</p>
-                  <p className="text-lg text-purple-800">{closing.subtitle}</p>
-                </div>
+                {(closing.title || closing.subtitle) && (
+                  <div className="mt-6 text-center">
+                    {closing.title && (
+                      <p className="text-lg font-semibold mb-2">
+                        {closing.title}
+                      </p>
+                    )}
+                    {closing.subtitle && (
+                      <p className="text-lg text-purple-800">
+                        {closing.subtitle}
+                      </p>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           </section>

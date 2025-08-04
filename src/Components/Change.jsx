@@ -15,7 +15,7 @@ const Change = () => {
         <div className="w-full lg:w-1/2 flex flex-col justify-start">
           <img
             src="/Images/BookCopy.webp"
-            className="w-full  md:h-[400px] object-contain mb-4 lg:mb-6 -mt-8"
+            className="w-full  md:h-[400px] object-contain mb-4 lg:mb-6 -mt-8  "
             alt="Dreams to Reality"
             loading="lazy"
           />
