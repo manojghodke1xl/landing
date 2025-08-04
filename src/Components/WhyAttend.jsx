@@ -4,8 +4,8 @@ import Group from "/Images/group.png";
 const WhyAttend = () => {
   return (
     <div>
-      <p className="text-xl md:text-2xl mb-10 text-purple-50 font-inter max-w-3xl mx-auto">
-        Two Young Visionaries:A 50-Day Mission to Success
+      <p className="text-xl md:text-2xl mb-10 text-purple-50 font-bold max-w-3xl mx-auto">
+        Two Young Visionaries:<span className="text-[#FFD700]">A 50-Day Mission to Success</span>
       </p>
       <p className="text-lg mb-10 text-purple-50 font-inter">
         Discover how two kids, just 13 and 10 years old, completed a

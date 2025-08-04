@@ -79,7 +79,7 @@ const Hero = ({ country }) => {
           <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div className="text-center md:text-left">
               <h2 className="font-playfair text-3xl md:text-5xl font-bold mb-6 leading-tight text-purple-50">
-                Check Out the Ultimate Success Blueprint of Two Young
+                Check Out the <span className="text-[#FFD700]">Ultimate Success Blueprint</span> of Two Young
                 Siblings Who Took on Bold Challenges and Inspired Thousands!
               </h2>
               <Suspense
