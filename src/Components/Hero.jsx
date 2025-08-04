@@ -75,10 +75,10 @@ const Hero = ({ country }) => {
             </div>
           </div>
         </nav>
-        <section className="min-h-screen flex items-center justify-center bg-custom-primary text-white px-4 py-10">
+        <section className="min-h-screen flex items-center justify-center bg-custom-primary text-white px-4 md:py-10">
           <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div className="text-center md:text-left">
-              <h2 className="font-playfair text-3xl md:text-5xl font-bold mb-6 leading-tight text-purple-50">
+              <h2 className="font-playfair text-2xl sm:text-3xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight text-purple-50">
                 Check Out the <span className="text-[#FFD700]">Ultimate Success Blueprint</span> of Two Young
                 Siblings Who Took on Bold Challenges and Inspired Thousands!
               </h2>
@@ -91,7 +91,7 @@ const Hero = ({ country }) => {
                 <a
                   // href={`/pay/?type=PRODUCT&curr=INR&productIds=67de9c03770d7aa5b35b4712&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
                   href={buildPayUrl("67de9c03770d7aa5b35b4712")}
-                  className="bg-white text-purple-900 hover:bg-purple-100 justify-center text-lg px-8 py-4 rounded-full font-semibold flex items-center gap-2 "
+                  className="bg-white text-purple-900 hover:bg-purple-100 justify-center text-lg px-8 py-2 md:py-4 rounded-full font-semibold flex items-center gap-2 "
                 >
                   Grab Your Hardcover
                 </a>
@@ -99,7 +99,7 @@ const Hero = ({ country }) => {
                   href={buildPayUrl("67dea774770d7aa5b35b4db2")}
                   // href={`/pay/?type=PRODUCT&curr=INR&productIds=67dea774770d7aa5b35b4db2&&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
                   //onClick={() => ToCheckout("67dea774770d7aa5b35b4db2")}
-                  className="bg-purple-700 text-white border-2 border-white hover:bg-purple-600 text-lg px-8 py-4 rounded-full font-semibold"
+                  className="bg-purple-700 text-white border-2 border-white hover:bg-purple-600 text-lg px-8 py-2 md:py-4 rounded-full font-semibold"
                 >
                   Grab Your E-Book
                 </a>
@@ -155,29 +155,26 @@ const Hero = ({ country }) => {
             <LazyDiscover cards={cardData} />
           </Suspense>
         </section>
+
         <section className="text-center max-w-3xl md:my-10 mx-auto">
           <div className="w-full flex flex-col justify-center  items-center mb-4 relative">
             <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] -mt-4 -mb-2 font-bold">
               <b className="text-2xl md:text-3xl font-semibold text-purple-800 my-6 md:my-4">
-                Dreams to Reality isn’t just a story; it’s an inspiration!
+                Join the Growing List of Action-Takers Who Are Turning Their
+              Dreams into Reality!
               </b>
             </h2>
             <p className="text-lg md:text-2xl text-gray-600 my-8">
-              And these platforms are how we keep that inspiration alive;
-              through action, creativity, and connection.
+             Let us know where to send your Book, and take the first step
+              toward achieving your goals today!
             </p>
-            <h3 className="text-xl md:text-2xl font-semibold text-gray-700">
-              Be part of the next chapter.
-            </h3>
-            <p className="text-lg  md:text-xl text-gray-700">
-              Because the real magic begins when you take the first step.
-            </p>
+           
             {/* Buttons */}
             <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
               {/* Hardcover Button */}
               <a
                 href={buildPayUrl("67de9c03770d7aa5b35b4712")}
-                className="text-white bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 font-semibold px-6 py-3 rounded-full text-sm shadow-md transition-all text-center"
+                className="text-white bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 font-semibold px-6 py-3 rounded-lg text-sm shadow-md transition-all text-center"
               >
                 Grab Your Hardcover
               </a>
@@ -185,7 +182,7 @@ const Hero = ({ country }) => {
               {/* E-Book Button */}
               <a
                 href={buildPayUrl("67dea774770d7aa5b35b4db2")}
-                className="text-purple-700 border border-purple-600 hover:bg-purple-100 font-semibold px-6 py-3 rounded-full text-sm transition-all text-center"
+                className="text-purple-700 border border-purple-600 hover:bg-purple-100 font-semibold px-6 py-3 rounded-lg text-sm transition-all text-center"
               >
                 Grab Your E-Book
               </a>
