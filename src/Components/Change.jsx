@@ -42,7 +42,7 @@ const Change = () => {
 
         {/* Right Section: Text Blocks */}
         <div className="w-full lg:w-1/2 flex flex-col gap-6">
-          <p className="font-helvetica text-gray-700 text-md md:text-lg">
+          <p className="font-helvetica text-gray-700 text-md md:text-lg text-justify">
             <strong>Dreams to Reality</strong> is the true story of two young
             siblings and child prodigies who turned bold dreams into nationwide
             impact—completing 120+ events in 50 days, inspiring over 50,000
@@ -51,12 +51,12 @@ const Change = () => {
             right mindset, age is never a limitation.
           </p>
 
-          <p className="font-helvetica text-gray-700 text-md md:text-lg">
+          <p className="font-helvetica text-gray-700 text-md md:text-lg text-justify">
             This book isn’t just their story; it’s a blueprint for anyone ready
             to take action, break barriers, and lead with purpose.
           </p>
 
-          <p className="font-helvetica text-gray-700 text-md md:text-lg">
+          <p className="font-helvetica text-gray-700 text-md md:text-lg text-justify">
             It’s a story of transformation. Two young siblings turned their
             learnings into a mission of giving back—reaching over 50,000 people
             across India through 120+ events in just 50 days. Their journey

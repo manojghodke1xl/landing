@@ -84,7 +84,7 @@ const Timeline = () => {
                 </div>
 
                 {/* Content */}
-                <div className="ml-16 md:ml-0 md:w-1/2 md:px-8 md:pl-12 text-gray-700">
+                <div className="ml-16 md:ml-0 md:w-1/2 md:px-8 md:pl-12 text-gray-700 text-justify">
                   <p className="md:text-xl">{milestone.description}</p>
                 </div>
               </div>

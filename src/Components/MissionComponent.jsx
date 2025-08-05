@@ -26,7 +26,7 @@ function MissionSection({
           </h2>
         )}
 
-        <p className=" text-md md:text-lg text-gray-600 mb-3 leading-relaxed  bg-none">
+        <p className=" text-md md:text-lg text-gray-600 mb-3 leading-relaxed  bg-none text-justify">
           {displayedText}
           {!isExpanded && isLong && "..."}
         </p>
