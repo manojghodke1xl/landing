@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { getSeoMeta } from "../utils/getSeoMeta";
 import Seo from "../Seo";
-import { cardData, missionSectionsData, profileImages } from "../data/BooksData";
+import {
+  cardData,
+  missionSectionsData,
+  profileImages,
+} from "../data/BooksData";
 import StoriesThatStay from "./StoriesThatStay";
 import Whythisbook from "./Whythisbook";
 const LazyFooter = React.lazy(() => import("./Footer"));
@@ -78,8 +82,12 @@ const Hero = ({ country }) => {
           <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div className="text-center md:text-left">
               <h2 className="font-playfair text-2xl sm:text-3xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight text-purple-50">
-                Check Out the <span className="text-[#FFD700]">Ultimate Success Blueprint</span> of Two Young
-                Siblings Who Took on Bold Challenges and Inspired Thousands!
+                Check Out the{" "}
+                <span className="text-[#FFD700]">
+                  Ultimate Success Blueprint
+                </span>{" "}
+                of Two Young Siblings Who Took on Bold Challenges and Inspired
+                Thousands!
               </h2>
               <Suspense
                 fallback={<div className="text-center">Loading...</div>}
@@ -108,12 +116,11 @@ const Hero = ({ country }) => {
               <img
                 src="/Images/TheNextChapter.webp"
                 loading="lazy"
-                className="rounded-lg shadow-2xl mx-auto max-w-full transition-transform duration-500 hover:rotate-12"
+                className="rounded-lg shadow-2xl mx-auto max-w-full transition-transform duration-500 hover:rotate-12 "
               />
             </div>
           </div>
         </section>
-
 
         <section className="w-full  ">
           <Suspense fallback={<div className="text-center">Loading...</div>}>
@@ -217,7 +224,7 @@ const Hero = ({ country }) => {
           </div>
         </section>
 
-        <div className="w-full flex flex-col md:my-15 justify-center items-center px-10 bg-[#F9FAFB]">
+        <div className="w-full flex flex-col md:my-15 justify-center items-center md:px-10 bg-[#F9FAFB]">
           <Whythisbook />
         </div>
       </div>
