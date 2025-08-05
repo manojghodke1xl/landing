@@ -6,7 +6,7 @@ const Discover = ({ cards = [] }) => {
       {cards.map((card, index) => (
         <div
           key={index}
-          className="group relative overflow-hidden bg-white p-6 pl-8 rounded-xl shadow-md mb-6 last:mb-0 hover:scale-105  bg-transparent hover:shadow-lg transition-shadow duration-300"
+          className="group relative overflow-hidden bg-white p-6 pl-8 rounded-xl shadow-md mb-6  hover:scale-105  bg-transparent hover:shadow-lg transition-shadow duration-300"
         >
           <div
             className="
