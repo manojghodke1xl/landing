@@ -112,11 +112,11 @@ const Hero = ({ country }) => {
                 </a>
               </div>
             </div>
-            <div className="relative">
+
+            <div className="relative aspect-[3/4] max-w-md mx-auto">
               <img
                 src="/Images/TheNextChapter.webp"
-                loading="lazy"
-                className="rounded-lg shadow-2xl mx-auto max-w-full transition-transform duration-500 hover:rotate-12 "
+                className="w-full h-full object-contain drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] transition-transform duration-500 hover:rotate-12"
               />
             </div>
           </div>
