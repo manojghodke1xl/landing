@@ -3,10 +3,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { getSeoMeta } from "../utils/getSeoMeta";
 import Seo from "../Seo";
-import {
-  cardData,
-  missionSectionsData
-} from "../data/BooksData";
+import { cardData, missionSectionsData } from "../data/BooksData";
 import StoriesThatStay from "./StoriesThatStay";
 import Whythisbook from "./Whythisbook";
 const LazyFooter = React.lazy(() => import("./Footer"));
@@ -56,7 +53,7 @@ const Hero = ({ country }) => {
     });
     return `${baseUrl}?${searchParams.toString()}`;
   };
-  const imageCount = 20;
+  const imageCount = 18;
   const image = Array.from({ length: imageCount });
   return (
     <>
@@ -162,6 +159,9 @@ const Hero = ({ country }) => {
           </Suspense>
         </section>
 
+        <div className="w-full flex flex-col md:my-15 justify-center items-center md:px-10 bg-[#F9FAFB]">
+          <Whythisbook />
+        </div>
         <section className="text-center max-w-3xl md:my-10 mx-auto">
           <div className="w-full flex flex-col justify-center  items-center mb-4 relative">
             <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] -mt-4 -mb-2 font-bold">
@@ -170,13 +170,13 @@ const Hero = ({ country }) => {
                 Dreams into Reality!
               </b>
             </h2>
-            <p className="text-lg md:text-2xl text-gray-600 my-8">
+            <p className="text-lg md:text-2xl text-gray-600 my-4">
               Let us know where to send your Book, and take the first step
               toward achieving your goals today!
             </p>
 
             {/* Buttons */}
-            <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="mt-4 flex flex-col sm:flex-row gap-4 justify-center">
               {/* Hardcover Button */}
               <a
                 href={buildPayUrl("67de9c03770d7aa5b35b4712")}
@@ -195,15 +195,11 @@ const Hero = ({ country }) => {
             </div>
           </div>
         </section>
-
-        <div className="w-full flex flex-col md:my-15 justify-center items-center md:px-10 bg-[#F9FAFB]">
-          <Whythisbook />
-        </div>
         <section className="text-center max-w-8xl md:my-10 mx-auto">
           <div className="w-full flex flex-col justify-center items-center mb-4 relative">
             <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold bg-transparent">
               <b className="font-playfair text-3xl md:text-5xl font-bold text-gray-900 mb-6 bg-transparent ">
-                Image heading
+                Our Gallary
               </b>
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-6 gap-2 mt-10">
@@ -217,7 +213,7 @@ const Hero = ({ country }) => {
                   hover:scale-105 hover:shadow-md"
                 >
                   <img
-                    src={`/Images/profileImages/${index + 1}.webp`}
+                    src={`/public/Images/profileImages/${index + 1}.webp`}
                     loading="lazy"
                     alt={`Profile ${index + 1}`}
                     className="w-full h-full rounded-lg"
