@@ -74,7 +74,11 @@ const Timeline = () => {
                 </div>
 
                 {/* Year indicator */}
-                <div className="ml-16 md:ml-0 md:w-1/2 md:px-8 md:text-right md:pr-12">
+                <div
+                  className={`ml-16 md:ml-0 md:w-1/2 md:px-8 ${
+                    index % 2 === 0 ? "md:text-right" : "md:text-left"
+                  }  md:pr-12`}
+                >
                   <h3 className="text-3xl font-bold text-purple-800">
                     {milestone.year}
                   </h3>

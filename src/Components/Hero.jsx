@@ -7,10 +7,8 @@ import { cardData, missionSectionsData } from "../data/BooksData";
 import StoriesThatStay from "./StoriesThatStay";
 import Whythisbook from "./Whythisbook";
 const LazyFooter = React.lazy(() => import("./Footer"));
-const FooterUAE = React.lazy(() => import("./FooterUAE"));
 const LazyGrowthInMotion = lazy(() => import("./GrowthInMotion"));
 const MissionSection = lazy(() => import("./MissionComponent"));
-const LazyBulletListSection = lazy(() => import("./BulletListSection"));
 const LazyDiscover = lazy(() => import("./Discover"));
 const LazyChange = lazy(() => import("./Change"));
 const LazyWhyAttend = lazy(() => import("./WhyAttend"));
@@ -75,7 +73,7 @@ const Hero = ({ country }) => {
             </div>
           </div>
         </nav>
-        <section className="min-h-screen flex items-center justify-center bg-custom-primary text-white px-4 md:py-10">
+        <section className=" flex items-center justify-center bg-custom-primary text-white px-4 md:py-10">
           <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div className="text-center md:text-left">
               <h2 className="font-playfair text-2xl sm:text-3xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight text-purple-50">
@@ -93,7 +91,6 @@ const Hero = ({ country }) => {
               </Suspense>
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                 <a
-                  // href={`/pay/?type=PRODUCT&curr=INR&productIds=67de9c03770d7aa5b35b4712&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
                   href={buildPayUrl("67de9c03770d7aa5b35b4712")}
                   className="bg-white text-purple-900 hover:bg-purple-100 justify-center text-lg px-8 py-2 md:py-4 rounded-full font-semibold flex items-center gap-2 "
                 >
@@ -101,8 +98,6 @@ const Hero = ({ country }) => {
                 </a>
                 <a
                   href={buildPayUrl("67dea774770d7aa5b35b4db2")}
-                  // href={`/pay/?type=PRODUCT&curr=INR&productIds=67dea774770d7aa5b35b4db2&&successUrl=${successUrl}&failureUrl=${failureUrl}&from=dreams-to-reality/in`}
-                  //onClick={() => ToCheckout("67dea774770d7aa5b35b4db2")}
                   className="bg-purple-700 text-white border-2 border-white hover:bg-purple-600 text-lg px-8 py-2 md:py-4 rounded-full font-semibold"
                 >
                   Grab Your E-Book
@@ -196,10 +191,10 @@ const Hero = ({ country }) => {
           </div>
         </section>
         <section className="text-center max-w-8xl md:my-10 mx-auto">
-          <div className="w-full flex flex-col justify-center items-center mb-4 relative">
+          <div className="bg-purple-50 py-4 w-full flex flex-col justify-center items-center relative">
             <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold bg-transparent">
               <b className="font-playfair text-3xl md:text-5xl font-bold text-gray-900 mb-6 bg-transparent ">
-                Our Gallary
+                Our Gallery
               </b>
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-6 gap-2 mt-10">
@@ -207,13 +202,13 @@ const Hero = ({ country }) => {
                 <div
                   key={index}
                   className="w-full h-auto md:w-[218px] md:h-[350px]
-                  rounded-lg mx-[5px] mb-[10px] p-2
-                  shadow-sm bg-white 
+                   mx-[5px] mb-[10px] p-2
+                  
                   transition duration-300 ease-in-out 
-                  hover:scale-105 hover:shadow-md"
+                  hover:scale-105 "
                 >
                   <img
-                    src={`/public/Images/profileImages/${index + 1}.webp`}
+                    src={`/Images/profileImages/${index + 1}.webp`}
                     loading="lazy"
                     alt={`Profile ${index + 1}`}
                     className="w-full h-full rounded-lg"

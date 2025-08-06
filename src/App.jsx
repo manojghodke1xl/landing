@@ -60,22 +60,19 @@ function App() {
                 />
                 <Route path="/gdpr-policy/in" element={<GDPRPolicy />} />
                 <Route
-                  path="/privacy-policyUAE/ae"
+                  path="/privacy-policy/ae"
                   element={<PrivacyPolicyUAE />}
                 />
                 <Route
-                  path="/terms-and-conditionsUAE/ae"
+                  path="/terms-and-conditions/ae"
                   element={<TermsOfServiceUAE />}
                 />
+                <Route path="/refund-policy/ae" element={<RefundPolicyUAE />} />
                 <Route
-                  path="/refund-policyUAE/ae"
-                  element={<RefundPolicyUAE />}
-                />
-                <Route
-                  path="/shipping-policyUAE/ae"
+                  path="/shipping-policy/ae"
                   element={<ShippingPolicyUAE />}
                 />
-                <Route path="/gdpr-policyUAE/ae" element={<GDPRPolicyUAE />} />
+                <Route path="/gdpr-policy/ae" element={<GDPRPolicyUAE />} />
                 <Route path="/contact-us/in" element={<ContactUs />} />
                 <Route path="/contact-us/ae" element={<ContactUs />} />
                 <Route path="*" element={<MainPage />} />

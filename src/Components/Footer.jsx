@@ -7,18 +7,18 @@ const Footer = (props) => {
   const country = props.country || "";
   const code = props.code || "/in";
   const policyLinks = [
-    { label: "Privacy Policy", path: `/privacy-policy${country}${code}` },
+    { label: "Privacy Policy", path: `/privacy-policy${code}` },
     { label: "Contact Us", path: `/contact-us${code}` },
     {
       label: "Terms and Conditions",
-      path: `/terms-and-conditions${country}${code}`,
+      path: `/terms-and-conditions${code}`,
     },
-    { label: "Refund Policy", path: `/refund-policy${country}${code}` },
+    { label: "Refund Policy", path: `/refund-policy${code}` },
     {
       label: "Shipping/Return Policy",
-      path: `/shipping-policy${country}${code}`,
+      path: `/shipping-policy${code}`,
     },
-    { label: "GDPR Policy", path: `/gdpr-policy${country}${code}` },
+    { label: "GDPR Policy", path: `/gdpr-policy${code}` },
   ];
 
   return (

@@ -10,12 +10,12 @@ const Change = () => {
           </b>
         </h2>
       </div>
-      <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+      <div className="flex flex-col lg:flex-row gap-12 lg:gap-4 items-start">
         {/* Left Section: Image + Bullet Points */}
         <div className="w-full lg:w-1/2 flex flex-col justify-start">
           <img
             src="/Images/BookCopy.webp"
-            className="w-full  md:h-[400px] object-contain mb-4 lg:mb-6 -mt-8  "
+            className="w-full object-contain mb-4 lg:mb-6 -mt-8  "
             alt="Dreams to Reality"
             loading="lazy"
           />
