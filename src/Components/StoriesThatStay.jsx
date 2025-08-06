@@ -30,7 +30,7 @@ function StoriesThatStay() {
         <div className="grid md:grid-cols-2 gap-6">
           {/* Card 1 */}
           <div className="bg-[#FAF5FF] p-6 sm:p-8 rounded-xl shadow-md hover:scale-105 transition duration-200 bg-transparent">
-            <h3 className="text-2xl font-bold text-purple-800 mb-4">
+            <h3 className="text-2xl font-bold text-purple-800 mb-4 ">
               JJFuntime
             </h3>
             <p className="text-justify font-medium text-gray-700 text-[18px] bg-transparent">
@@ -40,7 +40,7 @@ function StoriesThatStay() {
               subscribers and counting, this platform proves that big dreams can
               start with small experiments.
             </p>
-            <div className="text-start mt-12 bg-transparent">
+            <div className="text-center md:text-start mt-12 bg-transparent">
               <a
                 href="https://www.youtube.com/@JJFuntime"
                 target="_blank"
@@ -65,7 +65,7 @@ function StoriesThatStay() {
               being fearless; it’s about showing up with purpose, even when it’s
               tough.
             </p>
-            <div className="text-start mt-4 bg-transparent">
+            <div className="mt-4 bg-transparent text-center md:text-start">
               <a
                 href="https://www.youtube.com/@JJMissionDiary"
                 target="_blank"
