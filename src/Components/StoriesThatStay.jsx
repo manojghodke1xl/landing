@@ -5,7 +5,7 @@ function StoriesThatStay() {
       {/* Left Image */}
       <div className="w-full md:w-1/2 flex justify-center items-center">
         <img
-          src="/Images/stories.webp"
+          src="/Images/stories2.webp"
           className="w-full max-w-[700px] h-auto object-contain"
           alt="Stories That Stay With Us"
           loading="lazy"

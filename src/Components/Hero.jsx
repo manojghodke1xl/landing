@@ -217,7 +217,7 @@ const Hero = ({ country }) => {
                   hover:scale-105 hover:shadow-md"
                 >
                   <img
-                    src={`/public/Images/profileImages/${index + 1}.webp`}
+                    src={`/Images/profileImages/${index + 1}.webp`}
                     loading="lazy"
                     alt={`Profile ${index + 1}`}
                     className="w-full h-full rounded-lg"
