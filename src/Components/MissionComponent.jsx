@@ -6,6 +6,7 @@ function MissionSection({
   paragraphs = [],
   imageSrc,
   imageAlt,
+  index,
 }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -17,16 +18,26 @@ function MissionSection({
 
   const displayedText = isExpanded || !isLong ? fullText : previewText;
 
+  const spacing = [
+    { heading: "mb-4", paragraph: "mt-8", image: "mt-3" },
+    { heading: "mb-12", paragraph: "mt-2", image: "mt-1" },
+    { heading: "mb-4", paragraph: "mb-5", image: "-mt-5" },
+    { heading: "mb-14", paragraph: "mt-4", image: "mt-1" },
+    { heading: "mb-4", paragraph: "mt-10", image: "mt-3" },
+    { heading: "mb-4", paragraph: "mb-5", image: "-mt-1" },
+  ];
+
+  const currentSpacing = spacing[index] || spacing[0];
   return (
     <section className="w-[100%] md:w-[30%] bg-white flex flex-col shadow-md md:rounded-2xl p-6 md:p-10 items-center gap-6 md:gap-12 max-w-6xl mx-auto md:my-10 my-2 hover:scale-105 transition duration-200">
       <div className="w-full">
         {heading && (
-          <h2 className="text-[26px]  md:text-3xl font-playfair text-gray-800 md:mb-4 bg-none">
+          <h2 className={`text-[26px]  md:text-3xl font-playfair text-gray-800 bg-none ${currentSpacing.heading}`}>
             <b>{heading}</b>
           </h2>
         )}
 
-        <p className=" text-md md:text-lg text-gray-600 mb-3 bg-none text-start">
+        <p className=" text-md md:text-lg text-gray-600 bg-none text-start">
           {displayedText}
           {!isExpanded && isLong && "..."}
         </p>
@@ -34,14 +45,14 @@ function MissionSection({
         {isLong && (
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="text-blue-600 font-medium hover:underline transition duration-200"
+            className={`text-blue-600 font-medium hover:underline transition duration-200 ${currentSpacing.paragraph}`}
           >
             {isExpanded ? "Read Less" : "Read More"}
           </button>
         )}
       </div>
 
-      <div className="w-full">
+      <div className={`w-full ${currentSpacing.image}`}>
         <img
           src={imageSrc}
           alt={imageAlt}

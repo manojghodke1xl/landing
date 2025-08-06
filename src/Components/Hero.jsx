@@ -130,7 +130,7 @@ const Hero = ({ country }) => {
           </Suspense>
         </section>
 
-        <div className="bg-purple-50 text-white pt-10 w-full lg:px-10 xl:px-20 md:mt-5 md:flex md:flex-wrap md:gap-4 ">
+        <div className="bg-purple-50 text-white pt-10 w-full lg:px-10 xl:px-20 md:mt-5 md:flex md:flex-wrap md:gap-4">
           {missionSectionsData.map((section, index) => (
             <Suspense
               fallback={
@@ -138,7 +138,7 @@ const Hero = ({ country }) => {
               }
               key={index}
             >
-              <MissionSection {...section} />
+              <MissionSection {...section} index={index}/>
             </Suspense>
           ))}
         </div>
