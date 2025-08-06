@@ -43,7 +43,7 @@ export const missionSectionsData = [
       "With our mom on the road and our dad cheering us on from afar, we ran this mission ourselves, planning, preparing, speaking, and sometimes just showing up even when we were exhausted.",
       "We documented it all on JJMission Diary, a space where we share personal reflections, experiments, life hacks, and everything we learned in real time.",
     ],
-    imageSrc: "/Images/mission-50.webp",
+    imageSrc: "/Images/mission_50.webp",
     imageAlt: "Mission50 – Our Boldest Leap Yet",
     imageFirst: false,
   },
@@ -140,18 +140,3 @@ const bulletListData = [
 ];
 
 export default bulletListData;
-export const profileImages = [
-  { imageSrc: "https://www.donebook.com/assets/images/pf-tm-25.jpg" },
-  { imageSrc: "https://www.donebook.com/assets/images/pf-tm-25.jpg" },
-  { imageSrc: "https://www.donebook.com/assets/images/pf-tm-25.jpg" },
-  { imageSrc: "https://www.donebook.com/assets/images/pf-tm-25.jpg" },
-  { imageSrc: "https://www.donebook.com/assets/images/pf-tm-25.jpg" },
-  { imageSrc: "https://www.donebook.com/assets/images/pf-tm-25.jpg" },
-  { imageSrc: "https://www.donebook.com/assets/images/pf-tm-25.jpg" },
-  { imageSrc: "https://www.donebook.com/assets/images/pf-tm-25.jpg" },
-  { imageSrc: "https://www.donebook.com/assets/images/pf-tm-25.jpg" },
-  { imageSrc: "https://www.donebook.com/assets/images/pf-tm-25.jpg" },
-  { imageSrc: "https://www.donebook.com/assets/images/pf-tm-25.jpg" },
-  { imageSrc: "https://www.donebook.com/assets/images/pf-tm-25.jpg" },
-
-]

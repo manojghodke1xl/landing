@@ -5,8 +5,7 @@ import { getSeoMeta } from "../utils/getSeoMeta";
 import Seo from "../Seo";
 import {
   cardData,
-  missionSectionsData,
-  profileImages,
+  missionSectionsData
 } from "../data/BooksData";
 import StoriesThatStay from "./StoriesThatStay";
 import Whythisbook from "./Whythisbook";
@@ -57,7 +56,8 @@ const Hero = ({ country }) => {
     });
     return `${baseUrl}?${searchParams.toString()}`;
   };
-
+  const imageCount = 20;
+  const image = Array.from({ length: imageCount });
   return (
     <>
       {seo && <Seo {...seo} />}
@@ -195,6 +195,10 @@ const Hero = ({ country }) => {
             </div>
           </div>
         </section>
+
+        <div className="w-full flex flex-col md:my-15 justify-center items-center md:px-10 bg-[#F9FAFB]">
+          <Whythisbook />
+        </div>
         <section className="text-center max-w-8xl md:my-10 mx-auto">
           <div className="w-full flex flex-col justify-center items-center mb-4 relative">
             <h2 className="w-full text-center text-[20px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold bg-transparent">
@@ -203,7 +207,7 @@ const Hero = ({ country }) => {
               </b>
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-6 gap-2 mt-10">
-              {profileImages.map((img, index) => (
+              {image.map((_, index) => (
                 <div
                   key={index}
                   className="w-full h-auto md:w-[218px] md:h-[350px]
@@ -213,7 +217,7 @@ const Hero = ({ country }) => {
                   hover:scale-105 hover:shadow-md"
                 >
                   <img
-                    src={img.imageSrc}
+                    src={`/public/Images/profileImages/${index + 1}.webp`}
                     loading="lazy"
                     alt={`Profile ${index + 1}`}
                     className="w-full h-full rounded-lg"
@@ -223,10 +227,6 @@ const Hero = ({ country }) => {
             </div>
           </div>
         </section>
-
-        <div className="w-full flex flex-col md:my-15 justify-center items-center md:px-10 bg-[#F9FAFB]">
-          <Whythisbook />
-        </div>
       </div>
       <Suspense fallback={<div>Loading...</div>}>
         {country === "in" ? (
