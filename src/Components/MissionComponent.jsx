@@ -23,8 +23,8 @@ function MissionSection({
     { heading: "mb-12", paragraph: "mt-2", image: "mt-1" },
     { heading: "mb-4", paragraph: "mb-5", image: "-mt-5" },
     { heading: "mb-14", paragraph: "mt-4", image: "mt-1" },
-    { heading: "mb-4", paragraph: "mt-10", image: "mt-3" },
-    { heading: "mb-4", paragraph: "mb-5", image: "-mt-1" },
+    { heading: "mb-4", paragraph: "mt-12", image: "mt-1" },
+    { heading: "mb-4", paragraph: "mt-3", image: "-mt-1" },
   ];
 
   const currentSpacing = spacing[index] || spacing[0];
