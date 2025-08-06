@@ -96,15 +96,15 @@ export const missionSectionsData = [
     imageFirst: false,
   },
   {
-    heading: "The Next Chapter: Dreams to Reality",
-    highlightedText: "The Next Chapter: Dreams to Reality",
+    heading: "Dreams to Reality isn’t just a story; it’s an inspiration!",
+    highlightedText: "Dreams to Reality isn’t just a story; it’s an inspiration!",
     paragraphs: [
-      "Our latest initiative, Dreams to Reality, is about sharing the blueprint of our journey so others can start their own.",
-      "It's not about being fearless. It’s about showing up even when you’re scared.",
-      "It’s for those who are tired of waiting and ready to take one small step toward their dreams.",
+      "And these platforms are how we keep that inspiration alive; through action, creativity, and connection.",
+      "Be part of the next chapter.",
+      "Because the real magic begins when you take the first step.",
     ],
     imageSrc: "/Images/TheNextChapter.webp",
-    imageAlt: "The Next Chapter: Dreams to Reality",
+    imageAlt: "Dreams to Reality isn’t just a story; it’s an inspiration!",
     imageFirst: false,
   },
 ];

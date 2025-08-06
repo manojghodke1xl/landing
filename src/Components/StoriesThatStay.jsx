@@ -40,7 +40,7 @@ function StoriesThatStay() {
               subscribers and counting, this platform proves that big dreams can
               start with small experiments.
             </p>
-            <div className="text-start mt-4 bg-transparent">
+            <div className="text-start mt-12 bg-transparent">
               <a
                 href="https://www.youtube.com/@JJFuntime"
                 target="_blank"

@@ -9,7 +9,7 @@ const WhyAttend = () => {
         Two Young Visionaries:<span className="text-[#FFD700]">A 50-Day Mission to Success</span>
       </p>
       <p className="text-md md:text-lg mb-6 md:mb-10 text-purple-50 font-inter text-justify">
-        Discover how two kids, just 13 and 10 years old, completed a
+        Discover how two kids, just 13 and 11 years old, completed a
         life-changing 50-day mission, proving that age is no barrier to
         achieving big dreams. Get inspired by their journey of
         determination, courage, and purpose!

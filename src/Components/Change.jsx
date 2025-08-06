@@ -42,7 +42,7 @@ const Change = () => {
 
         {/* Right Section: Text Blocks */}
         <div className="w-full lg:w-1/2 flex flex-col gap-6">
-          <p className="font-helvetica text-gray-700 text-md md:text-lg text-justify">
+          <p className="font-helvetica text-gray-700 text-md md:text-lg text-start">
             <strong>Dreams to Reality</strong> is the true story of two young
             siblings and child prodigies who turned bold dreams into nationwide
             impact—completing 120+ events in 50 days, inspiring over 50,000

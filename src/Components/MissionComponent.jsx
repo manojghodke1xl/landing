@@ -26,7 +26,7 @@ function MissionSection({
           </h2>
         )}
 
-        <p className=" text-md md:text-lg text-gray-600 mb-3 leading-relaxed  bg-none text-justify">
+        <p className=" text-md md:text-lg text-gray-600 mb-3 bg-none text-start">
           {displayedText}
           {!isExpanded && isLong && "..."}
         </p>
@@ -45,7 +45,7 @@ function MissionSection({
         <img
           src={imageSrc}
           alt={imageAlt}
-          className="w-full h-auto rounded-lg object-cover shadow-md"
+          className="w-full h-auto rounded-lg object-cover shadow-md "
         />
       </div>
     </section>
